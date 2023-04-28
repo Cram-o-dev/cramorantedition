@@ -4,11 +4,11 @@ A ROM hack of Pokemon Yellow which replaces Pikachu with Cramorant! Many other m
 
 ## Main Features
 
-- Following Pikachu has been replaced with Following Cramorant! Every sprite, graphic, sound, and text associated with Pikachu has been replaced with Cramorant! Cramorant also has its own movepool, experience growth, and stats loosely based off of those found in Sword/Shield.
+- Journey through the region, beat Team Rocket, collect all badges, catch Pokemon, and become the Champ with Cramorant by your side!
+- Following Pikachu has been replaced with Following Cramorant! Every sprite, graphic, sound, and text associated with Pikachu has been replaced with Cramorant! -  Cramorant also has its own movepool, experience growth, and stats loosely based off of those found in Sword/Shield.
 - The Pikachu's Beach minigame is now Cramorant's Beach! As long as Cramorant knows Surf, you can play it!
 - New exclusive move added for Cramorant.
 - Many wild and Trainer Pokemon have had their levels raised slightly in an effort to provide the player with more challenge.
-- Journey through the region, beat Team Rocket, collect all badges, catch Pokemon, and become the Champ with Cramorant by your side!
 
 ## Additional Features
 

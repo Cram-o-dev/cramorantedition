@@ -1,0 +1,45 @@
+TMPlace_Script:
+	jp EnableAutoTextBoxDrawing
+
+TMPlace_TextPointers:
+	dw TMPlaceText1
+	dw TMPlaceText2
+	dw TMPlaceText3
+	dw TMCashier1Text
+	dw TMCashier2Text
+	dw TMCashier3Text
+	dw TMCashier4Text
+	dw TMPlaceSign1
+	dw TMPlaceSign2
+
+TMCashier1Text::
+	script_mart TM_MEGA_PUNCH, TM_RAZOR_WIND, TM_SWORDS_DANCE, TM_WHIRLWIND, TM_MEGA_KICK, TM_TOXIC, TM_HORN_DRILL, TM_BODY_SLAM, TM_TAKE_DOWN, TM_DOUBLE_EDGE, TM_BUBBLEBEAM, TM_WATER_GUN, TM_ICE_BEAM, TM_BLIZZARD
+	
+TMCashier2Text::
+	script_mart TM_HYPER_BEAM, TM_PAY_DAY, TM_SUBMISSION, TM_COUNTER, TM_SEISMIC_TOSS, TM_RAGE, TM_MEGA_DRAIN, TM_SOLARBEAM, TM_DRAGON_RAGE, TM_THUNDERBOLT, TM_THUNDER, TM_EARTHQUAKE, TM_FISSURE, TM_DIG
+	
+TMCashier3Text::
+	script_mart TM_PSYCHIC_M, TM_TELEPORT, TM_MIMIC, TM_DOUBLE_TEAM, TM_REFLECT, TM_BIDE, TM_METRONOME, TM_SELFDESTRUCT, TM_EGG_BOMB, TM_FIRE_BLAST, TM_SWIFT, TM_SKULL_BASH, TM_SOFTBOILED, TM_DREAM_EATER
+	
+TMCashier4Text::
+	script_mart  TM_SKY_ATTACK, TM_REST, TM_THUNDER_WAVE, TM_PSYWAVE, TM_EXPLOSION, TM_ROCK_SLIDE, TM_TRI_ATTACK, TM_SUBSTITUTE, TM_GULP_MISSILE
+	
+TMPlaceText1:
+	text_far _TMPlaceText1
+	text_end
+
+TMPlaceText2:
+	text_far _TMPlaceText2
+	text_end
+
+TMPlaceText3:
+	text_far _TMPlaceText3
+	text_end
+
+TMPlaceSign1:
+	text_far _TMPlaceSign1
+	text_end
+	
+TMPlaceSign2:
+	text_far _TMPlaceSign2
+	text_end

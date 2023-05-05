@@ -28,9 +28,9 @@ A ROM hack of Pokemon Yellow which replaces Pikachu with Cramorant! Many other m
 - Additonal text and some grammar touch-ups have been given to various NPC's.
 - Vermilion Gym puzzle no longer is frustrating and a time waster.
 - Amount of Pokemon required to show to Oak's Aides has been heavily reduced. Get that Flash HM without having to backtrack!
-- Beta and unused content included! Some unused music (like Giovanni's theme) and unused graphics and text have been added. A few other themes have been replaced by music adapted from Pokemon Crystal.
+- Beta and unused content included! Some unused music (like Giovanni's theme) and unused graphics and text have been added. A few other themes have been replaced by music adapted from the Generation II games.
 - Slow text speed has been removed and replaced by the Normal text speed. Fast text is on by default, and an Instant text speed option has been added! Use this speed to quickly go through dialogue and even skip some sound effects. Perfect for those with limited time.
-- Various bug fixes. Many Generation I bugs were fixed in Yellow, while Cramorant Edition fixes a few more minor errors and quirks. Any bugs which provide a negative experience for the player have been patched up.
+- Various bug fixes. Many Generation I bugs were fixed in Yellow, while Cramorant Edition fixes a few more minor errors and quirks. Any bugs which provide a negative experience for the player have been patched.
 -Even more incredibly minor stuff that adds more variety to the game.
 
 ## Features adapted from other projects and tutorials, many of which can be found in the Wiki section of the pokered and pokeyellow disassemblies.

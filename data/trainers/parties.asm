@@ -167,7 +167,8 @@ JrTrainerMData:
 	db 22, RATTATA, DIGLETT, EKANS, SANDSHREW, 0
 ; Route 12
 	db 30, NIDORAN_M, NIDORINO, 0
-	db 29, VICTREEBEL, SCYTHER, 0
+; Route 6
+	db 21, BELLSPROUT, SCYTHER, 0
 
 JrTrainerFData:
 ; Cerulean Gym
@@ -206,7 +207,8 @@ JrTrainerFData:
 	db 30, BELLSPROUT, ODDISH, TANGELA, SCYTHER, 0
 ; Route 20
 	db 35, TENTACOOL, HORSEA, SEEL, 0
-	db 39, MAROWAK, 0
+; Route 6
+	db 23, CUBONE, 0
 
 PokemaniacData:
 ; Route 10

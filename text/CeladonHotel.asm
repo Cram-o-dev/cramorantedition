@@ -24,6 +24,7 @@ _CeladonHotelPCText::
 	text "This PC stores"
 	line "guest information"
 	cont "for the hotel."
-	cont "Sadly, it can't"
-	cont "store #MON."
+	
+	para "Sadly, it can't"
+	line "store #MON."
 	done

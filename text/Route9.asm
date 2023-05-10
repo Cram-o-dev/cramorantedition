@@ -128,6 +128,57 @@ _Route9EndBattleText8::
 	text "Hahahaha!"
 	line "You beat me fair!"
 	prompt
+	
+_TeleportPreReceiveText::
+	text "That's the last"
+	line "time I try to use"
+	cont "TELEPORT!"
+
+	para "My #MON needs"
+	line "to better hone"
+	cont "its psychic"
+	cont "powers!"
+	
+	para "Here! It's yours!"
+	prompt
+
+_ReceivedTeleportText::
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer
+	text "!@"
+	text_end
+
+_TeleportExplanationText::
+	text "TM30 is TELEPORT!"
+
+	para "In a battle with"
+	line "wild #MON, use"
+	cont "it to let you"
+	cont "escape! But it"
+	cont "sometimes fails"
+	cont "if your #MON"
+	cont "is weak!"
+	
+	para "You can even"
+	line "return to the"
+	cont "last #MON"
+	cont "CENTER you used"
+	cont "out of battle,"
+	cont "just like an HM!"
+	
+	para "From now on, I'm"
+	line "just gonna walk"
+	cont "everywhere!"
+	done
+
+_TeleportNoRoomText::
+	text "Hmm... I sense"
+	line "something..."
+	
+	para "Your BAG has no"
+	line "room!"
+	done
 
 _Route9AfterBattleText8::
 	text "Hahahaha!"

@@ -194,15 +194,6 @@ _CinnabarGymAfterBattleText7::
 	line "But, fire melts"
 	cont "ice #MON!"
 	done
-	
-_QuizBoxText::
-	text "BLAINE has written"
-	line "potential quiz"
-	cont "questions."
-	
-	para "They all look"
-	line "tricky!"
-	done
 
 _CinnabarGymGuidePreBattleText::
 	text "Yo! Champ in"
@@ -265,4 +256,13 @@ _CinnabarGymText_6::
 _CinnabarGymText_7::
 	text "Come on, answer"
 	line "the question!"
+	done
+
+_QuizBoxText::
+	text "BLAINE has written"
+	line "potential quiz"
+	cont "questions."
+	
+	para "They all look"
+	line "tricky!"
 	done

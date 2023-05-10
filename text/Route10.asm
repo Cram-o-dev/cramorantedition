@@ -98,16 +98,7 @@ _Route10AfterBattleText6::
 	cont "pink one with a"
 	cont "floral pattern!"
 	done
-
-_Route10Text9::
-_Route10Text7::
-	text "ROCK TUNNEL"
-	done
-
-_Route10Text10::
-	text "POWER PLANT"
-	done
-
+	
 _CoinPreReceiveText::
 	text "Hello TRAINER! I"
 	line "see you've found"
@@ -159,4 +150,13 @@ _CoinExplanationText::
 	para "Might find me some"
 	line "parts to build me"
 	cont "a tent! Exciting!"
+	done
+
+_Route10Text9::
+_Route10Text7::
+	text "ROCK TUNNEL"
+	done
+
+_Route10Text10::
+	text "POWER PLANT"
 	done

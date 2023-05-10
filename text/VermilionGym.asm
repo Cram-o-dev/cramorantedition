@@ -132,8 +132,8 @@ _VermilionGymAfterBattleText3::
 
 	para "When you open the"
 	line "1st lock, the 2nd"
-	cont "lock is right"
-	cont "next to it!"
+	cont "lock is somewhere"
+	cont "close by!"
 	done
 
 _VermilionGymGuidePreBattleText::

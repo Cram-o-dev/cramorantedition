@@ -40,3 +40,8 @@ _LoreleiDontRunAwayText::
 	text "Someone's voice:"
 	line "Don't run away!"
 	done
+
+_LoreleiStatueText::
+	text "ABSOLUTELY NO"
+	line "FISHING ALLOWED!"
+	done

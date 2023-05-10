@@ -125,9 +125,9 @@ _Route12EndBattleText7::
 
 _Route12AfterBattleText7::
 	text "I usually fish up"
-	line "MAGIKARP all the"
-	cont "time, but they're"
-	cont "so weak!"
+	line "cool #MON all"
+	cont "the time, but"
+	cont "they're so weak!"
 	done
 
 _Route12Text11::

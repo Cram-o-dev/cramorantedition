@@ -62,3 +62,9 @@ _LanceAfterBattleText::
 	line "#MON LEAGUE"
 	cont "champion!@"
 	text_end
+
+_LanceStatueText::
+	text "Never stop"
+	line "believing in"
+	cont "yourself!"
+	done

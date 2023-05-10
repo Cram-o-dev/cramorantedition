@@ -37,5 +37,5 @@ _CeladonMansion2PCText::
 	
 	para "Let's hope he"
 	line "knows what he's"
-	cont "doing...."
+	cont "doing..."
 	done

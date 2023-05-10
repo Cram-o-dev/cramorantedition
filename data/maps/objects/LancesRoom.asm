@@ -7,6 +7,8 @@ LancesRoom_Object:
 	warp_event  6,  0, CHAMPIONS_ROOM, 1
 
 	def_bg_events
+	bg_event 4,  1, 2 ;Statue Text
+	bg_event 7,  1, 2 ;Statue Text
 
 	def_object_events
 	object_event  6,  1, SPRITE_LANCE, STAY, DOWN, 1, OPP_LANCE, 1

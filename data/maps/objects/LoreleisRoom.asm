@@ -8,7 +8,8 @@ LoreleisRoom_Object:
 	warp_event  5,  0, BRUNOS_ROOM, 2
 
 	def_bg_events
-
+	bg_event 3,  9, 3 ;Statue Text
+	
 	def_object_events
 	object_event  5,  2, SPRITE_LORELEI, STAY, DOWN, 1, OPP_LORELEI, 1
 

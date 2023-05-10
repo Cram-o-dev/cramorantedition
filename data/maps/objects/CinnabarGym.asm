@@ -6,10 +6,10 @@ CinnabarGym_Object:
 	warp_event 17, 17, LAST_MAP, 2
 
 	def_bg_events
-	bg_event  2,  1, 10 ; QuizBoxText
-	bg_event  3,  1, 10
-	bg_event  4,  1, 10
-	bg_event  5,  1, 10
+	bg_event  2,  1, 13 ; QuizBoxText
+	bg_event  3,  1, 13
+	bg_event  4,  1, 13
+	bg_event  5,  1, 13
 	
 	def_object_events
 	object_event  3,  3, SPRITE_SILPH_PRESIDENT, STAY, DOWN, 1, OPP_BLAINE, 1

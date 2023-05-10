@@ -22,7 +22,7 @@ Route9_TextPointers:
 	dw Route9Text7
 	dw Route9Text8
 	dw Route9Text9
-	dw PickUpItemText
+	dw GetTeleportText
 	dw Route9Text11
 
 Route9TrainerHeaders:
@@ -36,7 +36,7 @@ Route9TrainerHeader2:
 Route9TrainerHeader3:
 	trainer EVENT_BEAT_ROUTE_9_TRAINER_3, 2, Route9BattleText4, Route9EndBattleText4, Route9AfterBattleText4
 Route9TrainerHeader4:
-	trainer EVENT_BEAT_ROUTE_9_TRAINER_4, 2, Route9BattleText5, Route9EndBattleText5, Route9AfterBattleText5
+	trainer EVENT_BEAT_ROUTE_9_TRAINER_4, 1, Route9BattleText5, Route9EndBattleText5, Route9AfterBattleText5
 Route9TrainerHeader5:
 	trainer EVENT_BEAT_ROUTE_9_TRAINER_5, 3, Route9BattleText6, Route9EndBattleText6, Route9AfterBattleText6
 Route9TrainerHeader6:
@@ -200,6 +200,46 @@ Route9EndBattleText9:
 
 Route9AfterBattleText9:
 	text_far _Route9AfterBattleText9
+	text_end
+	
+GetTeleportText:
+	text_asm
+	CheckEvent EVENT_GET_TELEPORT
+	jr nz, .got_item
+	ld hl, TeleportPreReceiveText
+	call PrintText
+	lb bc, TM_TELEPORT, 1
+	call GiveItem
+	jr nc, .bag_full
+	ld hl, ReceivedTeleportText
+	call PrintText
+	SetEvent EVENT_GET_TELEPORT
+	jr .done
+.bag_full
+	ld hl, TeleportNoRoomText
+	call PrintText
+	jr .done
+.got_item
+	ld hl, TeleportExplanationText
+	call PrintText
+.done
+	jp TextScriptEnd
+
+TeleportPreReceiveText:
+	text_far _TeleportPreReceiveText
+	text_end
+
+ReceivedTeleportText:
+	text_far _ReceivedTeleportText
+	sound_get_item_1
+	text_end
+
+TeleportExplanationText:
+	text_far _TeleportExplanationText
+	text_end
+
+TeleportNoRoomText:
+	text_far _TeleportNoRoomText
 	text_end
 
 Route9Text11:

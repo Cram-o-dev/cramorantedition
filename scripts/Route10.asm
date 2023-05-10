@@ -19,11 +19,11 @@ Route10_TextPointers:
 	dw Route10Text4
 	dw Route10Text5
 	dw Route10Text6
+	dw Route10Hermit
 	dw Route10Text7
 	dw PokeCenterSignText
 	dw Route10Text9
 	dw Route10Text10
-	dw Route10Hermit
 
 Route10TrainerHeaders:
 	def_trainers
@@ -148,16 +148,7 @@ Route10EndBattleText6:
 Route10AfterBattleText6:
 	text_far _Route10AfterBattleText6
 	text_end
-
-Route10Text9:
-Route10Text7:
-	text_far _Route10Text7 ; _Route10Text9
-	text_end
-
-Route10Text10:
-	text_far _Route10Text10
-	text_end
-
+	
 Route10Hermit:
 	text_asm
 	CheckEvent EVENT_GOT_COIN
@@ -196,4 +187,13 @@ CoinExplanationText:
 
 CoinNoRoomText:
 	text_far _CoinNoRoomText
+	text_end
+
+Route10Text9:
+Route10Text7:
+	text_far _Route10Text7 ; _Route10Text9
+	text_end
+
+Route10Text10:
+	text_far _Route10Text10
 	text_end

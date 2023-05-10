@@ -127,6 +127,7 @@ LanceScript3:
 
 LancesRoom_TextPointers:
 	dw LanceText1
+	dw LanceStatueText
 
 LancesRoomTrainerHeaders:
 	def_trainers
@@ -153,3 +154,7 @@ LanceAfterBattleText:
 	text_asm
 	SetEvent EVENT_BEAT_LANCE
 	jp TextScriptEnd
+
+LanceStatueText:
+	text_far _LanceStatueText
+	text_end

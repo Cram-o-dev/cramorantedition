@@ -243,10 +243,10 @@ CinnabarGym_TextPointers:
 	dw CinnabarGymTrainerText6
 	dw CinnabarGymTrainerText7
 	dw CinnabarGymGuideText
-	dw QuizBoxText
 	dw BlaineVolcanoBadgeInfoText
 	dw ReceivedTM38Text
 	dw TM38NoRoomText
+	dw QuizBoxText
 
 CinnabarGymScript_750c3:
 	ldh a, [hSpriteIndexOrTextID]
@@ -563,12 +563,12 @@ CinnabarGymEndBattleText7:
 CinnabarGymAfterBattleText7:
 	text_far _CinnabarGymAfterBattleText7
 	text_end
-	
-QuizBoxText:
-	text_far _QuizBoxText
-	text_end
 
 CinnabarGymGuideText:
 	text_asm
 	callfar Func_f2133
 	jp TextScriptEnd
+
+QuizBoxText:
+	text_far _QuizBoxText
+	text_end

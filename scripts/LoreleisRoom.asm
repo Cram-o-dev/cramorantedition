@@ -118,6 +118,7 @@ LoreleiScript2:
 LoreleisRoom_TextPointers:
 	dw LoreleiText1
 	dw LoreleiDontRunAwayText
+	dw LoreleiStatueText
 
 LoreleisRoomTrainerHeaders:
 	def_trainers
@@ -145,4 +146,8 @@ LoreleiAfterBattleText:
 
 LoreleiDontRunAwayText:
 	text_far _LoreleiDontRunAwayText
+	text_end
+
+LoreleiStatueText:
+	text_far _LoreleiStatueText
 	text_end

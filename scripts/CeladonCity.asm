@@ -24,6 +24,7 @@ CeladonCity_TextPointers:
 	dw CeladonCityText8
 	dw CeladonCityText9
 	dw CeladonCityTMGuyText
+	dw CeladonCityJennyText
 	dw CeladonCityText10
 	dw CeladonCityText11
 	dw PokeCenterSignText
@@ -33,7 +34,6 @@ CeladonCity_TextPointers:
 	dw CeladonCityText16
 	dw CeladonCityText17
 	dw CeladonCityText18
-	dw CeladonCityJennyText
 
 CeladonCityText1:
 	text_far _CeladonCityText1
@@ -113,6 +113,10 @@ CeladonCityText9:
 CeladonCityTMGuyText:
 	text_far _CeladonCityTMGuyText
 	text_end
+	
+CeladonCityJennyText:
+	text_far _CeladonCityJennyText
+	text_end
 
 CeladonCityText10:
 	text_asm
@@ -145,8 +149,4 @@ CeladonCityText17:
 
 CeladonCityText18:
 	text_far _CeladonCityText18
-	text_end
-	
-CeladonCityJennyText:
-	text_far _CeladonCityJennyText
 	text_end

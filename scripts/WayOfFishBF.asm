@@ -86,7 +86,7 @@ WayOfFishBFAfterBattleText3:
 	
 WayOfFishBFText4:
 	text_asm
-	lb bc, ARROKUDA, 40
+	lb bc, ARROKUDA, 37
 	call GivePokemon
 	jr nc, .party_full
 	ld a, HS_WAY_OF_FISH_BF_ARROKUDA

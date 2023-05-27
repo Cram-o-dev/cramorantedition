@@ -23,8 +23,8 @@ Route11_TextPointers:
 	dw Route11Text8
 	dw Route11Text9
 	dw Route11Text10
-	dw Route11Text11
 	dw Route11TextSleep
+	dw Route11Text11
 
 Route11TrainerHeaders:
 	def_trainers
@@ -230,10 +230,10 @@ Route11AfterBattleText10:
 	text_far _Route11AfterBattleText10
 	text_end
 
-Route11Text11:
-	text_far _Route11Text11
-	text_end
-	
 Route11TextSleep:
 	text_far _Route11TextSleep
+	text_end
+	
+Route11Text11:
+	text_far _Route11Text11
 	text_end

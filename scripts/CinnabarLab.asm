@@ -4,32 +4,16 @@ CinnabarLab_Script:
 
 CinnabarLab_TextPointers:
 	dw Lab1Text1
+	dw Lab1TextAide
 	dw Lab1Text2
 	dw Lab1Text3
 	dw Lab1Text4
 	dw Lab1Text5
-	dw Lab1TextAide
 	
 Lab1Text1:
 	text_far _Lab1Text1
 	text_end
-
-Lab1Text2:
-	text_far _Lab1Text2
-	text_end
-
-Lab1Text3:
-	text_far _Lab1Text3
-	text_end
-
-Lab1Text4:
-	text_far _Lab1Text4
-	text_end
-
-Lab1Text5:
-	text_far _Lab1Text5
-	text_end
-
+	
 Lab1TextAide:
 	text_asm
 	CheckEvent EVENT_LAB_MASTER_BALL
@@ -57,4 +41,20 @@ Lab1TextAide:
 
 Lab1TextAideExplain:
 	text_far _Lab1TextAideExplain
+	text_end
+
+Lab1Text2:
+	text_far _Lab1Text2
+	text_end
+
+Lab1Text3:
+	text_far _Lab1Text3
+	text_end
+
+Lab1Text4:
+	text_far _Lab1Text4
+	text_end
+
+Lab1Text5:
+	text_far _Lab1Text5
 	text_end

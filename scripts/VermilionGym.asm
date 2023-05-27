@@ -95,10 +95,10 @@ VermilionGym_TextPointers:
 	dw VermilionGymTrainerText2
 	dw VermilionGymTrainerText3
 	dw VermilionGymGuideText
-	dw VermilionGymCityText
 	dw LTSurgeThunderBadgeInfoText
 	dw ReceivedTM24Text
 	dw TM24NoRoomText
+	dw VermilionGymCityText
 
 VermilionGymTrainerHeaders:
 	def_trainers 2

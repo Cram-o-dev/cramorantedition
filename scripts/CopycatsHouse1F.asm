@@ -5,6 +5,7 @@ CopycatsHouse1F_TextPointers:
 	dw CopycatsHouse1FText1
 	dw CopycatsHouse1FText2
 	dw CopycatsHouse1FText3
+	dw TVText
 
 CopycatsHouse1FText1:
 	text_far _CopycatsHouse1FText1
@@ -20,3 +21,7 @@ CopycatsHouse1FText3:
 	ld a, CHANSEY
 	call PlayCry
 	jp TextScriptEnd
+
+TVText:
+	text_far _TVText
+	text_end

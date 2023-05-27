@@ -224,13 +224,13 @@ CeruleanCity_TextPointers:
 	dw CeruleanCityText9
 	dw CeruleanCityText10
 	dw CeruleanCityText11
+	dw CeruleanCityTextBros
 	dw CeruleanCityText12
 	dw CeruleanCityText13
 	dw MartSignText
 	dw PokeCenterSignText
 	dw CeruleanCityText16
 	dw CeruleanCityText17
-	dw CeruleanCityTextBros
 
 CeruleanCityText1:
 	text_asm
@@ -424,6 +424,10 @@ CeruleanCityText10:
 	text_far _CeruleanCityText10
 	text_end
 
+CeruleanCityTextBros:
+	text_far _CeruleanCityTextBros
+	text_end
+	
 CeruleanCityText12:
 	text_far _CeruleanCityText12
 	text_end
@@ -438,8 +442,4 @@ CeruleanCityText16:
 
 CeruleanCityText17:
 	text_far _CeruleanCityText17
-	text_end
-
-CeruleanCityTextBros:
-	text_far _CeruleanCityTextBros
 	text_end

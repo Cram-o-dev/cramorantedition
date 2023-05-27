@@ -29,9 +29,10 @@ _Route25EndBattleText2::
 	prompt
 
 _Route25AfterBattleText2::
-	text "On S.S.ANNE, I"
-	line "saw trainers from"
-	cont "around the world."
+	text "On the S.S.ANNE,"
+	line "I saw trainers"
+	cont "from around the"
+	cont "world."
 	done
 
 _Route25BattleText3::
@@ -155,11 +156,9 @@ _Route25Text11::
 	line "BILL lives here!"
 	
 	para "P.S."
-	line "I've heard the"
-	cont "rumors about my"
-	cont "garden. I promise"
-	cont "there's nothing"
-	cont "back there!"
-	
-	para " -BILL"
+	line "Stop trying to"
+	cont "sneak behind my"
+	cont "house!"
+
+	para "-BILL"
 	done

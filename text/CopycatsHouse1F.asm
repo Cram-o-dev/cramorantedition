@@ -19,3 +19,14 @@ _CopycatsHouse1FText3::
 	text "CHANSEY: Chaaan"
 	line "sey!@"
 	text_end
+
+_TVText::
+	text "It shows an epic"
+	line "battle between"
+	cont "two #MON using"
+	cont "MIMIC over and"
+	cont "over."
+	
+	para "It might go on"
+	line "for a while!"
+	done

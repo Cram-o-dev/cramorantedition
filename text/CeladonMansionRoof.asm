@@ -4,7 +4,7 @@ _CeladonMansion4Text1::
 
 _CeladonMansionGraffitiText::
 	text "There's graffiti"
-	line "on the wall…"
+	line "on the wall..."
 	
 	para "“Dog” is written"
 	line "on the wall."

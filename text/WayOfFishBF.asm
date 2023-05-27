@@ -52,8 +52,8 @@ _WayOfFishBFBattleText2::
 	cont "of what nature"
 	cont "gives you!"
 	
-	para "Allow me to give"
-	line "you a full"
+	para "Let me give you"
+	line "a full"
 	cont "demonstration!"
 	done
 	
@@ -97,7 +97,7 @@ _WayOfFishBFBattleText3::
 	cont "for the perfect"
 	cont "time to strike!"
 	
-	para "Let me to rock"
+	para "Allow me to rock"
 	line "your world with a"
 	cont "mighty splash!"
 	done
@@ -158,9 +158,6 @@ _WayOfFishBFAfterBattleText3::
 	para "..."
 	line "..."
 	
-	para "..."
-	line "..."
-	
 	para "As long as my"
 	line "sister would be"
 	cont "cool with that."
@@ -172,6 +169,6 @@ _WayOfStatueText::
 	done
 	
 _WayOfStatueText2::
-	text "All rivers flow"
+	text "All rivers lead"
 	line "to the ocean."
 	done

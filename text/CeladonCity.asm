@@ -101,6 +101,20 @@ _CeladonCityTMGuyText::
 	cont "might grant you"
 	cont "entry."
 	done
+	
+_CeladonCityJennyText::
+	text "I'm an undercover"
+	line "cop."
+	
+	para "I've gotten"
+	line "several reports"
+	cont "of a creepy old"
+	cont "guy down by the"
+	cont "GYM."
+	
+	para "You know anything"
+	line "about that?"
+	done
 
 _CeladonCityText11::
 	text "CELADON CITY"
@@ -168,17 +182,4 @@ _CeladonCityText10::
 	line "CELADON DEPT."
 	cont "STORE!"
 	done
-
-_CeladonCityJennyText::
-	text "I'm an undercover"
-	line "cop."
 	
-	para "I've gotten"
-	line "several reports"
-	cont "of a creepy old"
-	cont "guy down by the"
-	cont "GYM."
-	
-	para "You know anything"
-	line "about that?"
-	done

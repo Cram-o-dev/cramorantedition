@@ -2,17 +2,14 @@ _VermilionCitySoloGuyHouseManText::
 	text "It's amazing what"
 	line "can be accompli-"
 	cont "shed these days!"
-	cont "SILPH CO. never"
-	cont "ceases to amaze!"
 	
 	para "In the old days,"
 	line "you had to meet"
-	cont "up with friends"
-	cont "and trade to"
-	cont "evolve certain"
-	cont "#MON."
+	cont "with friends and"
+	cont "trade to evolve"
+	cont "certain #MON."
 	
-	para "Now, you can"
+	para "Now you can"
 	line "simply use an"
 	cont "item called a"
 	cont "LINK CABLE to"
@@ -20,8 +17,7 @@ _VermilionCitySoloGuyHouseManText::
 	
 	para "That's how I"
 	line "got all my"
-	cont "#MON fully"
-	cont "evolved!"
+	cont "#MON friends!"
 	done
 	
 _VermilionCitySoloGuyHouseMachampText::

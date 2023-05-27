@@ -12,8 +12,9 @@ _Route14EndBattleText1::
 _Route14AfterBattleText1::
 	text "You have some HMs,"
 	line "right? #MON"
-	cont "can't ever forget"
-	cont "those moves."
+	cont "normally can't"
+	cont "forget those"
+	cont "moves."
 	done
 
 _Route14BattleText2::
@@ -170,19 +171,17 @@ _LeafStonePreReceiveText::
 	text "The flowers..."
 	
 	para "they're speaking"
-	line "to us...."
+	line "to us..."
 	
 	para "...Can you hear"
 	line "them...?"
-	
-	para "..."
 	
 	para "..."
 
 	para "The flowers..."
 	
 	para "they want you to"
-	line "have this...."
+	line "have this..."
 	prompt
 
 _ReceivedLeafStoneText::
@@ -196,26 +195,26 @@ _LeafStoneExplanationText::
 	text "The flowers..."
 	
 	para "such mysteries lie"
-	line "within them...."
+	line "within them..."
 	
 	para "Now... please..."
 	
 	para "let me be alone"
 	line "with..."
 
-	para "the flowers...."
+	para "the flowers..."
 	done
 
 _LeafStoneNoRoomText::
 	text "Oh..."
 	
 	para "You have..."
-	line "no room...."
+	line "no room..."
 	
 	para "The flowers..."
 	
 	para "They want you to"
-	line "accept this...."
+	line "accept this..."
 	done
 	
 _Route14Text11::

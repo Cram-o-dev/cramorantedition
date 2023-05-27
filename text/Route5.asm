@@ -14,10 +14,4 @@ _MonBrosText::
 	
 	para "We do it all!"
 	line "Inquire inside!"
-	
-	para "P.S."
-	line "The MOVE DELETER"
-	cont "can also help"
-	cont "#MON forget" 
-	cont "HM moves!"
 	done

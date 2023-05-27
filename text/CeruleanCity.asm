@@ -205,6 +205,23 @@ _CeruleanCityText10::
 	cont "only person who"
 	cont "is allowed in!"
 	done
+	
+_CeruleanCityTextBros::
+	text "The DAYCARE man's"
+	line "brothers joined"
+	cont "him recently, and"
+	cont "they offer their"
+	cont "own services too!"
+	
+	para "I think they can"
+	line "help adjust your"
+	cont "#MON's moves?"
+	
+	para "You should go!"
+	line "You can find"
+	cont "their business"
+	cont "south on ROUTE 5."
+	done
 
 _CeruleanCityText12::
 	text "CERULEAN CITY"
@@ -235,22 +252,5 @@ _CeruleanCityText17::
 
 	para "The Tomboyish"
 	line "Mermaid!"
-	done
-
-_CeruleanCityTextBros::
-	text "The DAYCARE man's"
-	line "brothers joined"
-	cont "him recently, and"
-	cont "they offer their"
-	cont "own services too!"
-	
-	para "I think they can"
-	line "help adjust your"
-	cont "#MON's moves?"
-	
-	para "You should go!"
-	line "You can find"
-	cont "their business"
-	cont "south on ROUTE 5."
 	done
 	

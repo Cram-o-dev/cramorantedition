@@ -19,3 +19,15 @@ _SSAnne1Text2::
 	line "challenged by the"
 	cont "more bored ones!"
 	done
+
+_SSAnneNurseText::
+	text "Are your #MON"
+	line "injured? Allow"
+	cont "me to heal them!"
+	prompt
+	
+_SSAnnePostHealText::
+	text "Come back if you"
+	line "need your #MON"
+	cont "in tip top shape!"
+	done

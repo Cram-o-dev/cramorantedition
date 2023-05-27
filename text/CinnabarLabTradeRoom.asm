@@ -10,10 +10,11 @@ _Lab2Text1::
 
 _LabTradeRoomText::
 	text "A picture of"
-	line "several sci-"
-	cont "entists in lab"
-	cont "gear performing"
+	line "several scientis-"
+	cont "ts in lab gear"
+	cont "performing some"
 	cont "experiments."
 	
 	para "Looks like"
 	line "challenging work!"
+	done

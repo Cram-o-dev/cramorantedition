@@ -157,14 +157,14 @@ _Route11AfterBattleText10::
 	line "stronger ones!"
 	done
 
-_Route11Text11::
-	text "DIGLETT's CAVE"
-	done
-	
 _Route11TextSleep::
 	text "Ahh... these"
 	line "flowers feel so"
 	cont "comfy."
 	
 	para "Zzz..."
+	done
+	
+_Route11Text11::
+	text "DIGLETT's CAVE"
 	done

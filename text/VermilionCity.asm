@@ -175,15 +175,15 @@ _HarborCramSignText::
 	
 	para "In an effort to"
 	line "control the local"
-	cont "CRAMORANT pop-"
-	cont "ulation, feeding"
+	cont "CRAMORANT popula-"
+	cont "tion, feeding"
 	cont "them is now"
 	cont "prohibited."
 	
 	para "Thanks for your"
 	line "cooperation."
 	
-	para "VERMILION POLICE."
+	para "VERMILION POLICE"
 	done
 	
 _CramFanClubSignText::

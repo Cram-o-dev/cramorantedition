@@ -64,7 +64,6 @@ _LanceAfterBattleText::
 	text_end
 
 _LanceStatueText::
-	text "Never stop"
-	line "believing in"
-	cont "yourself!"
+	text "It depicts a"
+	line "mighty dragon!"
 	done

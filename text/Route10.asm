@@ -136,8 +136,8 @@ _CoinNoRoomText::
 	
 _CoinExplanationText::
 	text "That COIN has no"
-	line "more value to me."
-	cont "I have no further"
+	line "more value to me"
+	cont "as I've no more"
 	cont "need for things"
 	cont "like money."
 	

@@ -17,6 +17,12 @@ _SafariZoneRestHouse3Text3::
 	line "from all the fun!"
 	done
 
+_SafariZoneRestHouse3Text5::
+	text "Catching #MON"
+	line "can be so"
+	cont "exhausting..."
+	done
+	
 _SafariZoneRestHouse3Text4::
 	text "Oh?"
 	
@@ -27,10 +33,4 @@ _SafariZoneRestHouse3Text4::
 	cont "green eyes."
 	
 	para "How cute!"
-	done
-
-_SafariZoneRestHouse3Text5::
-	text "Catching #MON"
-	line "can be so"
-	cont "exhausting..."
 	done

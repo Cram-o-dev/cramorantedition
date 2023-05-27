@@ -76,7 +76,7 @@ _Route1EndBattleText1::
 _Route1AfterBattleText1::
 	text "Wait, didn't I"
 	line "already ask you"
-	cont "about that"
+	cont "about that?"
 	
 	para "Whoops! I'm so"
 	line "sorry!"

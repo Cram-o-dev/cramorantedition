@@ -19,5 +19,5 @@ _Route16GateText_49781::
 _Route16GateText2::
 	text "Darn! I can't get"
 	line "on CYCLING ROAD"
-	cont "from this entry!"
+	cont "from this side!"
 	done

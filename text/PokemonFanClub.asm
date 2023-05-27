@@ -4,7 +4,7 @@ PikachuFanText::
 	cont "adorable face?"
 	
 	para "Just keep any"
-	line "CRAMORANT away"
+	line "CRAMORANTs away"
 	cont "from it."
 	done
 

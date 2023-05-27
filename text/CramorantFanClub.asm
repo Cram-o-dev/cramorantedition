@@ -1,6 +1,6 @@
-_CramorantFanClubText1::
+_CramorantFanClubText1:: ;this was placeholder text, and I don't feel like removing it for fear of breaking something
 	text "Woah!"
-	line "Woah woah!" ;this was placeholder text, and I don't feel like removing it for fear of breaking something
+	line "Woah woah!"
 	done
 	
 _CramorantFanClubText2::
@@ -72,7 +72,7 @@ _CramorantFanClubText8::
 	cont "CRAMORANT!"
 	
 	para "Well, some of us"
-	line "anyway...."
+	line "anyway..."
 	
 	para "Unfortunately, the"
 	line "VERMILION POLICE"
@@ -93,7 +93,8 @@ _CramorantFanClubText9::
 _CrammyDescription::
 	text_start 
 	para "This CRAMORANT"
-	line "has a pink bow on."
+	line "has a pink bow on"
+	cont "its head!"
 	done
 	
 _MusicText::
@@ -106,7 +107,7 @@ _PapersText::
 	text "Various pictures"
 	line "and essays about"
 	cont "CRAMORANT are"
-	cont "strewn here."
+	cont "strewn all over."
 	done
 	
 _FeatherText::
@@ -208,7 +209,7 @@ _CramClubPicture2Text::
 	line "of a CRAMORANT"
 	cont "dancing."
 	
-	para "Very interesting."
+	para "Very interesting!"
 	done
 	
 _NoCramClub::

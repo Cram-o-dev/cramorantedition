@@ -6,6 +6,17 @@ _Lab1Text1::
 	line "us rare #MON"
 	cont "for examination."
 	done
+	
+_Lab1TextAideExplain::
+	text "SILPH gave that to"
+	line "PROF. OAK, but he"
+	cont "felt it would be"
+	cont "better off in"
+	cont "your hands!"
+	
+	para "Think hard about"
+	line "what to use it on!"
+	done
 
 _Lab1Text2::
 	text "A photo of the"
@@ -26,15 +37,4 @@ _Lab1Text4::
 _Lab1Text5::
 	text "#MON LAB"
 	line "Testing Room"
-	done
-
-_Lab1TextAideExplain::
-	text "SILPH gave that to"
-	line "PROF. OAK, but he"
-	cont "felt it would be"
-	cont "better off in"
-	cont "your hands!"
-	
-	para "Think hard about"
-	line "what to use it on!"
 	done

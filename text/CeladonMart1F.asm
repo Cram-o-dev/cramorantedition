@@ -37,9 +37,6 @@ _CeladonMartPhoneText::
 	para "ring..."
 	line "ring..."
 	
-	para "ring..."
-	line "ring..."
-	
 	para "MOM: Hello?"
 	line "<PLAYER>? Is that"
 	cont "you?"
@@ -72,9 +69,9 @@ _CeladonMartPhoneText::
 	para "MOM: Promise me"
 	line "you'll come home"
 	cont "once in a while,"
-	cont "and we'll talk"
-	cont "about everything"
-	cont "you've seen!"
+	cont "and I'll heal"
+	cont "your #MON"
+	cont "right up!"
 	
 	para "MOM: Well I gotta"
 	line "go now. Good luck"

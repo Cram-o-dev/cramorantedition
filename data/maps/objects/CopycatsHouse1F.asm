@@ -7,7 +7,8 @@ CopycatsHouse1F_Object:
 	warp_event  7,  1, COPYCATS_HOUSE_2F, 1
 
 	def_bg_events
-
+	bg_event  3,  1, 4 ; TVText
+	
 	def_object_events
 	object_event  2,  2, SPRITE_MIDDLE_AGED_WOMAN, WALK, LEFT_RIGHT, 1 ; person
 	object_event  5,  4, SPRITE_MIDDLE_AGED_MAN, STAY, LEFT, 2 ; person

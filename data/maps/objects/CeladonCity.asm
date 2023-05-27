@@ -19,15 +19,15 @@ CeladonCity_Object:
 	warp_event 21, 15, TM_PLACE, 1
 	
 	def_bg_events
-	bg_event 27, 15, 11 ; CeladonCityText10
-	bg_event 19, 15, 12 ; CeladonCityText11
-	bg_event 42,  9, 13 ; PokeCenterSignText
-	bg_event 13, 29, 14 ; CeladonCityText13
-	bg_event 21,  9, 15 ; CeladonCityText14
-	bg_event 12, 13, 16 ; CeladonCityText15
-	bg_event 39, 21, 17 ; CeladonCityText16
-	bg_event 33, 21, 18 ; CeladonCityText17
-	bg_event 27, 21, 19 ; CeladonCityText18
+	bg_event 27, 15, 12 ; CeladonCityText10
+	bg_event 19, 15, 13 ; CeladonCityText11
+	bg_event 42,  9, 14 ; PokeCenterSignText
+	bg_event 13, 29, 15 ; CeladonCityText13
+	bg_event 21,  9, 16 ; CeladonCityText14
+	bg_event 12, 13, 17 ; CeladonCityText15
+	bg_event 39, 21, 18 ; CeladonCityText16
+	bg_event 33, 21, 19 ; CeladonCityText17
+	bg_event 27, 21, 20 ; CeladonCityText18
 
 	def_object_events
 	object_event  9, 17, SPRITE_LITTLE_GIRL, WALK, ANY_DIR, 1 ; person
@@ -40,6 +40,6 @@ CeladonCity_Object:
 	object_event 32, 29, SPRITE_ROCKET, WALK, LEFT_RIGHT, 8 ; person
 	object_event 42, 14, SPRITE_ROCKET, WALK, LEFT_RIGHT, 9 ; person
 	object_event 21, 16, SPRITE_FISHER, STAY, DOWN, 10
-	object_event  5, 20, SPRITE_GIRL, WALK, ANY_DIR, 20
+	object_event  5, 20, SPRITE_GIRL, WALK, ANY_DIR, 11
 
 	def_warps_to CELADON_CITY

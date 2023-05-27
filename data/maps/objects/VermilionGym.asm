@@ -6,8 +6,8 @@ VermilionGym_Object:
 	warp_event  5, 17, LAST_MAP, 4
 
 	def_bg_events
-	bg_event  4,  0, 6
-	bg_event  2,  0, 6
+	bg_event  4,  0, 9
+	bg_event  2,  0, 9
 	
 	def_object_events
 	object_event  5,  1, SPRITE_ROCKER, STAY, DOWN, 1, OPP_LT_SURGE, 1

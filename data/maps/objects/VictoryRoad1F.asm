@@ -13,7 +13,7 @@ VictoryRoad1F_Object:
 	object_event  3,  2, SPRITE_COOLTRAINER_M, STAY, DOWN, 2, OPP_COOLTRAINER_M, 5
 	object_event 11,  0, SPRITE_POKE_BALL, STAY, NONE, 3, TM_SKY_ATTACK
 	object_event  9,  2, SPRITE_POKE_BALL, STAY, NONE, 4, RARE_CANDY
-	object_event  5, 15, SPRITE_BOULDER, STAY, BOULDER_MOVEMENT_BYTE_2, 5 ; person
+	object_event  8, 15, SPRITE_BOULDER, STAY, BOULDER_MOVEMENT_BYTE_2, 5 ; person
 	object_event  2, 10, SPRITE_BOULDER, STAY, BOULDER_MOVEMENT_BYTE_2, 6 ; person
 
 	def_warps_to VICTORY_ROAD_1F

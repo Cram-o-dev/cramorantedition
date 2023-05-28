@@ -15,24 +15,24 @@ A ROM hack of Pokemon Yellow which replaces Pikachu with Cramorant! Many other m
 - Extra Pokemon! Cramorant and 2 other Pokemon have been added which brings the total amount to 154!
 - Extra battles! A few additional trainers have been added.
 - Greater trainer Pokemon variety. Trainers now use a bigger selection of Pokemon. Many Pokemon never that never got a chance to shine in battle will get their moment!
-- Greater wild Pokemon variety. Many more Pokemon can now be found in the wild all across the region or recieved through other means. Many rare Pokemon are now be found in several locations, and Pokemon that couldn't previously be found in the wild are waiting to be encountered!
-- All 151+ Pokemon are obtainable in-game without the need for trading or glitches and can be infinitely encountered! Pikachu is now a regular Pokemon that can be found in Viridian Forest and the legendary birds re-appear each time you beat the Pokemon League. Pokemon that evolved through trading can now be obtained a different way, and there new Pokemon availiable as Game Corner Prizes.
-- New maps added! A few additional locations have been added for new events and dialogue. Many maps have also recieved some touch-ups to look nicer and a few have been altered to be less claustrophobic (like (Cerulean and Fuschia City). Many cut trees have been removed. A few new buildings open up after you become champion!
-- Tons of additional items! Search suspicious places for hidden items.
+- Greater wild Pokemon variety. Many more Pokemon can now be found in the wild all across the region or recieved through other means. Many rare Pokemon can now be found in several locations, and Pokemon that couldn't previously be found in the wild are waiting to be encountered!
+- All 151+ Pokemon are obtainable in-game without the need for trading or glitches, and can be infinitely encountered! Pikachu is now a regular Pokemon that can be found in Viridian Forest and the legendary birds re-appear each time you beat the Pokemon League. Pokemon that evolved through trading can now be obtained a different way, and new Pokemon are availiable as Game Corner Prizes.
+- New maps added! A few minor locations have been added for new events. Many maps have also recieved some touch-ups to look nicer, and a few have been altered to be less claustrophobic (like Cerulean and Fuschia City). Many of the CUT trees have been removed. A couple of new buildings also open up after you become champion!
+- Tons of additional hidden items! Search suspicious places for them.
 - Many unused, rare, and hard to obtain items have been added and are more plentiful than before. If you ever wanted to use Safari Balls outside the Safari Zone, now you can! Speaking of which...
 - More forgiving Safari Zone. The amount of steps allowed to take has been increased substantially! More Safari Balls are also given to the player and many Safari Zone Pokemon have been made slightly easier to catch!
 - Faster saving speed. The game can now be saved much faster than before.
-- Faster Fly menu. Scrolling through towns now no longer has a delay! Players can also now fly to the Pokecenters by Mt. Moon and Rock Tunnel.
+- Faster FLY menu. Scrolling through towns now no longer has a delay, and players can now fly to the Poke Centers by Mt. Moon and Rock Tunnel.
 - Additional flavor text has been added. Several background objects now have descriptive text associated with them, such as Red's bed or the windows in Vermilion Gym.
 - Trapping moves like Wrap and Fire Spin are now multi-hit moves.
 - Additional or altered text and some grammar touch-ups have been given to various NPC's.
 - Vermilion Gym puzzle is no longer frustrating and a time waster.
 - Amount of Pokemon required to show to Oak's Aides has been heavily reduced. Get the Flash HM much earlier!
-- Beta and unused content included! Some unused music (like Giovanni's theme) as well as unused graphics and text have been added. A few music tracks have also been replaced by songs adapted from the Generation II games.
+- Some beta and unused content included! Unused music (like Giovanni's theme) as well as unused graphics and text have been added. A few music tracks have also been replaced by songs adapted from the Generation II games.
 - Slow text speed has been removed and replaced with Normal text speed. Fast text is on by default, and an Instant text speed option has been added. Use this text speed to quickly go through dialogue and even skip some sound effects. Perfect for those with limited time!
 - Various bug fixes. Many Generation I bugs were fixed in Yellow, while Cramorant Edition fixes a few more minor errors and quirks. Any bugs which provided a negative experience for the player have been patched.
-- Super Game Boy compatible! Comes with its own version of GBC palettes and its own border!
-- Link cable compatible with the base Generation I games. Note that minor issues occur if Pokemon from Cramorant Edition are traded to base Yellow, and vice-versa.
+- Super Game Boy compatible! Comes with its own set of color palettes and its own border!
+- Link Cable compatible with the base Generation I games. Note that minor issues occur if Pokemon from Cramorant Edition are traded to base Yellow, and vice-versa.
 
 ## Features adapted from other projects and tutorials, many of which can be found in the Wiki section of the pokered and pokeyellow disassemblies.
 - Better game corner. Faster and more forgiving slots along with the ability to repeatedly buy coins. (Adapted from Pokemon PureRGB by Vortyne.)

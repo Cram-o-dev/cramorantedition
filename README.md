@@ -1,6 +1,6 @@
 # Pokémon Yellow: Cramorant Edition
 
-A ROM hack of Pokemon Yellow which replaces Pikachu with Cramorant! Many other major and minor changes have been made to create (in my opinion) an overall better way to play Yellow, and by extension, the Generation I games. The goal of this project is to provide a fun and different way to play Yellow while adding more variety to the game, all while staying mostly true to the Generation I experience. I give a gigantic thanks to the pret team for the Pokemon disassemblies as well as the pret community for being helpful and providing tons of tutorials.
+A ROM hack of Pokemon Yellow which replaces Pikachu with Cramorant! Many other major and minor changes have been made to create (in my opinion) an overall better way to play Yellow, and by extension, the Generation I games. The goal of this project is to provide a fun and different way to play Yellow while adding more variety to the game, all while staying mostly true to the Generation I experience. A gigantic thanks to pret (pokemon reverse engineering team) for the Pokemon disassemblies as well as the pret community for being very helpful and providing tons of tutorials.
 
 ## Main Features
 

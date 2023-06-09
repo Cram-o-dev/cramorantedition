@@ -326,6 +326,15 @@ PikaPicAnimScript28:
 	pikapic_cry
 	pikapic_looptofinish
 
+PikaPicAnimScript30:
+	pikapic_setduration 70
+	pikapic_loadgfx GFX_e718f
+	pikapic_loadgfx GFX_e731f
+	pikapic_animation PikaPicAnimBGFrames_5, $80, $0, $0
+	pikapic_animation PikaPicAnimBGFrames_29, $99, $0, $0
+	pikapic_waitbgmap
+	pikapic_looptofinish
+
 MACRO pikapicanimgfx
 	IF _NARG == 2
 	\2_id::

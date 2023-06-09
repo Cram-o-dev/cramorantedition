@@ -145,6 +145,16 @@ ItemUseBall:
 	ld [wPokeBallAnimData], a
 
 	call LoadScreenTilesFromBuffer1
+	
+	ld a, [wBattleType]
+	cp BATTLE_TYPE_PIKACHU
+	jr nz, .useBallText
+	
+	ld a, [wEnemyMonSpecies]
+	cp PIKATWO
+	jr z, .pikachuStopBallSequence
+
+.useBallText
 	ld hl, ItemUseText00
 	call PrintText
 
@@ -160,6 +170,19 @@ ItemUseBall:
 	cp BATTLE_TYPE_PIKACHU
 	jr z, .oldManBattle ; pikachu battle technically old man battle
 	jr .notOldManBattle
+
+.pikachuStopBallSequence
+	ld hl, ItemUsePikachuText
+	call PrintText
+
+	ld hl, wLinkEnemyTrainerName
+	ld de, wPlayerName
+	ld bc, NAME_LENGTH
+	call CopyData
+
+	ld c, 200
+	call DelayFrames
+	ret
 
 .oldManBattle
 	ld hl, wGrassRate
@@ -2670,6 +2693,12 @@ ItemUseText00:
 	text_far _ItemUseText001
 	text_low
 	text_far _ItemUseText002
+	text_end
+
+ItemUsePikachuText:
+	text_far _ItemUseText001
+	text_low
+	text_far _ItemUsePikachuText
 	text_end
 
 GotOnBicycleText:

@@ -11,6 +11,11 @@ PrintBeginningBattleText:
 	ld a, [wBattleType]
 	cp BATTLE_TYPE_PIKACHU
 	jr nz, .notPikachuBattle
+
+	ld a, [wEnemyMonSpecies]
+	cp PIKACHU
+	jr nz, .notPikachuBattle
+
 	callfar IsPlayerPikachuAsleepInParty
 	ld e, $24
 	jr c, .asm_f4026

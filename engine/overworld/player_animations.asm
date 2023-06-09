@@ -65,6 +65,20 @@ EnterMapAnim::
 	ld [wPikachuSpawnState], a
 	jr .restoreDefaultMusic
 
+CramorantDivingAnimation::
+	call LoadFlyingCramorantIntroSpriteGraphics
+	ld a, SFX_FLY
+	call PlaySound
+	ld hl, wFlyAnimUsingCoordList
+	xor a ; is using coord list
+	ld [hli], a ; wFlyAnimUsingCoordList
+	ld a, 23
+	ld [hli], a ; wFlyAnimCounter
+	ld [hl], $20 ; wFlyAnimBirdSpriteImageIndex (facing right)
+	ld de, FlyingCramorantIntroAnimationEnterScreenCoords
+	call DoIntroFlyAnimation
+	ret
+
 FlyAnimationEnterScreenCoords:
 ; y, x pairs
 ; This is the sequence of screen coordinates used by the overworld
@@ -81,6 +95,34 @@ FlyAnimationEnterScreenCoords:
 	db $3B, $50
 	db $3C, $48
 	db $3C, $40
+
+FlyingCramorantIntroAnimationEnterScreenCoords:
+	; y, x pairs
+	; This is the sequence of screen coordinates used by the overworld
+	; Fly animation when the player is entering a map.
+		db $15, $a8
+		db $1a, $a4
+		db $1F, $a0
+		db $24, $9c
+		db $28, $98
+		db $2c, $94
+		db $30, $90
+		db $34, $8c
+		db $37, $88
+		db $3a, $84
+		db $3D, $80
+		db $3f, $7c
+		db $42, $78
+		db $44, $74
+		db $46, $70
+		db $48, $6c
+		db $49, $68
+		db $4a, $64
+		db $4B, $60
+		db $4B, $5c
+		db $4C, $58
+		db $4C, $54
+		db $4C, $50
 
 PlayerSpinWhileMovingDown:
 	ld hl, wPlayerSpinWhileMovingUpOrDownAnimDeltaY
@@ -251,6 +293,30 @@ DoFlyAnimation:
 	jr nz, DoFlyAnimation
 	ret
 
+DoIntroFlyAnimation:
+	ld a, [wFlyAnimBirdSpriteImageIndex]
+	xor $1 ; make the bird flap its wings
+	ld [wFlyAnimBirdSpriteImageIndex], a
+	ld [wSprite05StateData1ImageIndex], a
+	call Delay3
+	ld a, [wFlyAnimUsingCoordList]
+	cp $ff
+	jr z, .skipCopyingCoords ; if the bird is flapping its wings in place
+	ld hl, wSprite05StateData1YPixels
+	ld a, [de]
+	inc de
+	ld [hli], a ; y
+	inc hl
+	ld a, [de]
+	inc de
+	ld [hl], a ; x
+.skipCopyingCoords
+	ld a, [wFlyAnimCounter]
+	dec a
+	ld [wFlyAnimCounter], a
+	jr nz, DoIntroFlyAnimation
+	ret
+
 LoadBirdSpriteGraphics:
 	ld de, BirdSprite
 	ld b, BANK(BirdSprite)
@@ -261,6 +327,18 @@ LoadBirdSpriteGraphics:
 	ld b, BANK(BirdSprite)
 	ld c, 12
 	ld hl, vNPCSprites2
+	jp CopyVideoData
+
+LoadFlyingCramorantIntroSpriteGraphics:
+	ld de, FlyingCramorantSprite tile 8
+	ld b, BANK(FlyingCramorantSprite)
+	ld c, 4
+	ld hl, vNPCSprites tile $18
+	call CopyVideoData
+	ld de, FlyingCramorantSprite tile 20 ; moving animation sprite
+	ld b, BANK(FlyingCramorantSprite)
+	ld c, 4
+	ld hl, vNPCSprites2 tile $18
 	jp CopyVideoData
 
 InitFacingDirectionList:

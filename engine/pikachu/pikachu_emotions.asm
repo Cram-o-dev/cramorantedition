@@ -296,11 +296,16 @@ PikachuEmotionTable:
 	pikaemotion_def PikachuEmotion31
 	pikaemotion_def PikachuEmotion32
 	pikaemotion_def PikachuEmotion33
+	pikaemotion_def PikachuEmotion34
 
 PikachuEmotion33:
 	db $ff
 
 MapSpecificPikachuExpression:
+	ld a, [wPartySpecies]
+	cp $ff
+	jr z, .cramorantEatsPikachu
+	
 	ld a, [wCurMap]
 	cp POKEMON_FAN_CLUB
 	jr nz, .notFanClub
@@ -353,6 +358,10 @@ MapSpecificPikachuExpression:
 	add hl, bc
 	ld a, [hl]
 	jr .play_emotion
+
+.cramorantEatsPikachu
+	ldpikaemotion a, PikachuEmotion34
+	jr z, .play_emotion
 
 .mood_based_emotion
 	and a

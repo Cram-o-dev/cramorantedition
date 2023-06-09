@@ -19,6 +19,7 @@ PalletTown_ScriptPointers:
 	dw PalletTownScript7
 	dw PalletTownScript8
 	dw PalletTownScript9
+	dw PalletTownScript10
 
 PalletTownScript0:
 	CheckEvent EVENT_FOLLOWED_OAK_INTO_LAB
@@ -134,7 +135,74 @@ PalletTownScript3:
 	ret
 
 PalletTownScript4:
-	; start the pikachu battle
+	; start the Pikatwo battle
+	ld a, ~(A_BUTTON | B_BUTTON)
+	ld [wJoyIgnore], a
+	xor a
+	ld [wListScrollOffset], a
+	ld a, BATTLE_TYPE_PIKACHU
+	ld [wBattleType], a
+	ld a, PIKATWO
+	ld [wCurOpponent], a
+	ld a, 5
+	ld [wCurEnemyLVL], a
+
+	; trigger the next script
+	ld a, 5
+	ld [wPalletTownCurScript], a
+	ret
+
+PalletTownScript5:
+	;ld hl, wSprite01StateData2MapY
+	;ld a, 7
+	;ld [hli], a ; SPRITESTATEDATA2_MAPY
+	;ld a, 11
+	;ld [hl], a ; SPRITESTATEDATA2_MAPX
+	ld a, HS_PALLET_TOWN_CRAMORANT
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+
+	ld a, HS_PALLET_TOWN_PIKATWO
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	
+	ld a, 3
+.pause
+	push af
+	call Delay3
+	pop af
+	dec a
+	jr nz, .pause
+
+	callfar CramorantDivingAnimation
+
+	ld hl, wSprite05StateData2MapY
+	ld a, 5
+	ld [hli], a ; SPRITESTATEDATA2_MAPY
+	ld a, 15
+	ld [hl], a ; SPRITESTATEDATA2_MAPX
+	ld a, HS_PALLET_TOWN_CRAMORANT
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+
+	ld a, HS_PALLET_TOWN_PIKATWO
+	ld [wMissableObjectIndex], a
+	predef HideObject
+
+ld a, 3
+.pause2
+	push af
+	call Delay3
+	pop af
+	dec a
+	jr nz, .pause2
+
+	callfar InitializePikachuTextID
+
+
+
+
+	; start the Cramorant battle
 	ld a, ~(A_BUTTON | B_BUTTON)
 	ld [wJoyIgnore], a
 	xor a
@@ -146,12 +214,16 @@ PalletTownScript4:
 	ld a, 5
 	ld [wCurEnemyLVL], a
 
+	ld a, HS_PALLET_TOWN_CRAMORANT
+	ld [wMissableObjectIndex], a
+	predef HideObject
+
 	; trigger the next script
-	ld a, 5
+	ld a, 6
 	ld [wPalletTownCurScript], a
 	ret
 
-PalletTownScript5:
+PalletTownScript6:
 	ld a, $2
 	ld [wcf0d], a
 	ld a, $1
@@ -168,11 +240,11 @@ PalletTownScript5:
 	ld [wJoyIgnore], a
 
 	; trigger the next script
-	ld a, 6
+	ld a, 7
 	ld [wPalletTownCurScript], a
 	ret
 
-PalletTownScript6:
+PalletTownScript7:
 	xor a
 	ld [wSpritePlayerStateData1FacingDirection], a
 	ld a, $1
@@ -185,21 +257,21 @@ PalletTownScript6:
 	ld [wNPCMovementScriptBank], a
 
 	; trigger the next script
-	ld a, 7
-	ld [wPalletTownCurScript], a
-	ret
-
-PalletTownScript7:
-	ld a, [wNPCMovementScriptPointerTableNum]
-	and a ; is the movement script over?
-	ret nz
-
-	; trigger the next script
 	ld a, 8
 	ld [wPalletTownCurScript], a
 	ret
 
 PalletTownScript8:
+	ld a, [wNPCMovementScriptPointerTableNum]
+	and a ; is the movement script over?
+	ret nz
+
+	; trigger the next script
+	ld a, 9
+	ld [wPalletTownCurScript], a
+	ret
+
+PalletTownScript9:
 	CheckEvent EVENT_DAISY_WALKING
 	jr nz, .next
 	CheckBothEventsSet EVENT_GOT_TOWN_MAP, EVENT_ENTERED_BLUES_HOUSE, 1
@@ -215,7 +287,7 @@ PalletTownScript8:
 	CheckEvent EVENT_GOT_POKEBALLS_FROM_OAK
 	ret z
 	SetEvent EVENT_PALLET_AFTER_GETTING_POKEBALLS_2
-PalletTownScript9:
+PalletTownScript10:
 	ret
 
 PalletTown_TextPointers:

@@ -2199,7 +2199,7 @@ wPalletTownCurScript:: db
 wBluesHouseCurScript:: db
 wViridianCityCurScript:: db
 wRoute1CurScript:: db
-	ds 1
+wViridianForestSouthGateCurScript:: db
 wPewterCityCurScript:: db
 wRoute3CurScript:: db
 wRoute4CurScript:: db

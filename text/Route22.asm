@@ -10,7 +10,7 @@ _Route22Text_511bc::
 	cont "#MON?"
 
 	para "You should catch"
-	cont "some more too!"
+	line "some more too!"
 	prompt
 
 _Route22RivalDefeatedText2::

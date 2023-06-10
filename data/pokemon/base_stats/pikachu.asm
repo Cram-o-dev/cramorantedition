@@ -17,7 +17,7 @@
 	tmhm BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,		 SKY_ATTACK,   \
 	     SURF,         FLY,		     BLIZZARD,     RAZOR_WIND,   DOUBLE_TEAM,  \
 	     BUBBLEBEAM,   GULP_MISSILE, BIDE,         SWIFT,        REST,    	   \
-	     SUBSTITUTE,   ICE_BEAM,	 EGG_BOMB,  \
+	     SUBSTITUTE,   ICE_BEAM,	 EGG_BOMB,     WATER_GUN,	 METRONOME,    \
 	; end
 
 	db BANK(PikachuPicFront)

@@ -13,6 +13,7 @@ ENDC
 	def_bg_events
 	bg_event  0,  6, 1 ; RedsHouse2FBedText
 	bg_event  0,  7, 1
+	bg_event  5,  0, 2
 	
 	def_object_events
 

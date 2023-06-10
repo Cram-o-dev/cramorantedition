@@ -157,7 +157,7 @@ CeladonGameCornerText2:
 	xor a
 	ldh [hMoney], a
 	ldh [hMoney + 2], a
-	ld a, $80
+	ld a, $15
 	ldh [hMoney + 1], a
 	call HasEnoughMoney
 	jr nc, .asm_48cdb

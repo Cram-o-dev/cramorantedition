@@ -31,7 +31,7 @@ _CeladonCityText4::
 _TM41PreText::
 	text "Hello, there!"
 
-	para "It's nice to see,"
+	para "It's nice to see"
 	line "the young folk"
 	cont "stop and chat"
 	cont "with us elders!"

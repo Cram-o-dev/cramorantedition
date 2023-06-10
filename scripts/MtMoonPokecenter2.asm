@@ -10,25 +10,25 @@ MagikarpSalesman::
 	ld a, [wCurrentMenuItem]
 	and a
 	jp nz, .choseNo
-	; $000500
+	; $003000
 	xor a
 	ldh [hMoney], a
 	ldh [hMoney + 2], a
-	ld a, $5
+	ld a, $30
 	ldh [hMoney + 1], a
 	call HasEnoughMoney
 	jr nc, .enoughMoney
 	ld hl, .NoMoneyText
 	jr .printText
 .enoughMoney
-	lb bc, MAGIKARP, 5
+	lb bc, ABRA, 5
 	call GivePokemon
 	jr nc, .done
-	; $000500
+	; $003000
 	xor a
 	ld [wPriceTemp], a
 	ld [wPriceTemp + 2], a
-	ld a, $5
+	ld a, $30
 	ld [wPriceTemp + 1], a
 	ld hl, wPriceTemp + 2
 	ld de, wPlayerMoney + 2

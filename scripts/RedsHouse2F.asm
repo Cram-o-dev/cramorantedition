@@ -21,7 +21,12 @@ RedsHouse2FScript4:
 
 RedsHouse2F_TextPointers:
 	dw RedsHouse2FBedText
+	dw RedsHouse2FWindowText
 
 RedsHouse2FBedText:
 	text_far _RedsHouse2FBedText
+	text_end
+
+RedsHouse2FWindowText:
+	text_far _RedsHouse2FWindowText
 	text_end

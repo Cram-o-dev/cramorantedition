@@ -172,6 +172,11 @@ ItemUseBall:
 	jr .notOldManBattle
 
 .pikachuStopBallSequence
+	ld hl, ItemUseText00
+	call PrintText
+
+	call WaitForTextScrollButtonPress
+
 	ld hl, ItemUsePikachuText
 	call PrintText
 
@@ -180,7 +185,7 @@ ItemUseBall:
 	ld bc, NAME_LENGTH
 	call CopyData
 
-	ld c, 200
+	ld c, 50
 	call DelayFrames
 	ret
 
@@ -2696,8 +2701,6 @@ ItemUseText00:
 	text_end
 
 ItemUsePikachuText:
-	text_far _ItemUseText001
-	text_low
 	text_far _ItemUsePikachuText
 	text_end
 

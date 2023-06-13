@@ -226,7 +226,7 @@ IF DEF(_DEBUG)
 	ret nz
 	ld a, [wExpressionNumber]
 	inc a
-	cp (PikachuEmotion33_id - PikachuEmotionTable) / 2
+	cp (PikachuEmotion34_id - PikachuEmotionTable) / 2
 	jr c, .valid
 	ldpikaemotion a, PikachuEmotion1
 .valid
@@ -298,7 +298,7 @@ PikachuEmotionTable:
 	pikaemotion_def PikachuEmotion33
 	pikaemotion_def PikachuEmotion34
 
-PikachuEmotion33:
+PikachuEmotion34:
 	db $ff
 
 MapSpecificPikachuExpression:
@@ -360,8 +360,8 @@ MapSpecificPikachuExpression:
 	jr .play_emotion
 
 .cramorantEatsPikachu
-	ldpikaemotion a, PikachuEmotion34
-	jr z, .play_emotion
+	ldpikaemotion a, PikachuEmotion33
+	jr .play_emotion
 
 .mood_based_emotion
 	and a

@@ -148,7 +148,7 @@ PlacePikapicTextBoxBorder:
 
 LoadCurrentPikaPicAnimScriptPointer:
 	ld a, [wPikaPicAnimNumber]
-	cp $1d
+	cp $1f
 	jr c, .valid
 	ld a, $0
 .valid
@@ -199,6 +199,7 @@ PikaPicAnimPointers:
 	pikapic_def PikaPicAnimScript27 ; 1b
 	pikapic_def PikaPicAnimScript28 ; 1c
 	pikapic_def PikaPicAnimScript29 ; 1d
+	pikapic_def PikaPicAnimScript30 ; 1e
 
 ExecutePikaPicAnimScript:
 .loop
@@ -808,8 +809,15 @@ PikaPicAnimCommand_thunderbolt:
 	ret
 
 .LoadAudio:
-	ld hl, MoveSoundTable
+	ld a, [wPartyCount]
+	and a
 	ld e, BUBBLEBEAM-1
+	jr nz, .SoundLoaded
+
+	ld e, THUNDERSHOCK-1
+
+.SoundLoaded:
+	ld hl, MoveSoundTable
 	ld d, 0
 	add hl, de
 	add hl, de

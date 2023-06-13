@@ -126,3 +126,7 @@ Pic_e411c::
 INCBIN "gfx/pikachu/unknown_e411c.pic"
 GFX_e41d2::
 INCBIN "gfx/pikachu/unknown_e41d2.2bpp"
+GFX_Crambite1::
+INCBIN "gfx/pikachu/Crambite1.2bpp"
+GFX_Crambite2::
+INCBIN "gfx/pikachu/Crambite2.2bpp"

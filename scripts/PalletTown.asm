@@ -153,33 +153,47 @@ PalletTownScript4:
 	ret
 
 PalletTownScript5:
-	;ld hl, wSprite01StateData2MapY
-	;ld a, 7
-	;ld [hli], a ; SPRITESTATEDATA2_MAPY
-	;ld a, 11
-	;ld [hl], a ; SPRITESTATEDATA2_MAPX
+	CheckEvent EVENT_PLAYER_AT_RIGHT_EXIT_TO_PALLET_TOWN
+	jr z, .pikachu_placed
+
+	ld hl, wSprite04StateData2MapY
+	ld a, 5
+	ld [hli], a ; SPRITESTATEDATA2_MAPY
+	ld a, 14
+	ld [hl], a ; SPRITESTATEDATA2_MAPX
+	ld a, SPRITE_FACING_RIGHT
+	ld [wSprite04StateData2OrigFacingDirection], a
+	ld [wSprite04StateData1FacingDirection], a
+
+.pikachu_placed
+	ld a, HS_PALLET_TOWN_PIKATWO
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+
 	ld a, HS_PALLET_TOWN_CRAMORANT
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 
-	ld a, HS_PALLET_TOWN_PIKATWO
-	ld [wMissableObjectIndex], a
-	predef ShowObject
-	
-	ld a, 3
-.pause
+	ld a, 15
+.pause1
 	push af
 	call Delay3
 	pop af
 	dec a
-	jr nz, .pause
+	jr nz, .pause1
 
 	callfar CramorantDivingAnimation
 
-	ld hl, wSprite05StateData2MapY
-	ld a, 5
-	ld [hli], a ; SPRITESTATEDATA2_MAPY
+	ld a, [wXCoord]
+	cp $a
 	ld a, 15
+	jr z, .SideFound
+
+	ld a, 14
+.SideFound
+	ld hl, wSprite05StateData2MapY + 1
+	ld [hld], a ; SPRITESTATEDATA2_MAPY
+	ld a, 5
 	ld [hl], a ; SPRITESTATEDATA2_MAPX
 	ld a, HS_PALLET_TOWN_CRAMORANT
 	ld [wMissableObjectIndex], a
@@ -189,7 +203,7 @@ PalletTownScript5:
 	ld [wMissableObjectIndex], a
 	predef HideObject
 
-ld a, 3
+ld a, 5
 .pause2
 	push af
 	call Delay3
@@ -199,8 +213,27 @@ ld a, 3
 
 	callfar InitializePikachuTextID
 
+ld a, 20
+.pause3
+	push af
+	call Delay3
+	pop af
+	dec a
+	jr nz, .pause3
 
+	ld a, 2
+	ld [wcf0d], a
+	ld a, 1
+	ldh [hSpriteIndexOrTextID], a
+	call DisplayTextID
 
+	ld a, 5
+.pause4
+	push af
+	call Delay3
+	pop af
+	dec a
+	jr nz, .pause4
 
 	; start the Cramorant battle
 	ld a, ~(A_BUTTON | B_BUTTON)
@@ -224,7 +257,7 @@ ld a, 3
 	ret
 
 PalletTownScript6:
-	ld a, $2
+	ld a, $3
 	ld [wcf0d], a
 	ld a, $1
 	ldh [hSpriteIndexOrTextID], a
@@ -312,14 +345,22 @@ PalletTownText1:
 .next
 	dec a
 	jr nz, .asm_18fd3
+
 	ld hl, OakWalksUpText
 	jr .done
 
 .asm_18fd3
+	dec a
+	jr z, .pikachu_escaped
+
 	ld hl, PalletTownText_19002
 .done
 	call PrintText
 	jp TextScriptEnd
+
+.pikachu_escaped
+	ld hl, PikachuEscapedText
+	jr .done
 
 OakAppearsText:
 	text_far _OakAppearsText
@@ -337,6 +378,10 @@ OakAppearsText:
 
 OakWalksUpText:
 	text_far _OakWalksUpText
+	text_end
+
+PikachuEscapedText:
+	text_far _PikachuEscapedText
 	text_end
 
 PalletTownText_19002:

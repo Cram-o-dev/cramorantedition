@@ -69,13 +69,21 @@ CramorantDivingAnimation::
 	call LoadFlyingCramorantIntroSpriteGraphics
 	ld a, SFX_FLY
 	call PlaySound
+	call WaitForSoundToFinish
 	ld hl, wFlyAnimUsingCoordList
 	xor a ; is using coord list
 	ld [hli], a ; wFlyAnimUsingCoordList
 	ld a, 23
 	ld [hli], a ; wFlyAnimCounter
 	ld [hl], $20 ; wFlyAnimBirdSpriteImageIndex (facing right)
+
+	ld a, [wXCoord]
+	cp $a
 	ld de, FlyingCramorantIntroAnimationEnterScreenCoords
+	jr z, .PathFound
+	
+	ld de, FlyingCramorantIntroAnimationEnterScreenFromLeftCoords
+.PathFound
 	call DoIntroFlyAnimation
 	ret
 
@@ -98,8 +106,6 @@ FlyAnimationEnterScreenCoords:
 
 FlyingCramorantIntroAnimationEnterScreenCoords:
 	; y, x pairs
-	; This is the sequence of screen coordinates used by the overworld
-	; Fly animation when the player is entering a map.
 		db $15, $a8
 		db $1a, $a4
 		db $1F, $a0
@@ -123,6 +129,32 @@ FlyingCramorantIntroAnimationEnterScreenCoords:
 		db $4C, $58
 		db $4C, $54
 		db $4C, $50
+
+FlyingCramorantIntroAnimationEnterScreenFromLeftCoords:
+	; y, x pairs
+		db $15, $88
+		db $1a, $84
+		db $1F, $80
+		db $24, $7c
+		db $28, $78
+		db $2c, $74
+		db $30, $70
+		db $34, $6c
+		db $37, $68
+		db $3a, $64
+		db $3D, $60
+		db $3f, $5c
+		db $42, $58
+		db $44, $54
+		db $46, $50
+		db $48, $4c
+		db $49, $48
+		db $4a, $44
+		db $4B, $40
+		db $4B, $3c
+		db $4C, $38
+		db $4C, $34
+		db $4C, $30
 
 PlayerSpinWhileMovingDown:
 	ld hl, wPlayerSpinWhileMovingUpOrDownAnimDeltaY
@@ -294,6 +326,8 @@ DoFlyAnimation:
 	ret
 
 DoIntroFlyAnimation:
+	ld a, SPRITE_FACING_RIGHT
+	ld [wSprite05StateData2OrigFacingDirection], a
 	ld a, [wFlyAnimBirdSpriteImageIndex]
 	xor $1 ; make the bird flap its wings
 	ld [wFlyAnimBirdSpriteImageIndex], a

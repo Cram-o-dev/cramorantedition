@@ -251,7 +251,8 @@ _ItemUseText002::
 	done
 
 _ItemUsePikachuText::
-	text "... wait what?"
+	text "PROF.OAK: ..."
+	line "wait, what?"
 	done
 
 _GotOnBicycleText1::

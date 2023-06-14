@@ -175,7 +175,8 @@ ItemUseBall:
 	ld hl, ItemUseText00
 	call PrintText
 
-	call WaitForTextScrollButtonPress
+	ld c, 50
+	call DelayFrames
 
 	ld hl, ItemUsePikachuText
 	call PrintText

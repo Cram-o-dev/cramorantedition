@@ -94,6 +94,7 @@ CreditsTextPointers:
 	dw CreditsText_Friends2
 	dw CreditsText_Orange
 	dw CreditsText_Vortyne
+	dw CreditsText_Doury
 	dw CreditsText_Friends
 	dw CreditsText_Pret
 	dw CreditsText_Community
@@ -290,6 +291,8 @@ CreditsText_Orange:
 	db -6, "FRENCH ORANGE@"
 CreditsText_Vortyne:
 	db -3, "VORTYNE@"
+CreditsText_Doury:
+	db -5, "DAMIEN DOURY@"
 CreditsText_Friends:
 	db -6, " EXTRA THANKS@"
 CreditsText_Pret:

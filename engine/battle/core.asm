@@ -1657,11 +1657,20 @@ TryRunningFromBattle:
 	dec a
 .playSound
 	ld [wBattleResult], a
+
+	ld a, [wBattleType]
+	cp BATTLE_TYPE_PIKACHU
+	jr nz, .doSFX
+
+	jr .saveScreenTiles
+
+.doSFX
 	ld a, SFX_RUN
 	call PlaySoundWaitForCurrent
 	ld hl, GotAwayText
 	call PrintText
 	call WaitForSoundToFinish
+.saveScreenTiles
 	call SaveScreenTilesToBuffer1
 	scf ; set carry
 	ret
@@ -2369,6 +2378,14 @@ UseBagItem:
 	xor a
 	ld [wCurrentMenuItem], a
 	ld a, [wBattleType]
+	cp BATTLE_TYPE_PIKACHU
+	jr nz, .safari_check
+
+	ld a, [wEnemyMonSpecies]
+	cp PIKATWO
+	jr z, .endPikachuBattle
+
+.safari_check
 	cp BATTLE_TYPE_SAFARI
 	jr z, .checkIfMonCaptured
 
@@ -2402,6 +2419,9 @@ UseBagItem:
 	call GBPalNormal
 	and a ; reset carry
 	ret
+
+.endPikachuBattle
+	jp TryRunningFromBattle.canEscape
 
 .returnAfterCapturingMon
 	call GBPalNormal

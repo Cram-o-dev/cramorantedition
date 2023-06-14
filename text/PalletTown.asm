@@ -11,6 +11,12 @@ _OakWalksUpText::
 	line "in tall grass!"
 	done
 
+_PikachuEscapedText::
+	text "PIKACHU escaped!"
+
+	para "CRAMORANT: Cram!"
+	done
+
 _OakWhewText::
 	text "OAK: Whew..."
 	done

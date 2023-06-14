@@ -265,6 +265,8 @@ MissableObjects:
 
 PalletTownHS:
 	db PALLET_TOWN, $01, HIDE
+	db PALLET_TOWN, $04, HIDE
+	db PALLET_TOWN, $05, HIDE
 ViridianCityHS:
 	db VIRIDIAN_CITY, $05, SHOW
 	db VIRIDIAN_CITY, $07, HIDE

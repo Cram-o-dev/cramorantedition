@@ -221,6 +221,11 @@ PikachuEmotion32:
 	pikaemotion_pikapic PikaPicAnimScript23
 	db $ff
 
+PikachuEmotion33:
+	pikaemotion_dummy2
+	pikaemotion_pikapic PikaPicAnimScript30
+	db $ff
+
 PikachuMovementData_fd218:
 	db $00
 	db $39,  2 - 1

@@ -250,6 +250,11 @@ _ItemUseText002::
 	text "!"
 	done
 
+_ItemUsePikachuText::
+	text "PROF.OAK: ..."
+	line "wait, what?"
+	done
+
 _GotOnBicycleText1::
 	text "<PLAYER> got on the@"
 	text_end

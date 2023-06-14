@@ -260,8 +260,8 @@ PikaPicAnimScript22:
 
 PikaPicAnimScript23:
 	pikapic_setduration 70
-	pikapic_loadgfx GFX_e718f
-	pikapic_loadgfx GFX_e731f
+	pikapic_loadgfx GFX_Crambite1
+	pikapic_loadgfx GFX_Crambite2
 	pikapic_animation PikaPicAnimBGFrames_5, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_29, $99, $0, $0
 	pikapic_waitbgmap
@@ -325,6 +325,18 @@ PikaPicAnimScript28:
 	pikapic_waitbgmap
 	pikapic_cry
 	pikapic_looptofinish
+
+PikaPicAnimScript30:	
+	pikapic_setduration 64
+	pikapic_loadgfx GFX_Crambite1
+	pikapic_loadgfx GFX_Crambite2
+	pikapic_animation PikaPicAnimBGFrames_5, $80, $0, $0
+	pikapic_animation PikaPicAnimBGFrames_28, $99, $0, $0
+	pikapic_writebyte 13
+	pikapic_waitbgmap
+	pikapic_thunderbolt
+	pikapic_cry
+	pikapic_ret
 
 MACRO pikapicanimgfx
 	IF _NARG == 2
@@ -401,3 +413,5 @@ PikaPicAnimGFXHeaders:
 	pikapicanimgfx -1, Pic_f0cf4     ; 3c
 	pikapicanimgfx 25, GFX_f0d82     ; 3d
 	pikapicanimgfx 24, PikachuSprite ; 3e
+	pikapicanimgfx 25, GFX_Crambite1 ; 3f
+	pikapicanimgfx 25, GFX_Crambite2 ; 40

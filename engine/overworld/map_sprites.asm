@@ -299,6 +299,13 @@ Func_14179:
 GetSplitMapSpriteSetID:
 	ld e, a
 	ld d, 0
+
+	; Before the player gets its first Pokémon, we load a special sprite set for the animation of Cramorant eating Pikachu.
+	ld a, [wPartySpecies]
+	cp $ff
+	ld a, SPRITESET_PALLET_INTRO
+	ret z
+
 	ld hl, MapSpriteSets
 	add hl, de
 	ld a, [hl] ; a = spriteSetID

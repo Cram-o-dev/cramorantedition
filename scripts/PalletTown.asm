@@ -19,6 +19,7 @@ PalletTown_ScriptPointers:
 	dw PalletTownScript7
 	dw PalletTownScript8
 	dw PalletTownScript9
+	dw PalletTownScript10
 
 PalletTownScript0:
 	CheckEvent EVENT_FOLLOWED_OAK_INTO_LAB
@@ -134,7 +135,107 @@ PalletTownScript3:
 	ret
 
 PalletTownScript4:
-	; start the pikachu battle
+	; start the Pikatwo battle
+	ld a, ~(A_BUTTON | B_BUTTON)
+	ld [wJoyIgnore], a
+	xor a
+	ld [wListScrollOffset], a
+	ld a, BATTLE_TYPE_PIKACHU
+	ld [wBattleType], a
+	ld a, PIKATWO
+	ld [wCurOpponent], a
+	ld a, 5
+	ld [wCurEnemyLVL], a
+
+	; trigger the next script
+	ld a, 5
+	ld [wPalletTownCurScript], a
+	ret
+
+PalletTownScript5:
+	CheckEvent EVENT_PLAYER_AT_RIGHT_EXIT_TO_PALLET_TOWN
+	jr z, .pikachu_placed
+
+	ld hl, wSprite04StateData2MapY
+	ld a, 5
+	ld [hli], a ; SPRITESTATEDATA2_MAPY
+	ld a, 14
+	ld [hl], a ; SPRITESTATEDATA2_MAPX
+	ld a, SPRITE_FACING_RIGHT
+	ld [wSprite04StateData2OrigFacingDirection], a
+	ld [wSprite04StateData1FacingDirection], a
+
+.pikachu_placed
+	ld a, HS_PALLET_TOWN_PIKATWO
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+
+	ld a, HS_PALLET_TOWN_CRAMORANT
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+
+	ld a, 15
+.pause1
+	push af
+	call Delay3
+	pop af
+	dec a
+	jr nz, .pause1
+
+	callfar CramorantDivingAnimation
+
+	ld a, [wXCoord]
+	cp $a
+	ld a, 15
+	jr z, .SideFound
+
+	ld a, 14
+.SideFound
+	ld hl, wSprite05StateData2MapY + 1
+	ld [hld], a ; SPRITESTATEDATA2_MAPY
+	ld a, 5
+	ld [hl], a ; SPRITESTATEDATA2_MAPX
+	ld a, HS_PALLET_TOWN_CRAMORANT
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+
+	ld a, HS_PALLET_TOWN_PIKATWO
+	ld [wMissableObjectIndex], a
+	predef HideObject
+
+ld a, 5
+.pause2
+	push af
+	call Delay3
+	pop af
+	dec a
+	jr nz, .pause2
+
+	callfar InitializePikachuTextID
+
+ld a, 20
+.pause3
+	push af
+	call Delay3
+	pop af
+	dec a
+	jr nz, .pause3
+
+	ld a, 2
+	ld [wcf0d], a
+	ld a, 1
+	ldh [hSpriteIndexOrTextID], a
+	call DisplayTextID
+
+	ld a, 5
+.pause4
+	push af
+	call Delay3
+	pop af
+	dec a
+	jr nz, .pause4
+
+	; start the Cramorant battle
 	ld a, ~(A_BUTTON | B_BUTTON)
 	ld [wJoyIgnore], a
 	xor a
@@ -146,13 +247,17 @@ PalletTownScript4:
 	ld a, 5
 	ld [wCurEnemyLVL], a
 
+	ld a, HS_PALLET_TOWN_CRAMORANT
+	ld [wMissableObjectIndex], a
+	predef HideObject
+
 	; trigger the next script
-	ld a, 5
+	ld a, 6
 	ld [wPalletTownCurScript], a
 	ret
 
-PalletTownScript5:
-	ld a, $2
+PalletTownScript6:
+	ld a, $3
 	ld [wcf0d], a
 	ld a, $1
 	ldh [hSpriteIndexOrTextID], a
@@ -168,11 +273,11 @@ PalletTownScript5:
 	ld [wJoyIgnore], a
 
 	; trigger the next script
-	ld a, 6
+	ld a, 7
 	ld [wPalletTownCurScript], a
 	ret
 
-PalletTownScript6:
+PalletTownScript7:
 	xor a
 	ld [wSpritePlayerStateData1FacingDirection], a
 	ld a, $1
@@ -185,21 +290,21 @@ PalletTownScript6:
 	ld [wNPCMovementScriptBank], a
 
 	; trigger the next script
-	ld a, 7
-	ld [wPalletTownCurScript], a
-	ret
-
-PalletTownScript7:
-	ld a, [wNPCMovementScriptPointerTableNum]
-	and a ; is the movement script over?
-	ret nz
-
-	; trigger the next script
 	ld a, 8
 	ld [wPalletTownCurScript], a
 	ret
 
 PalletTownScript8:
+	ld a, [wNPCMovementScriptPointerTableNum]
+	and a ; is the movement script over?
+	ret nz
+
+	; trigger the next script
+	ld a, 9
+	ld [wPalletTownCurScript], a
+	ret
+
+PalletTownScript9:
 	CheckEvent EVENT_DAISY_WALKING
 	jr nz, .next
 	CheckBothEventsSet EVENT_GOT_TOWN_MAP, EVENT_ENTERED_BLUES_HOUSE, 1
@@ -215,7 +320,7 @@ PalletTownScript8:
 	CheckEvent EVENT_GOT_POKEBALLS_FROM_OAK
 	ret z
 	SetEvent EVENT_PALLET_AFTER_GETTING_POKEBALLS_2
-PalletTownScript9:
+PalletTownScript10:
 	ret
 
 PalletTown_TextPointers:
@@ -240,14 +345,22 @@ PalletTownText1:
 .next
 	dec a
 	jr nz, .asm_18fd3
+
 	ld hl, OakWalksUpText
 	jr .done
 
 .asm_18fd3
+	dec a
+	jr z, .pikachu_escaped
+
 	ld hl, PalletTownText_19002
 .done
 	call PrintText
 	jp TextScriptEnd
+
+.pikachu_escaped
+	ld hl, PikachuEscapedText
+	jr .done
 
 OakAppearsText:
 	text_far _OakAppearsText
@@ -265,6 +378,10 @@ OakAppearsText:
 
 OakWalksUpText:
 	text_far _OakWalksUpText
+	text_end
+
+PikachuEscapedText:
+	text_far _PikachuEscapedText
 	text_end
 
 PalletTownText_19002:

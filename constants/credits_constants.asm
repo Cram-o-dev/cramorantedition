@@ -93,6 +93,7 @@
 	const CRED_FRIENDS2
 	const CRED_ORANGE
 	const CRED_VORTYNE
+	const CRED_DOURY                 
 	const CRED_FRIENDS
 	const CRED_PRET
 	const CRED_COMMUNITY

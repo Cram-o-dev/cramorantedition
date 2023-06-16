@@ -352,13 +352,29 @@ DoIntroFlyAnimation:
 	ret
 
 LoadBirdSpriteGraphics:
-	ld de, BirdSprite
+	ld a, [wcf91]
+	cp STARTER_PIKACHU
+	jr z, .cramorant
+
 	ld b, BANK(BirdSprite)
+	ld de, BirdSprite
 	ld c, $c
 	ld hl, vNPCSprites
 	call CopyVideoData
 	ld de, BirdSprite tile 12 ; moving animation sprite
 	ld b, BANK(BirdSprite)
+	ld c, 12
+	ld hl, vNPCSprites2
+	jp CopyVideoData
+
+.cramorant
+	ld b, BANK(FlyingCramorantSprite)
+	ld de, FlyingCramorantSprite
+	ld c, $c
+	ld hl, vNPCSprites
+	call CopyVideoData
+	ld de, FlyingCramorantSprite tile 12 ; moving animation sprite
+	ld b, BANK(FlyingCramorantSprite)
 	ld c, 12
 	ld hl, vNPCSprites2
 	jp CopyVideoData

@@ -21,3 +21,9 @@ Music_GBPrinter::
 	channel_count 2
 	channel 1, Music_GBPrinter_Ch1
 	channel 2, Music_GBPrinter_Ch2
+
+Music_Kincho::
+	channel_count 3
+	channel 1, Music_Kincho_Ch1
+	channel 2, Music_Kincho_Ch2
+	channel 3, Music_Kincho_Ch3

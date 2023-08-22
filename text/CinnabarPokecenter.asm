@@ -3,7 +3,8 @@ _CinnabarPokecenterText2::
 	line "evolution."
 
 	para "When a #MON is"
-	line "evolving, you can"
+	line "evolving, press"
+	cont "the B button to"
 	cont "stop it and leave"
 	cont "it the way it is."
 	done

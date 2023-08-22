@@ -260,8 +260,9 @@ _CinnabarGymText_7::
 
 _QuizBoxText::
 	text "BLAINE has written"
-	line "potential quiz"
-	cont "questions."
+	line "future questions"
+	cont "for his quizzes"
+	cont "here."
 	
 	para "They all look"
 	line "tricky!"

@@ -72,6 +72,10 @@ _Route17AfterBattleText5::
 	text "I got my #MON"
 	line "at the abandoned"
 	cont "POWER PLANT."
+	
+	para "I even found a"
+	line "THUNDERSTONE in"
+	cont "there!"
 	done
 
 _Route17BattleText6::

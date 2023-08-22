@@ -86,7 +86,8 @@ _VermilionCityText6::
 	cont "cruise ship."
 
 	para "We visit VERMILION"
-	line "once a year."
+	line "a couple times"
+	cont "each year."
 	done
 
 _OfficerJennyText1::

@@ -20,7 +20,7 @@ _ReceivedSafariBallText::
 _SafariBallExplanationText::
 	text "I've heard these"
 	line "SAFARI BALLs are"
-	cont "quite decent at"
+	cont "really great at"
 	cont "catching #MON!"
 	
 	para "Use them wisely."

@@ -76,7 +76,7 @@ _CramorantFanClubText8::
 	
 	para "Unfortunately, the"
 	line "VERMILION POLICE"
-	cont "DEPT. has put a"
+	cont "DEPT.has put a"
 	cont "ban on feeding"
 	cont "the local"
 	cont "CRAMORANT."
@@ -217,4 +217,31 @@ _NoCramClub::
 	line "Please let me"
 	cont "tell you why it's"
 	cont "the greatest!"
+	done
+	
+_CramClubJimmyText::
+	text "An article is"
+	line "lying on the"
+	cont "table:"
+	
+	para "Legends tell of"
+	line "a CRAMORANT who"
+	cont "was so strong,"
+	cont "any foe who stood"
+	cont "in his way met"
+	cont "with a swift end."
+	
+	para "During his adven-"
+	line "tures across the"
+	cont "land, all #MON"
+	cont "bowed before him,"
+	cont "and his name was"
+	cont "recorded into the"
+	cont "annals of history"
+	cont "and space-time."
+	
+	para "This CRAMORANT"
+	line "was known as..."
+	
+	para "“Jimmy.”"
 	done

@@ -45,6 +45,18 @@ _WayOfFish1FText1::
 	cont "beat them!"
 	done
 	
+_WayOfFish1FText2::
+	text "Wow! You like,"
+	line "beat my bros?"
+
+	para "And they even gave"
+	line "you, like, their"
+	cont "strongest fish?"
+	
+	para "You're like,"
+	line "totally awesome!"
+	done
+	
 _WayOfFish1FTVText::
 	text "The TV is showing"
 	line "a documentary on"

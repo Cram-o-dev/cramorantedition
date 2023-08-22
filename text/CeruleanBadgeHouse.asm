@@ -46,7 +46,7 @@ _CeruleanHouse2Text_74e9b::
 	prompt
 
 _CeruleanHouse2Text_74ea0::
-	text "The SPEED of all"
+	text "The DEFENSE of all"
 	line "#MON increases"
 	cont "a little bit."
 
@@ -65,4 +65,21 @@ _CeruleanHouse2Text_74ea5::
 	para "It also lets you"
 	line "use STRENGTH out-"
 	cont "side of battle."
+	prompt
+
+_CDPowerOn::
+	text "Powering on..."
+	prompt
+	
+_CDSelectTrack:: 
+	text "Please select a"
+	line "track."
+	done
+	
+_CDNowPlaying::
+	text "Now playing..."
+	prompt
+	
+_CDPowerOff::
+	text "Powering off..."
 	prompt

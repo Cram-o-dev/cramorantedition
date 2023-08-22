@@ -15,7 +15,7 @@ _CeruleanCaveB4FText_51510::
 	cont "that the journey"
 	cont "doesn't end once"
 	cont "you become the"
-	cont "champ. There's"
+	cont "CHAMP. There's"
 	cont "always room for"
 	cont "improvement!"
 
@@ -103,7 +103,7 @@ _CeruleanCaveB4FText_51526::
 	para "And seeing how"
 	line "quickly you and"
 	cont "<RIVAL> became"
-	cont "champions inspir-"
+	cont "CHAMPIONs inspir-"
 	cont "es me!"
 
 	para "So <PLAYER>, I"
@@ -128,14 +128,20 @@ _CeruleanCaveB4FText_5152b::
 	line "something special"
 	cont "in you <PLAYER>!"
 	prompt
+	
+_CeruleanCaveB4FOakBeatText_5152b::
+	text "Hah! I"
+	line "Haven't missed a"
+	cont "beat!"
+	prompt
 
 _CeruleanCaveB4FText_51530::
-	text "Thanks <PLAYER>."
-	line "I know the future"
-	cont "of KANTO is"
-	cont "bright with"
-	cont "trainers like you"
-	cont "around!"
+	text "OAK: Thank you"
+	line "<PLAYER>. I know"
+	cont "the future of"
+	cont "KANTO is bright"
+	cont "with trainers"
+	cont "like you around!"
 
 	para "I'll stay here a"
 	line "while longer."

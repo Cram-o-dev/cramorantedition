@@ -22,7 +22,7 @@ _OakWhewText::
 	done
 
 _OakGrassText::
-	text "OAK: A #MON can"
+	text "OAK: #MON can"
 	line "appear anytime in"
 	cont "tall grass."
 

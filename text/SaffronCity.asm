@@ -111,6 +111,13 @@ _SaffronCityText18::
 
 	para "The Master of"
 	line "Psychic #MON!"
+	
+	para "Hmm?"
+	
+	para "Someone scribbled"
+	line "something here:"
+	
+	para "Left, down, down."
 	done
 
 _SaffronCityText20::

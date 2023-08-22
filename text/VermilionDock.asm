@@ -1,6 +1,6 @@
 _MewBattleText::
 	text "..."
-	text_end
+	done
 
 _CratesText::
 	text "Some crates to be"
@@ -21,7 +21,7 @@ _SignText::
 	cont "hardcore #MON"
 	cont "fan!"
 	
-	para "If you've not"
+	para "If you haven't"
 	line "already, why not"
 	cont "look under that"
 	cont "truck?"

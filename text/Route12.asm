@@ -59,9 +59,9 @@ _Route12EndBattleText3::
 	prompt
 
 _Route12AfterBattleText3::
-	text "I could have made"
-	line "my #MON evolve"
-	cont "with a MOON STONE!"
+	text "I got a MOON STONE"
+	line "and evolved my"
+	cont "#MON with it!"
 	done
 
 _Route12BattleText4::

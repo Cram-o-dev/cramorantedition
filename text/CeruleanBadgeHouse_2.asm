@@ -1,5 +1,5 @@
 _CeruleanHouse2Text_74eaa::
-	text "The DEFENSE of all"
+	text "The SPEED of all"
 	line "#MON increases"
 	cont "a little bit."
 

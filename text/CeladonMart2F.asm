@@ -20,3 +20,27 @@ _CeladonMart2Text5::
 	para "2F: TRAINER'S"
 	line "    MARKET"
 	done
+
+_CeladonMart2Guide::
+	text "TMs for sale! Find"
+	line "the perfect move!"
+	
+	para "TM 32 - DBL TEAM"
+	line "TM 33 - REFLECT"
+	
+	para "TM 02 - RZR WIND"
+	line "TM 07 - HORN DRILL"
+
+	para "TM 37 - EGG BOMB"
+	line "TM 01 - MEGA PNCH"
+	
+	para "TM 05 - MEGA KICK"
+	line "TM 35 - METRONOME"
+
+	para "TM 09 - TAKE DOWN"
+	line "TM 17 - SBMISSION"
+	
+	para "TM 15 - HYPER BEAM"
+	line "TM 23 - DRGN RAGE"
+	cont "TM 50 - SBSTITUTE"
+	done

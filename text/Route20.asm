@@ -150,7 +150,12 @@ _Route20AfterBattleText10::
 	line "volcanic island!"
 	done
 
-_Route20Text12::
 _Route20Text11::
 	text "SEAFOAM ISLANDS"
+	line "NORTH ENTRANCE"
+	done
+	
+_Route20Text12::
+	text "SEAFOAM ISLANDS"
+	line "SOUTH ENTRANCE"
 	done

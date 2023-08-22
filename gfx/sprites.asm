@@ -94,3 +94,4 @@ SECTION "NPC Sprites 4", ROMX
 
 PikatwoSprite::          INCBIN "gfx/sprites/pikatwo.2bpp"
 FlyingCramorantSprite::  INCBIN "gfx/sprites/flying_cramorant.2bpp"
+TrophySprite::  		 INCBIN "gfx/sprites/trophy.2bpp"

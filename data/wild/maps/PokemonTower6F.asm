@@ -3,13 +3,13 @@ PokemonTower6FWildMons:
 	db 22, GASTLY
 	db 23, GASTLY
 	db 24, GASTLY
-	db 25, GASTLY
-	db 26, GASTLY
-	db 23, GASTLY
-	db 22, CUBONE
-	db 27, CUBONE
-	db 23, HAUNTER
-	db 28, HAUNTER
+	db 26, HAUNTER
+	db 21, CUBONE
+	db 23, CUBONE
+	db 25, CUBONE
+	db 29, HAUNTER
+	db 25, MAROWAK
+	db 32, MAROWAK
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

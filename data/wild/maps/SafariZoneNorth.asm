@@ -22,5 +22,5 @@ SafariZoneNorthWildMons:
 	db 27, POLIWAG
 	db 25, SEEL
 	db 29, SEEL
-	db 18, DRATINI
+	db 34, DRATINI
 	end_water_wildmons

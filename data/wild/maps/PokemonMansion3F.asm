@@ -8,7 +8,7 @@ PokemonMansion3FWildMons:
 	db 38, WEEZING
 	db 38, MUK
 	db 42, WEEZING
-	db 42, MUK
+	db 42, RAPIDASH
 	db 46, RAPIDASH
 	end_grass_wildmons
 

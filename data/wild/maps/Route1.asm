@@ -8,7 +8,7 @@ Route1WildMons:
 	db  4, PIDGEY
 	db  6, PIDGEY
 	db  5, RATTATA
-	db  7, PIDGEY
+	db  7, SPEAROW
 	db  8, PIDGEY
 	end_grass_wildmons
 
@@ -21,6 +21,6 @@ Route1WildMons:
 	db 15, MAGIKARP
 	db 20, MAGIKARP
 	db 10, ARROKUDA
-	db 20, PIKACHU
+	db 20, PIKACHU ;is actually Cramorant
 	db 100, MAGIKARP
 	end_water_wildmons

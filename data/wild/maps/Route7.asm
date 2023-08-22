@@ -4,7 +4,7 @@ Route7WildMons:
 	db 22, BELLSPROUT
 	db 21, MANKEY
 	db 17, ABRA
-	db 19, ABRA
+	db 19, DODUO
 	db 24, PIDGEOTTO
 	db 26, ABRA
 	db 21, MEOWTH

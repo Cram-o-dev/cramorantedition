@@ -8,8 +8,8 @@ Route3WildMons:
 	db 11, RATTATA
 	db 11, SANDSHREW
 	db 13, RATTATA
-	db 12, JIGGLYPUFF
 	db 13, JIGGLYPUFF
+	db 13, CLEFAIRY
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

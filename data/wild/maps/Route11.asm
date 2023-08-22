@@ -6,10 +6,10 @@ Route11WildMons:
 	db 15, DROWZEE
 	db 17, SANDSHREW
 	db 17, DROWZEE
-	db 18, PIDGEOTTO
-	db 20, PIDGEOTTO
-	db 19, DROWZEE
-	db 17, RATICATE
+	db 19, PIDGEOTTO
+	db 20, RATICATE
+	db 16, GROWLITHE
+	db 19, GROWLITHE
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

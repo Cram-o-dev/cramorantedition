@@ -7,9 +7,9 @@ Route8WildMons:
 	db 19, VULPIX
 	db 21, VULPIX
 	db 23, MANKEY
-	db 24, JIGGLYPUFF
-	db 20, KADABRA
+	db 22, KADABRA
 	db 27, KADABRA
+	db 28, MACHOKE
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

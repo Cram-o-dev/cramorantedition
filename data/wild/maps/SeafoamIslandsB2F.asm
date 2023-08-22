@@ -6,9 +6,9 @@ SeafoamIslandsB2FWildMons:
 	db 36, GOLBAT
 	db 34, GOLDUCK
 	db 39, SEEL
-	db 31, STARYU
-	db 35, STARYU
+	db 33, STARYU
 	db 35, SLOWBRO
+	db 37, STARMIE
 	db 40, STARMIE
 	end_grass_wildmons
 

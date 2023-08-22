@@ -3,14 +3,14 @@ Route20WildMons:
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
-	db  5, TENTACOOL
-	db 10, STARYU
-	db 15, TENTACOOL
-	db  5, ARROKUDA
-	db 10, ARROKUDA
-	db 15, ARROKUDA
-	db 28, TENTACOOL
-	db 33, TENTACOOL
-	db 36, TENTACOOL
+	db 20, TENTACOOL
+	db 20, STARYU
+	db 25, TENTACOOL
+	db 20, ARROKUDA
+	db 26, ARROKUDA
+	db 31, ARROKUDA
+	db 28, SHELLDER
+	db 33, HORSEA
+	db 39, TENTACOOL
 	db 40, BARASKEWDA
 	end_water_wildmons

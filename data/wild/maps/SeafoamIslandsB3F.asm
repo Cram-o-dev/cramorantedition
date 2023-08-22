@@ -6,18 +6,18 @@ SeafoamIslandsB3FWildMons:
 	db 40, GOLBAT
 	db 30, KINGLER
 	db 34, LAPRAS
-	db 36, KRABBY
-	db 40, KINGLER
+	db 40, KRABBY
+	db 44, KINGLER
 	db 36, CLOYSTER
 	db 41, CLOYSTER
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
-	db 29, TENTACOOL
 	db 36, TENTACOOL
 	db 30, SEEL
 	db 32, STARYU
 	db 40, TENTACRUEL
+	db 36, STARMIE
 	db 30, OMANYTE
 	db 30, KABUTO
 	db 40, LAPRAS

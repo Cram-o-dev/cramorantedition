@@ -7,9 +7,9 @@ SeafoamIslandsB4FWildMons:
 	db 39, SLOWBRO
 	db 37, GOLDUCK
 	db 38, DEWGONG
-	db 30, JYNX
-	db 34, JYNX
-	db 41, JYNX
+	db 32, JYNX
+	db 37, JYNX
+	db 44, JYNX
 	end_grass_wildmons
 
 	def_water_wildmons 5 ; encounter rate
@@ -19,8 +19,8 @@ SeafoamIslandsB4FWildMons:
 	db 36, CLOYSTER
 	db 35, KABUTO
 	db 35, OMANYTE
-	db 32, LAPRAS
+	db 41, LAPRAS
 	db 40, GOLDUCK
 	db 40, SEADRA
-	db 43, STARMIE
+	db 46, STARMIE
 	end_water_wildmons

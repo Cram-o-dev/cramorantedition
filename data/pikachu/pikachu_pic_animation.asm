@@ -260,8 +260,8 @@ PikaPicAnimScript22:
 
 PikaPicAnimScript23:
 	pikapic_setduration 70
-	pikapic_loadgfx GFX_Crambite1
-	pikapic_loadgfx GFX_Crambite2
+	pikapic_loadgfx GFX_e718f
+	pikapic_loadgfx GFX_e731f
 	pikapic_animation PikaPicAnimBGFrames_5, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_29, $99, $0, $0
 	pikapic_waitbgmap

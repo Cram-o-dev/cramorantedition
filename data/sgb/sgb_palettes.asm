@@ -42,7 +42,8 @@ SuperPalettes:
 	RGB 31,31,30, 31,30,16, 14,22,27, 06,06,06 ; PAL_26 ;used for following pikachu
 	RGB 31,31,30, 31,30,16, 14,22,27, 06,06,06 ; PAL_25 ;used in intro
 	RGB 31,31,30, 28,24,14, 20,20,11, 06,06,06 ; PAL_GAMEFREAK
-	RGB 31,31,30, 16,16,16, 31,25,09, 06,06,06 ; PAL_27
+	RGB 31,31,30, 16,16,16, 31,25,09, 06,06,06 ; PAL_27 ;used in "Cramorant's Beach" text
+	RGB 31,31,30, 24,20,30, 11,20,30, 03,02,02 ; PAL_28 ;used for Seafoam Island
 	assert_table_length NUM_SGB_PALS
 
 GBCBasePalettes:
@@ -87,7 +88,8 @@ GBCBasePalettes:
 	RGB 31,31,31, 25,28,31, 00,21,26, 03,03,03 ; PAL_BADGE
 	RGB 31,31,31, 23,08,00, 17,14,11, 03,03,03 ; PAL_CAVE
 	RGB 31,31,31, 31,31,00, 00,15,27, 03,03,03 ; PAL_26 ;used for following pikachu
-	RGB 31,31,31, 31,31,00, 00,15,27, 03,03,03 ; PAL_25 ; used in intro
+	RGB 31,31,31, 31,31,00, 00,15,27, 03,03,03 ; PAL_25 ;used in intro
 	RGB 31,31,31, 31,19,00, 19,19,00, 03,03,03 ; PAL_GAMEFREAK
-	RGB 31,31,31, 09,09,09, 31,21,00, 03,03,03 ; PAL_27
+	RGB 31,31,31, 09,09,09, 31,21,00, 03,03,03 ; PAL_27 ;used in "Cramorant's Beach" text
+	RGB 31,31,31, 18,10,31, 03,15,31, 01,01,01 ; PAL_28 ;used for Seafoam Island
 	assert_table_length NUM_SGB_PALS

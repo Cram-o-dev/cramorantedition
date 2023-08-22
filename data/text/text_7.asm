@@ -195,8 +195,9 @@ _PokemonCenterFarewellText::
 	done
 
 _LooksContentText::
-	text "It looks very"
-	line "content asleep."
+	text "Aww! Your CRAMOR-"
+	line "ANT looks very"
+	cont "content asleep."
 	done
 
 _CableClubNPCAreaReservedFor2FriendsLinkedByCableText::

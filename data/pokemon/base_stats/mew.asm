@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
-	db 45 ; catch rate
+	db 25 ; catch rate
 	db 64 ; base exp
 
 	INCBIN "gfx/pokemon/front/mew.pic", 0, 1 ; sprite dimensions
@@ -24,7 +24,8 @@
 	     SELFDESTRUCT, EGG_BOMB,     FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
 	     SOFTBOILED,   DREAM_EATER,  SKY_ATTACK,   REST,         THUNDER_WAVE, \
 	     PSYWAVE,      EXPLOSION,    ROCK_SLIDE,   TRI_ATTACK,   SUBSTITUTE,   \
-	     CUT,          FLY,          SURF,         STRENGTH,     FLASH
+	     CUT,          FLY,          SURF,         STRENGTH,     FLASH,		   \
+		 GULP_MISSILE
 	; end
 
 	db BANK(MewPicFront)

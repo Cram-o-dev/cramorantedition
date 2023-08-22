@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db FLYING, WATER ; type
-	db 45 ; catch rate
+	db 50 ; catch rate
 	db 166 ; base exp
 
 	INCBIN "gfx/pokemon/front/pikachu.pic", 0, 1 ; sprite dimensions

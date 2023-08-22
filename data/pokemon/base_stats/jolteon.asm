@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db ELECTRIC, ELECTRIC ; type
-	db 45 ; catch rate
+	db 80 ; catch rate
 	db 197 ; base exp
 
 	INCBIN "gfx/pokemon/front/jolteon.pic", 0, 1 ; sprite dimensions

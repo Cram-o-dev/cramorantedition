@@ -4,8 +4,8 @@
 	;   hp  atk  def  spd  spc
 
 	db BUG, POISON ; type
-	db 120 ; catch rate
-	db 71 ; base exp
+	db 150 ; catch rate
+	db 72 ; base exp
 
 	INCBIN "gfx/pokemon/front/kakuna.pic", 0, 1 ; sprite dimensions
 	dw KakunaPicFront, KakunaPicBack

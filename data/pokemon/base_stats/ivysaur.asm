@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db GRASS, POISON ; type
-	db 45 ; catch rate
+	db 100 ; catch rate
 	db 141 ; base exp
 
 	INCBIN "gfx/pokemon/front/ivysaur.pic", 0, 1 ; sprite dimensions

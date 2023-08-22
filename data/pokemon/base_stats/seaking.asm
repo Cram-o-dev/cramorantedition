@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db WATER, WATER ; type
-	db 60 ; catch rate
+	db 80 ; catch rate
 	db 170 ; base exp
 
 	INCBIN "gfx/pokemon/front/seaking.pic", 0, 1 ; sprite dimensions

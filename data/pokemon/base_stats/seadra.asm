@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db WATER, WATER ; type
-	db 75 ; catch rate
+	db 90 ; catch rate
 	db 155 ; base exp
 
 	INCBIN "gfx/pokemon/front/seadra.pic", 0, 1 ; sprite dimensions

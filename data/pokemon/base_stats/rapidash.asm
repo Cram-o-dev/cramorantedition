@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db FIRE, FIRE ; type
-	db 60 ; catch rate
+	db 75 ; catch rate
 	db 192 ; base exp
 
 	INCBIN "gfx/pokemon/front/rapidash.pic", 0, 1 ; sprite dimensions

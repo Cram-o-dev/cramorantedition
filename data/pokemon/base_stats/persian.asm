@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db NORMAL, NORMAL ; type
-	db 90 ; catch rate
+	db 100 ; catch rate
 	db 148 ; base exp
 
 	INCBIN "gfx/pokemon/front/persian.pic", 0, 1 ; sprite dimensions

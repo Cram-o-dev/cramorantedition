@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db GROUND, GROUND ; type
-	db 85 ; catch rate
+	db 100 ; catch rate
 	db 124 ; base exp
 
 	INCBIN "gfx/pokemon/front/marowak.pic", 0, 1 ; sprite dimensions

@@ -4,8 +4,8 @@
 	;   hp  atk  def  spd  spc
 
 	db POISON, POISON ; type
-	db 235 ; catch rate
-	db 59 ; base exp
+	db 240 ; catch rate
+	db 60 ; base exp
 
 	INCBIN "gfx/pokemon/front/nidoranf.pic", 0, 1 ; sprite dimensions
 	dw NidoranFPicFront, NidoranFPicBack

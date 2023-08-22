@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db NORMAL, FLYING ; type
-	db 45 ; catch rate
+	db 80 ; catch rate
 	db 172 ; base exp
 
 	INCBIN "gfx/pokemon/front/pidgeot.pic", 0, 1 ; sprite dimensions

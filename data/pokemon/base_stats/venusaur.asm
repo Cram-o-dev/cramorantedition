@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db GRASS, POISON ; type
-	db 45 ; catch rate
+	db 50 ; catch rate
 	db 208 ; base exp
 
 	INCBIN "gfx/pokemon/front/venusaur.pic", 0, 1 ; sprite dimensions

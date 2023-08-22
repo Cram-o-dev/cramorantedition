@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db ROCK, WATER ; type
-	db 45 ; catch rate
+	db 100 ; catch rate
 	db 120 ; base exp
 
 	INCBIN "gfx/pokemon/front/omanyte.pic", 0, 1 ; sprite dimensions

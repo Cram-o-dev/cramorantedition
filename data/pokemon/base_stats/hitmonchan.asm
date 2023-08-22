@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db FIGHTING, FIGHTING ; type
-	db 45 ; catch rate
+	db 80 ; catch rate
 	db 140 ; base exp
 
 	INCBIN "gfx/pokemon/front/hitmonchan.pic", 0, 1 ; sprite dimensions

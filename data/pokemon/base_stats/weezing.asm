@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db POISON, POISON ; type
-	db 60 ; catch rate
+	db 80 ; catch rate
 	db 173 ; base exp
 
 	INCBIN "gfx/pokemon/front/weezing.pic", 0, 1 ; sprite dimensions

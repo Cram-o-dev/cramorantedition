@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db GRASS, POISON ; type
-	db 45 ; catch rate
+	db 75 ; catch rate
 	db 184 ; base exp
 
 	INCBIN "gfx/pokemon/front/vileplume.pic", 0, 1 ; sprite dimensions

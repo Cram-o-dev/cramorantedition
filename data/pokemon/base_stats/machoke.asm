@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db FIGHTING, FIGHTING ; type
-	db 90 ; catch rate
+	db 105 ; catch rate
 	db 146 ; base exp
 
 	INCBIN "gfx/pokemon/front/machoke.pic", 0, 1 ; sprite dimensions

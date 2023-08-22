@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db WATER, WATER ; type
-	db 225 ; catch rate
+	db 230 ; catch rate
 	db 83 ; base exp
 
 	INCBIN "gfx/pokemon/front/horsea.pic", 0, 1 ; sprite dimensions

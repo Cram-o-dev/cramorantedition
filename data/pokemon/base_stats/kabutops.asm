@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db ROCK, WATER ; type
-	db 45 ; catch rate
+	db 70 ; catch rate
 	db 201 ; base exp
 
 	INCBIN "gfx/pokemon/front/kabutops.pic", 0, 1 ; sprite dimensions

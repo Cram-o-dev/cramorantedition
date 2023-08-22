@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db BUG, POISON ; type
-	db 190 ; catch rate
+	db 200 ; catch rate
 	db 75 ; base exp
 
 	INCBIN "gfx/pokemon/front/venonat.pic", 0, 1 ; sprite dimensions

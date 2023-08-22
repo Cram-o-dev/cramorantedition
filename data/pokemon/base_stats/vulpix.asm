@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db FIRE, FIRE ; type
-	db 190 ; catch rate
+	db 200 ; catch rate
 	db 63 ; base exp
 
 	INCBIN "gfx/pokemon/front/vulpix.pic", 0, 1 ; sprite dimensions

@@ -83,4 +83,5 @@ KeyItemFlags:
 	dbit FALSE ; MAX_ETHER
 	dbit FALSE ; ELIXER
 	dbit FALSE ; MAX_ELIXER
+	dbit TRUE  ; CD_PLAYER
 	end_bit_array NUM_ITEMS

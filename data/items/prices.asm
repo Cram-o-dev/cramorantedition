@@ -7,7 +7,7 @@ ItemPrices::
 	bcd3 0     ; TOWN_MAP
 	bcd3 0     ; BICYCLE
 	bcd3 0     ; SURFBOARD
-	bcd3 3000  ; SAFARI_BALL
+	bcd3 1500  ; SAFARI_BALL
 	bcd3 0     ; POKEDEX
 	bcd3 2500  ; MOON_STONE
 	bcd3 100   ; ANTIDOTE
@@ -39,7 +39,7 @@ ItemPrices::
 	bcd3 4400  ; IRON
 	bcd3 4400  ; CARBOS
 	bcd3 4400  ; CALCIUM
-	bcd3 7500  ; RARE_CANDY
+	bcd3 6000  ; RARE_CANDY
 	bcd3 5000  ; DOME_FOSSIL
 	bcd3 5000  ; HELIX_FOSSIL
 	bcd3 0     ; SECRET_KEY
@@ -83,6 +83,7 @@ ItemPrices::
 	bcd3 1800  ; MAX_ETHER
 	bcd3 2800  ; ELIXER
 	bcd3 4600  ; MAX_ELIXER
+	bcd3 0     ; CD_PLAYER
 	assert_table_length NUM_ITEMS
 	bcd3 0     ; FLOOR_B2F
 	bcd3 0     ; FLOOR_B1F
@@ -98,4 +99,56 @@ ItemPrices::
 	bcd3 0     ; FLOOR_10F
 	bcd3 0     ; FLOOR_11F
 	bcd3 0     ; FLOOR_B4F
+	bcd3 0     ; INTRO
+	bcd3 0     ; TITLE_SCREEN
+	bcd3 0     ; WELCOME
+	bcd3 0     ; PROF_OAKM
+	bcd3 0     ; RIVALM
+	bcd3 0     ; MTRAINER
+	bcd3 0     ; FTRAINER
+	bcd3 0     ; ETRAINER
+	bcd3 0     ; JESSIEJAMES
+	bcd3 0     ; GIOVANNIM
+	bcd3 0     ; FOLLOW_ME
+	bcd3 0	   ; TENSION
+	bcd3 0     ; PALLET_TOWNM
+	bcd3 0     ; PEWTER_SAFFRON
+	bcd3 0     ; CERULEAN_FUCHSIA
+	bcd3 0     ; VERMILIONM
+	bcd3 0     ; LAVENDERM
+	bcd3 0     ; CELADONM
+	bcd3 0     ; CINNABARM
+	bcd3 0	   ; LABO
+	bcd3 0	   ; PKMNCENTER
+	bcd3 0     ; GYMM
+	bcd3 0     ; SSANNE
+	bcd3 0     ; GAMECORNER
+	bcd3 0     ; TOWER
+	bcd3 0     ; SILPH
+	bcd3 0     ; MANSIONM
+	bcd3 0     ; PLATEAUM
+	bcd3 0     ; ROUTES1M
+	bcd3 0     ; ROUTESCOMMON
+	bcd3 0     ; ROUTESRARE
+	bcd3 0     ; CAVE1M
+	bcd3 0     ; CAVE2M
+	bcd3 0     ; CAVE3M
+	bcd3 0     ; DIGGY
+	bcd3 0	   ; ROADDY
+	bcd3 0	   ; WILDMON
+	bcd3 0	   ; BEATMON
+	bcd3 0	   ; TRAINERBAT
+	bcd3 0	   ; TRAINERBEAT
+	bcd3 0	   ; GYMBAT
+	bcd3 0	   ; GYMBEAT
+	bcd3 0	   ; CHAMP
+	bcd3 0	   ; HOF
+	bcd3 0	   ; CREDITSM
+	bcd3 0	   ; BIKEY
+	bcd3 0	   ; SURFY
+	bcd3 0	   ; CRAMSURF
+	bcd3 0	   ; EVOM
+	bcd3 0	   ; MONHEAL
+	bcd3 0	   ; JIGGLY
+	bcd3 0	   ; PRINTER
 	assert_table_length NUM_ITEMS + NUM_FLOORS

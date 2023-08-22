@@ -15,8 +15,8 @@ VermilionCity_Object:
 	warp_event 30,  9, CRAMORANT_FAN_CLUB, 1
 
 	def_bg_events
-	bg_event 27,  3, 8 ; VermilionCityText7
-	bg_event 37, 13, 9 ; VermilionCityText8
+	bg_event 27,  3,  8 ; VermilionCityText7
+	bg_event 37, 13,  9 ; VermilionCityText8
 	bg_event 24, 13, 10 ; MartSignText
 	bg_event 12,  3, 11 ; PokeCenterSignText
 	bg_event  7, 13, 12 ; VermilionCityText11

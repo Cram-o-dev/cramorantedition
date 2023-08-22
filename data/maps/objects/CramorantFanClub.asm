@@ -13,6 +13,7 @@ CramorantFanClub_Object:
 	bg_event 11,  3, 12 ; FeatherText
 	bg_event  5,  0, 13 ; CramClubPictureText
 	bg_event  9,  0, 14 ; CramClubPicture2Text
+	bg_event  9,  2, 15 ; CramClubJimmyText
 
 	def_object_events
 	object_event  6, 1, SPRITE_SAILOR, STAY, DOWN, 1

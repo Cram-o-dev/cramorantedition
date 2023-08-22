@@ -8,6 +8,7 @@ CeladonMart2F_Object:
 
 	def_bg_events
 	bg_event 14,  1, 5 ; CeladonMart2Text5
+	bg_event  7,  4, 6 ; CeladonMart2Guide
 
 	def_object_events
 	object_event  5,  3, SPRITE_CLERK, STAY, DOWN, 1 ; person

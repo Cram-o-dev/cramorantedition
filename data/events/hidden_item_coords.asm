@@ -15,6 +15,7 @@ HiddenItemCoords:
 	hidden_item POKEMON_MANSION_2F,            13,  14
 	hidden_item POKEMON_MANSION_3F,             1,   9
 	hidden_item POKEMON_MANSION_B1F,            1,   9
+	hidden_item POKEMON_MANSION_B1F,           16,  13
 	hidden_item SAFARI_ZONE_WEST,               6,   5
 	hidden_item CERULEAN_CAVE_2F,              16,  13
 	hidden_item CERULEAN_CAVE_B1F,              8,  14
@@ -42,6 +43,7 @@ HiddenItemCoords:
 	hidden_item ROCKET_HIDEOUT_B4F,            25,   1
 	hidden_item ROUTE_10,                       9,  17
 	hidden_item ROUTE_10,                      16,  53
+	hidden_item ROUTE_10,                       4,  19
 	hidden_item POWER_PLANT,                   17,  16
 	hidden_item POWER_PLANT,                   12,   1
 	hidden_item POWER_PLANT,                   37,  10
@@ -53,11 +55,11 @@ HiddenItemCoords:
 	hidden_item ROUTE_13,                      16,  13
 	hidden_item ROUTE_13,                      25,   7
 	hidden_item ROUTE_13,                       3,   7
-	hidden_item ROUTE_14,                      15,  43
 	hidden_item ROUTE_14,                      10,   9
 	hidden_item ROUTE_14,                      18,   5
 	hidden_item ROUTE_14,                       6,   3
 	hidden_item ROUTE_15,                      47,   5
+	hidden_item ROUTE_15,                      15,   7
 	hidden_item ROUTE_16,                       1,   2
 	hidden_item ROUTE_17,                      15,  14
 	hidden_item ROUTE_17,                       8,  45
@@ -93,7 +95,7 @@ HiddenItemCoords:
 	hidden_item VIRIDIAN_CITY,                 14,   4
 	hidden_item CERULEAN_CITY,                 15,   8
 	hidden_item CERULEAN_CITY,                 23,   3
-	hidden_item CERULEAN_CAVE_1F,              18,   7
+	hidden_item CERULEAN_CAVE_1F,              23,  14
 	hidden_item LAVENDER_TOWN,					1,	 1
 	hidden_item POKEMON_TOWER_4F,               5,   4
 	hidden_item POKEMON_TOWER_5F,               4,  12

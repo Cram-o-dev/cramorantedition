@@ -34,6 +34,7 @@ HiddenObjectMaps:
 	dbw ROUTE_11,                     Route11HiddenObjects
 	dbw ROUTE_12,                     Route12HiddenObjects
 	dbw ROUTE_13,                     Route13HiddenObjects
+	dbw ROUTE_14,					  Route14HiddenObjects
 	dbw ROUTE_15,                     Route15HiddenObjects
 	dbw ROUTE_15_GATE_2F,             Route15Gate2FHiddenObjects
 	dbw ROUTE_16,                     Route16HiddenObjects
@@ -169,6 +170,7 @@ Mansion3HiddenObjects:
 
 Mansion4HiddenObjects:
 	hidden_object  1,  9, RARE_CANDY, HiddenItems
+	hidden_object 16, 13, COIN, HiddenItems
 	hidden_object 20,  3, SPRITE_FACING_UP, Mansion4Script_Switches
 	hidden_object 18, 25, SPRITE_FACING_UP, Mansion4Script_Switches
 	db -1 ; end
@@ -289,7 +291,6 @@ Route13HiddenObjects:
 	db -1 ; end
 	
 Route14HiddenObjects:
-	hidden_object 15, 43, HYPER_POTION, HiddenItems
 	hidden_object 10,  9, IRON, HiddenItems
 	hidden_object 18,  5, CARBOS, HiddenItems
 	hidden_object  6,  3, HP_UP, HiddenItems
@@ -297,6 +298,7 @@ Route14HiddenObjects:
 	
 Route15HiddenObjects:
 	hidden_object 47,  5, RARE_CANDY, HiddenItems
+	hidden_object 15,  7, HYPER_POTION, HiddenItems
 	db -1 ; end
 
 Route15Gate2FHiddenObjects:
@@ -331,7 +333,7 @@ Route23HiddenObjects:
 	db -1 ; end
 	
 VictoryRoad1HiddenObjects:
-	hidden_object  5,  2, MAX_REVIVE, HiddenItems
+	hidden_object 15, 13, MAX_REVIVE, HiddenItems
 	hidden_object  9, 10, FULL_RESTORE, HiddenItems
 	db -1 ; end
 	
@@ -500,7 +502,7 @@ BikeShopHiddenObjects:
 	db -1 ; end
 
 CeruleanCave1HiddenObjects:
-	hidden_object 18,  7, PP_UP, HiddenItems
+	hidden_object 23, 14, PP_UP, HiddenItems
 	db -1 ; end
 
 LavenderPokecenterHiddenObjects:
@@ -649,7 +651,7 @@ GameCornerHiddenObjects:
 	hidden_object 10, 16, COIN+10, HiddenCoins
 	hidden_object 11,  7, COIN+40, HiddenCoins
 	hidden_object 15,  8, COIN+100, HiddenCoins
-	hidden_object 12, 15, COIN+10, HiddenCoins
+	hidden_object 12, 16, COIN+10, HiddenCoins
 	db -1 ; end
 
 FuchsiaCityHiddenObjects:

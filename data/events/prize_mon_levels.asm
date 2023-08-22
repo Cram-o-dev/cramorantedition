@@ -1,5 +1,5 @@
 PrizeMonLevelDictionary:
-	db FARFETCHD,  22
+	db FARFETCHD,  25
 	db HITMONCHAN, 26
 	db HITMONLEE,  26
 
@@ -9,4 +9,4 @@ PrizeMonLevelDictionary:
 	
 	db SNORLAX,    32
 	db DRATINI,    35
-	db MEW,        40
+	db MEW,        45

@@ -127,7 +127,6 @@ INCLUDE "text/Route21.asm"
 INCLUDE "text/Route22.asm"
 INCLUDE "text/Route23.asm"
 INCLUDE "text/Route24.asm"
-INCLUDE "text/Route25.asm"
 
 INCLUDE "data/text/text_4.asm"
 
@@ -136,6 +135,7 @@ SECTION "Text 5", ROMX
 
 INCLUDE "data/text/text_5.asm"
 
+INCLUDE "text/Route25.asm"
 INCLUDE "text/RedsHouse1F.asm"
 INCLUDE "text/RedsHouse2F.asm"
 INCLUDE "text/BluesHouse.asm"
@@ -157,13 +157,11 @@ INCLUDE "text/CeruleanTrashedHouse.asm"
 INCLUDE "text/CeruleanMelaniesHouse.asm"
 INCLUDE "text/CeruleanPokecenter.asm"
 INCLUDE "text/CeruleanGym.asm"
-INCLUDE "text/BikeShop.asm"
-INCLUDE "text/CeruleanMart.asm"
-INCLUDE "text/CeruleanBadgeHouse.asm"
 
 
 SECTION "Text 6", ROMX
 
+INCLUDE "text/CeruleanBadgeHouse.asm"
 INCLUDE "text/CeruleanBadgeHouse_2.asm"
 INCLUDE "text/LavenderPokecenter.asm"
 INCLUDE "text/PokemonTower1F.asm"
@@ -193,7 +191,6 @@ INCLUDE "text/CeladonMart3F.asm"
 INCLUDE "text/CeladonMart4F.asm"
 INCLUDE "text/CeladonMartRoof.asm"
 INCLUDE "text/CeladonMansion1F.asm"
-INCLUDE "text/CeladonMansion2F.asm"
 INCLUDE "text/CeladonMansion3F.asm"
 INCLUDE "text/CeladonMansionRoof.asm"
 INCLUDE "text/CeladonMansionRoofHouse.asm"
@@ -265,7 +262,6 @@ INCLUDE "data/pokemon/dex_text.asm"
 SECTION "Move Names", ROMX
 
 INCLUDE "data/moves/names.asm"
-INCLUDE "text/CramorantFanClub.asm"
 
 SECTION "Extra Text", ROMX
 
@@ -281,3 +277,7 @@ INCLUDE "text/move_deleter.asm"
 INCLUDE "text/move_relearner.asm"
 INCLUDE "text/CeruleanCity.asm"
 INCLUDE "text/UndergroundPathWestEast.asm"
+INCLUDE "text/CeladonMansion2F.asm"
+INCLUDE "text/CramorantFanClub.asm"
+INCLUDE "text/BikeShop.asm"
+INCLUDE "text/CeruleanMart.asm"

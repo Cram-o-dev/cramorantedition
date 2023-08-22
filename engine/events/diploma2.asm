@@ -101,7 +101,7 @@ Func_e9ad3:
 	lb bc, $80 | 1, 2
 	call PrintNumber
 	ld a, [wNumSetBits]
-	cp 151
+	cp 154
 	ret nz
 	ld de, TileMap_e9bc1
 	hlcoord 2, 0

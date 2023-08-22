@@ -41,7 +41,7 @@ MapHSPointers:
 	dw Route24HS
 	dw Route25HS
 	dw NoHS
-	dw NoHS
+	dw RedsHouse2F
 	dw BluesHouseHS
 	dw OaksLabHS
 	dw NoHS
@@ -112,8 +112,8 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw VictoryRoad1FHS
-	dw NoHS ;WayOfFish1F
-	dw WayOfFishBFHS ;WayOfFishBF
+	dw WayOfFish1FHS
+	dw WayOfFishBFHS
 	dw SaffronShadyHouseHS
 	dw NoHS
 	dw NoHS
@@ -132,7 +132,7 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw NoHS
-	dw NoHS
+	dw CeladonMansion2FHS
 	dw NoHS
 	dw NoHS
 	dw CeladonMansionRoofHouseHS
@@ -321,6 +321,9 @@ Route24HS:
 	db ROUTE_24, $08, SHOW
 Route25HS:
 	db ROUTE_25, $0A, SHOW
+RedsHouse2F:
+	db REDS_HOUSE_2F, $01, HIDE
+	db REDS_HOUSE_2F, $02, HIDE
 BluesHouseHS:
 	db BLUES_HOUSE, $01, SHOW
 	db BLUES_HOUSE, $02, HIDE
@@ -363,6 +366,9 @@ PokemonTower7FHS:
 	db POKEMON_TOWER_7F, $03, SHOW
 MrFujisHouseHS:
 	db MR_FUJIS_HOUSE, $05, HIDE
+CeladonMansion2FHS:
+	db CELADON_MANSION_2F, $01, SHOW
+	db CELADON_MANSION_2F, $02, HIDE
 CeladonMansionRoofHouseHS:
 	db CELADON_MANSION_ROOF_HOUSE, $02, SHOW
 GameCornerHS:
@@ -560,6 +566,9 @@ CeruleanCaveB1FHS:
 VictoryRoad1FHS:
 	db VICTORY_ROAD_1F, $03, SHOW
 	db VICTORY_ROAD_1F, $04, SHOW
+WayOfFish1FHS:
+	db WAY_OF_FISH_1F, $01, SHOW
+	db WAY_OF_FISH_1F, $02, HIDE
 WayOfFishBFHS:
 	db WAY_OF_FISH_BF, $04, SHOW
 SaffronShadyHouseHS:

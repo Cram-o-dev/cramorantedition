@@ -76,7 +76,12 @@ InternalMapEntries:
 	internal_map BILLS_HOUSE,                   12,  0, SeaCottageName
 	internal_map VERMILION_DOCK,                10,  9, VermilionCityName
 	internal_map SS_ANNE_B1F_ROOMS,              9, 10, SSAnneName
+	internal_map TM_PLACE,						 7,  5, CeladonCityName
 	internal_map VICTORY_ROAD_1F,                0,  4, VictoryRoadName
+	internal_map WAY_OF_FISH_1F,				 9,  5, Route7Name
+	internal_map WAY_OF_FISH_BF,				 9,  5, Route7Name
+	internal_map SAFFRON_SHADY_HOUSE,		    10,  5, SaffronCityName
+	internal_map ROUTE_21_HOUSE,			     2, 13, Route21Name
 	internal_map HALL_OF_FAME,                   0,  2, PokemonLeagueName
 	internal_map UNDERGROUND_PATH_NORTH_SOUTH,  10,  5, UndergroundPathName
 	internal_map CHAMPIONS_ROOM,                 0,  2, PokemonLeagueName
@@ -115,6 +120,10 @@ InternalMapEntries:
 	internal_map CERULEAN_BADGE_HOUSE,          10,  2, CeruleanCityName
 	internal_map ROCK_TUNNEL_B1F,               14,  3, RockTunnelName
 	internal_map SILPH_CO_ELEVATOR,             10,  5, SilphCoName
+	internal_map VIRIDIAN_FOREST_HOUSE,          2,  4, ViridianForestName
+	internal_map VERMILION_CITY_SOLO_GUY_HOUSE, 10,  9, VermilionCityName
+	internal_map CRAMORANT_FAN_CLUB,			10,  9, VermilionCityName
+	internal_map CERULEAN_CAVE_B4F,				 9,  1, CeruleanCaveName
 	internal_map AGATHAS_ROOM,                   0,  2, PokemonLeagueName
 	internal_map SUMMER_BEACH_HOUSE,             6, 15, Route19Name
 	db -1 ; end

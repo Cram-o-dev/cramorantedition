@@ -171,7 +171,8 @@
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
 	const GULP_MISSILE ; a5
-	const STRUGGLE     ; a6
+	const DRAGONBREATH ; a6
+	const STRUGGLE     ; a7
 DEF NUM_ATTACKS EQU const_value - 1
 
 	; Moves do double duty as animation identifiers.

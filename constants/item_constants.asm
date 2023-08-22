@@ -92,10 +92,11 @@ DEF SAFARI_ROCK EQU $16 ; overload
 	const MAX_ETHER     ; $51
 	const ELIXER        ; $52
 	const MAX_ELIXER    ; $53
+	const CD_PLAYER		; $54 
 DEF NUM_ITEMS EQU const_value - 1
 
-; elevator floors use item IDs
-	const FLOOR_B2F     ; $54
+; elevator floors use item IDs ; Also included are the CD Player tracks.
+	const FLOOR_B2F     ; $54 too lazy to update the floor hex values.
 	const FLOOR_B1F     ; $55
 	const FLOOR_1F      ; $56
 	const FLOOR_2F      ; $57
@@ -109,6 +110,58 @@ DEF NUM_ITEMS EQU const_value - 1
 	const FLOOR_10F     ; $5F
 	const FLOOR_11F     ; $60
 	const FLOOR_B4F     ; $61
+	const INTRO  		; $63
+	const TITLE_SCREEN  ; $64
+	const WELCOME		; $65
+	const PROF_OAKM	    ; $66
+	const RIVALM	    ; $67
+	const MTRAINER	    ; $68
+	const FTRAINER	    ; $69
+	const ETRAINER	    ; $6A
+	const JESSIEJAMES	; $6B
+	const GIOVANNIM	    ; $6C
+	const FOLLOW_ME		; $6D
+	const TENSION		; $6E Added after list was made. Add +1 to following hex values.
+	const PALLET_TOWNM  ; $6E
+	const PEWTER_SAFFRON ; $6F
+	const CERULEAN_FUCHSIA ;$70
+	const VERMILIONM	; $71
+	const LAVENDERM	    ; $72
+	const CELADONM	    ; $73
+	const CINNABARM	    ; $74
+	const LABO			; $75
+	const PKMNCENTER	; $76
+	const GYMM			; $77
+	const SSANNE		; $78
+	const GAMECORNER    ; $79
+	const TOWER    		; $7A
+	const SILPH    		; $7B
+	const MANSIONM	 	; $7C
+	const PLATEAUM	    ; $7D
+	const ROUTES1M	    ; $7E
+	const ROUTESCOMMON	; $7F
+	const ROUTESRARE	; $80
+	const CAVE1M	    ; $81
+	const CAVE2M	    ; $82
+	const CAVE3M	    ; $83
+	const DIGGY			; $84
+	const ROADDY		; $85
+	const WILDMON		; $86
+	const BEATMON		; $87
+	const TRAINERBAT	; $88
+	const TRAINERBEAT	; $89
+	const GYMBAT		; $8A
+	const GYMBEAT		; $8B
+	const CHAMP			; $8C
+	const HOF		    ; $8D
+	const CREDITSM		; $8E
+	const BIKEY		    ; $8F
+	const SURFY			; $90
+	const CRAMSURF		; $91
+	const EVOM		    ; $92
+	const MONHEAL		; $93
+	const JIGGLY		; $94
+	const PRINTER		; $95
 DEF NUM_FLOORS EQU const_value - 1 - NUM_ITEMS
 
 	const_next $C4

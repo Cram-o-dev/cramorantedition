@@ -49,6 +49,8 @@ DEF SHOW EQU $15
 	const HS_NUGGET_BRIDGE_GUY             ; 28
 	const HS_ROUTE_24_ITEM                 ; 29
 	const HS_ROUTE_25_ITEM                 ; 2A
+	const HS_REDS_HOUSE_2F_CRAM_PLUSH
+	const HS_REDS_HOUSE_2F_TROPHY
 	const HS_DAISY_SITTING                 ; 2B
 	const HS_DAISY_WALKING                 ; 2C
 	const HS_TOWN_MAP                      ; 2D
@@ -78,6 +80,8 @@ DEF SHOW EQU $15
 	const HS_POKEMON_TOWER_7F_JAMES        ; 45
 	const HS_POKEMON_TOWER_7F_MR_FUJI      ; 46
 	const HS_MR_FUJIS_HOUSE_MR_FUJI        ; 47
+	const HS_CELADON_MANSION_2F_ME1
+	const HS_CELADON_MANSION_2F_ME2
 	const HS_CELADON_MANSION_EEVEE_GIFT    ; 48
 	const HS_GAME_CORNER_ROCKET            ; 49
 	const HS_WARDENS_HOUSE_ITEM            ; 4A
@@ -232,6 +236,8 @@ DEF SHOW EQU $15
 	const HS_CERULEAN_CAVE_B1F_ITEM_4      ; DF
 	const HS_VICTORY_ROAD_1F_ITEM_1        ; E0
 	const HS_VICTORY_ROAD_1F_ITEM_2        ; E1
+	const HS_WAY_OF_FISH_1F_SISTER1
+	const HS_WAY_OF_FISH_1F_SISTER2
 	const HS_WAY_OF_FISH_BF_ARROKUDA	   ; E2
 	const HS_SAFFRON_SHADY_HOUSE_GUY1	   ; E3
 	const HS_SAFFRON_SHADY_HOUSE_GUY2	   ; E4

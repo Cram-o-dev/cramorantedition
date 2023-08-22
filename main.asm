@@ -58,6 +58,9 @@ INCLUDE "engine/math/bcd.asm"
 INCLUDE "engine/movie/oak_speech/init_player_data.asm"
 INCLUDE "engine/items/get_bag_item_quantity.asm"
 INCLUDE "engine/overworld/pathfinding.asm"
+
+SECTION "bank4", ROMX
+
 INCLUDE "engine/gfx/hp_bar.asm"
 INCLUDE "engine/events/hidden_objects/bookshelves.asm"
 INCLUDE "engine/events/hidden_objects/indigo_plateau_statues.asm"
@@ -65,10 +68,6 @@ INCLUDE "engine/events/hidden_objects/book_or_sculpture.asm"
 INCLUDE "engine/events/hidden_objects/elevator.asm"
 INCLUDE "engine/events/hidden_objects/town_map.asm"
 INCLUDE "engine/events/hidden_objects/pokemon_stuff.asm"
-
-
-SECTION "bank4", ROMX
-
 INCLUDE "gfx/font.asm"
 INCLUDE "engine/pokemon/status_screen.asm"
 INCLUDE "engine/menus/party_menu.asm"
@@ -160,21 +159,21 @@ SECTION "Battle Engine 6", ROMX
 
 INCLUDE "data/moves/moves.asm"
 INCLUDE "data/pokemon/base_stats.asm"
-INCLUDE "data/pokemon/cries.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
-INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
-INCLUDE "gfx/trade.asm"
 INCLUDE "engine/pokemon/evos_moves.asm"
 
 
 SECTION "Battle Core", ROMX
 
+INCLUDE "data/pokemon/cries.asm"
+INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
 INCLUDE "engine/battle/core.asm"
 INCLUDE "engine/battle/effects.asm"
 
 
 SECTION "bank10", ROMX
 
+INCLUDE "gfx/trade.asm"
 INCLUDE "engine/menus/pokedex.asm"
 INCLUDE "engine/overworld/emotion_bubbles.asm"
 INCLUDE "engine/movie/trade.asm"
@@ -277,12 +276,12 @@ INCLUDE "engine/gfx/mon_icons.asm"
 INCLUDE "engine/events/in_game_trades.asm"
 INCLUDE "engine/gfx/palettes.asm"
 INCLUDE "engine/menus/save.asm"
-INCLUDE "engine/overworld/use_another_repel.asm"
 
 
 SECTION "Itemfinder 1", ROMX
 
 INCLUDE "engine/items/itemfinder.asm"
+INCLUDE "engine/overworld/use_another_repel.asm"
 
 
 SECTION "Vending Machine", ROMX

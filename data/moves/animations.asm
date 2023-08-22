@@ -165,6 +165,7 @@ AttackAnimationPointers:
 	dw SlashAnim
 	dw SubstituteAnim
 	dw GulpMissileAnim
+	dw DragonbreathAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -1145,6 +1146,11 @@ GulpMissileAnim:
 	battle_anim GULP_MISSILE, SUBANIM_0_BEAM, 0, 4
 	battle_anim SLAM, SUBANIM_0_STAR, 0, 6, 
 	battle_anim AMNESIA, SUBANIM_0_FISH, 0, 8
+	db -1 ; end
+	
+DragonbreathAnim:
+	battle_anim DRAGON_RAGE, SUBANIM_1_FLAME_BEAM, 1, 6
+	battle_anim NO_MOVE, SUBANIM_0_WATER_1_FIRE_GEYSER, 1, 6
 	db -1 ; end
 	
 BallTossAnim:

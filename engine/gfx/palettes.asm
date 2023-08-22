@@ -150,6 +150,8 @@ SetPal_Overworld:
 	jr z, .PokemonTowerOrAgatha
 	cp CAVERN
 	jr z, .caveOrBruno
+	cp CAVERN2
+	jr z, .icyCave
 	ld a, [wCurMap]
 	cp FIRST_INDOOR_MAP
 	jr c, .townOrRoute
@@ -190,6 +192,9 @@ SetPal_Overworld:
 	jr .town
 .trade_center_colosseum
 	ld a, PAL_GREYMON - 1
+	jr .town
+.icyCave
+	ld a, PAL_28 - 1
 	jr .town
 
 ; used when a Pokemon is the only thing on the screen
@@ -397,6 +402,8 @@ GetPal_Pikachu::
 	jr z, .PokemonTowerOrAgatha
 	cp CAVERN
 	jr z, .caveOrBruno
+	cp CAVERN2
+	jr z, .icyCave
 	ld a, [wCurMap]
 	cp REDS_HOUSE_1F
 	jr c, .townOrRoute
@@ -436,6 +443,10 @@ GetPal_Pikachu::
 
 .battleOrTradeCenter
 	ld a, PAL_GREYMON - 1
+	jr .town
+	
+.icyCave
+	ld a, PAL_28 - 1
 	jr .town
 
 InitPartyMenuBlkPacket:

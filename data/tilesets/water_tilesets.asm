@@ -9,6 +9,7 @@ WaterTilesets:
 	db CAVERN
 	db FACILITY
 	db PLATEAU
+	db CAVERN2
 	db -1 ; end
 
 ; tiles that allow surfing and fishing,

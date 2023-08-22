@@ -25,6 +25,7 @@ WarpTileIDPointers:
 	dw .FacilityWarpTileIDs
 	dw .PlateauWarpTileIDs
 	dw .BeachHouseWarpTileIDs
+	dw .Cavern2WarpTileIDs
 	assert_table_length NUM_TILESETS
 
 MACRO warp_tiles
@@ -96,3 +97,6 @@ ENDM
 
 .BeachHouseWarpTileIDs:
 	warp_tiles ; end
+
+.Cavern2WarpTileIDs:
+	warp_tiles $18, $1A, $22

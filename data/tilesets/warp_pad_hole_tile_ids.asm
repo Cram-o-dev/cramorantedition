@@ -4,4 +4,5 @@ WarpPadAndHoleData:
 	db FACILITY, $11, 2 ; hole
 	db CAVERN,   $22, 2 ; hole
 	db INTERIOR, $55, 1 ; warp pad
+	db CAVERN2,  $22, 2 ; hole
 	db -1 ; end

@@ -280,6 +280,9 @@ FlyAnimationScreenCoords2:
 	db $F0, $00
 
 LeaveMapThroughHoleAnim:
+	ld a, [wLastMusicSoundID]
+	cp MUSIC_BIKE_RIDING
+	call z, PlayDefaultMusic
 	ld a, $ff
 	ld [wUpdateSpritesEnabled], a ; disable UpdateSprites
 	; shift upper half of player's sprite down 8 pixels and hide lower half
@@ -355,7 +358,7 @@ LoadBirdSpriteGraphics:
 	ld a, [wcf91]
 	cp STARTER_PIKACHU
 	jr z, .cramorant
-
+	
 	ld b, BANK(BirdSprite)
 	ld de, BirdSprite
 	ld c, $c

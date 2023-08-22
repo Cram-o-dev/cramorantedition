@@ -736,6 +736,7 @@ wEnemyMonEvasionMod:: db
 wEnemyMonStatModsEnd::
 
 NEXTU
+wTempColCoords::
 	ds 30
 wEngagedTrainerClass:: db
 wEngagedTrainerSet:: db
@@ -1246,7 +1247,7 @@ wGymCityName:: ds 17
 wGymLeaderName:: ds NAME_LENGTH
 
 UNION
-wItemList:: ds 16
+;wItemList:: ds 16
 NEXTU
 
 wItemFinderItemDirection::db
@@ -1743,7 +1744,7 @@ wRepelRemainingSteps:: db
 wMoves:: ds NUM_MOVES
 
 wMoveNum:: db
-
+wItemList::            ; Thanks for the help again Vortyne. Now I have room for the CD tracks.
 wMovesString:: ds 56
 
 wUnusedD119:: db
@@ -2057,7 +2058,8 @@ wPikachuMovementXOffset:: db
 wPikachuMovementYOffset:: db
 wPikachuStepTimer:: db
 wPikachuStepSubtimer:: db
-	ds 5
+wDamageIntention:: dw ; in battle, the amount of damage a move will do before doing it (used for high jump kick / jump kick crash effect). Thanks Vortyne
+	ds 4
 wCurPikaMovementDataEnd::
 
 NEXTU
@@ -2290,7 +2292,7 @@ wVictoryRoad1FCurScript:: db
 wCeruleanCaveB4FCurScript:: db
 wLancesRoomCurScript:: db
 wWayOfFishBFCurScript:: db
-	;ds 4
+	ds 4
 wSilphCo10FCurScript:: db
 wSilphCo11FCurScript:: db
 wSaffronShadyHouseCurScript:: db
@@ -2313,7 +2315,7 @@ wRoute18Gate1FCurScript:: db
 	ds 78
 wGameProgressFlagsEnd::
 
-	ds 56
+	ds 16
 
 wObtainedHiddenItemsFlags:: flag_array 112
 
@@ -2376,10 +2378,10 @@ wWhichDungeonWarp:: db
 
 wUnusedD71F:: db
 
-	;ds 8
+	ds 2
 	
 wLowHealthTonePairs::				;in battle, used as a counter for low hp alarm tone pairs
-	ds 1	
+	ds 1
 	
 ; bit 0: using Strength outside of battle
 ; bit 1: set by IsSurfingAllowed when surfing's allowed, but the caller resets it after checking the result

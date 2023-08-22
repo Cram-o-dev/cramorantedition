@@ -82,7 +82,7 @@ Route20TrainerHeader0:
 Route20TrainerHeader1:
 	trainer EVENT_BEAT_ROUTE_20_TRAINER_1, 4, Route20BattleText2, Route20EndBattleText2, Route20AfterBattleText2
 Route20TrainerHeader2:
-	trainer EVENT_BEAT_ROUTE_20_TRAINER_2, 2, Route20BattleText3, Route20EndBattleText3, Route20AfterBattleText3
+	trainer EVENT_BEAT_ROUTE_20_TRAINER_2, 3, Route20BattleText3, Route20EndBattleText3, Route20AfterBattleText3
 Route20TrainerHeader3:
 	trainer EVENT_BEAT_ROUTE_20_TRAINER_3, 4, Route20BattleText4, Route20EndBattleText4, Route20AfterBattleText4
 Route20TrainerHeader4:
@@ -279,7 +279,10 @@ Route20AfterBattleText10:
 	text_far _Route20AfterBattleText10
 	text_end
 
-Route20Text12:
 Route20Text11:
 	text_far _Route20Text11
+	text_end
+
+Route20Text12:
+	text_far _Route20Text12
 	text_end

@@ -122,6 +122,7 @@ OaksLabScript4:
 	call SetSpriteFacingDirectionAndDelay
 	ld hl, wFlags_D733
 	res 1, [hl]
+	call DelayFrame
 	call PlayDefaultMusic
 
 	ld a, $5

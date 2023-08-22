@@ -93,6 +93,24 @@ Mansion1AfterBattleText2:
 	text_end
 
 MansionBookText:
+	text_asm
+	call StopAllMusic
+	ld c, BANK(Music_Kincho)
+	ld a, MUSIC_KINCHO
+	call PlayMusic
+	ld hl, ReadingBookText
+	call PrintText
+	ld a, 4
+	ld [wAudioFadeOutControl], a
+	call StopAllMusic
+.waitLoop
+	ld a, [wAudioFadeOutControl]
+	and a ; is fade-out finished?
+	jr nz, .waitLoop ; if not, check again
+	call PlayDefaultMusic
+	jp TextScriptEnd
+	
+ReadingBookText:
 	text_far _MansionBookText
 	text_end
 	

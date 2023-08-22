@@ -148,6 +148,9 @@ SilphCo9Text1:
 	predef HealParty
 	call GBFadeOutToWhite
 	call Delay3
+	ld a, SFX_HEAL_AILMENT
+	call PlaySound
+	call WaitForSoundToFinish
 	call GBFadeInFromWhite
 	ld hl, SilphCo9Text_5d8ea
 	call PrintText

@@ -3,12 +3,17 @@ WayOfFish1F_Script:
 
 WayOfFish1F_TextPointers:
 	dw WayOfFish1FText1
+	dw WayOfFish1FText2
 	dw WayOfFish1FTVText
 	dw WayOfFish1FSNESText
 	dw WayOfFish1FBedText
 	
 WayOfFish1FText1:
 	text_far _WayOfFish1FText1
+	text_end
+	
+WayOfFish1FText2:
+	text_far _WayOfFish1FText2
 	text_end
 	
 WayOfFish1FTVText:

@@ -245,7 +245,7 @@ ViridianCityScript10:
 	ld a, [wd730]
 	bit 0, a
 	ret nz
-	ld a, $3
+	ld a, HS_OLD_MAN
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	xor a

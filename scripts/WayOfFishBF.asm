@@ -92,6 +92,12 @@ WayOfFishBFText4:
 	ld a, HS_WAY_OF_FISH_BF_ARROKUDA
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	ld a, HS_WAY_OF_FISH_1F_SISTER1
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_WAY_OF_FISH_1F_SISTER2
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 .party_full
 	jp TextScriptEnd
 	

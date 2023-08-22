@@ -53,7 +53,7 @@ Func_f1f77::
 	ld hl, .MakePaymentText
 	call PrintText
 	ld a, 60
-	ld hl, 3502
+	ld hl, 2002
 .poor_mans_discount
 	ld [wNumSafariBalls], a
 	ld a, h

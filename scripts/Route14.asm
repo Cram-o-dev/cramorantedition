@@ -234,6 +234,10 @@ Route14FlowerGirlText:
 	text_asm
 	CheckEvent EVENT_FLOWER_GIRL
 	jr nz, .got_item
+	call StopAllMusic
+	ld c, BANK(Music_Kincho)
+	ld a, MUSIC_KINCHO
+	call PlayMusic
 	ld hl, LeafStonePreReceiveText
 	call PrintText
 	lb bc, LEAF_STONE, 1
@@ -241,16 +245,42 @@ Route14FlowerGirlText:
 	jr nc, .bag_full
 	ld hl, ReceivedLeafStoneText
 	call PrintText
+	call StopAllMusic
+	ld c, BANK(Music_Kincho)
+	ld a, MUSIC_KINCHO
+	call PlayMusic
 	SetEvent EVENT_FLOWER_GIRL
+	ld a, 4
+	ld [wAudioFadeOutControl], a
+	call StopAllMusic
+.waitLoop
+	ld a, [wAudioFadeOutControl]
+	and a ; is fade-out finished?
+	jr nz, .waitLoop ; if not, check again
+	ld c, BANK(Music_Routes4)
+	ld a, MUSIC_ROUTES4
+	call PlayMusic
 	jr .done
 .bag_full
 	ld hl, LeafStoneNoRoomText
 	call PrintText
 	jr .done
 .got_item
+	call StopAllMusic
+	ld c, BANK(Music_Kincho)
+	ld a, MUSIC_KINCHO
+	call PlayMusic
 	ld hl, LeafStoneExplanationText
 	call PrintText
 .done
+	ld a, 4
+	ld [wAudioFadeOutControl], a
+	call StopAllMusic
+.waitLoopAdded
+	ld a, [wAudioFadeOutControl]
+	and a
+	jr nz, .waitLoopAdded
+	call PlayDefaultMusic
 	jp TextScriptEnd
 
 LeafStonePreReceiveText:

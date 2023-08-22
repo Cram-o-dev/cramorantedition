@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db POISON, FLYING ; type
-	db 90 ; catch rate
+	db 105 ; catch rate
 	db 171 ; base exp
 
 	INCBIN "gfx/pokemon/front/golbat.pic", 0, 1 ; sprite dimensions

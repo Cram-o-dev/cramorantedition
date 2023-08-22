@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db ROCK, GROUND ; type
-	db 120 ; catch rate
+	db 125 ; catch rate
 	db 134 ; base exp
 
 	INCBIN "gfx/pokemon/front/graveler.pic", 0, 1 ; sprite dimensions

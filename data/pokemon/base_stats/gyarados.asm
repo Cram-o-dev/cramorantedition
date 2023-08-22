@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  spc
 
 	db WATER, FLYING ; type
-	db 45 ; catch rate
+	db 70 ; catch rate
 	db 214 ; base exp
 
 	INCBIN "gfx/pokemon/front/gyarados.pic", 0, 1 ; sprite dimensions

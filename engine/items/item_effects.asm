@@ -100,6 +100,7 @@ ItemUsePtrTable:
 	dw ItemUsePPRestore  ; MAX_ETHER
 	dw ItemUsePPRestore  ; ELIXER
 	dw ItemUsePPRestore  ; MAX_ELIXER
+	dw ItemUseCDPlayer   ; CD_PLAYER
 
 ItemUseBall:
 
@@ -220,7 +221,7 @@ ItemUseBall:
 ; The ranges are as follows.
 ; Poké Ball:         [0, 255]
 ; Great Ball:        [0, 200]
-; Ultra/Safari Ball: [0, 150]
+; Ultra/Safari Ball: [0, 120]
 ; Loop until an acceptable number is found.
 
 .loop
@@ -249,8 +250,8 @@ ItemUseBall:
 	cp GREAT_BALL
 	jr z, .checkForAilments
 
-; If it's an Ultra/Safari Ball and Rand1 is greater than 150, try again.
-	ld a, 150
+; If it's an Ultra/Safari Ball and Rand1 is greater than 120, try again.
+	ld a, 120
 	cp b
 	jr c, .loop
 
@@ -291,10 +292,10 @@ ItemUseBall:
 	ldh [hMultiplier], a
 	call Multiply
 
-; Determine BallFactor. It's 8 for Great Balls and 12 for the others.
+; Determine BallFactor. It's 8 for Great Balls and 10 for the others.
 	ld a, [wcf91]
 	cp GREAT_BALL
-	ld a, 12
+	ld a, 10
 	jr nz, .skip1
 	ld a, 8
 
@@ -377,7 +378,7 @@ ItemUseBall:
 ; Determine BallFactor2.
 ; Poké Ball:         BallFactor2 = 255
 ; Great Ball:        BallFactor2 = 200
-; Ultra/Safari Ball: BallFactor2 = 150
+; Ultra/Safari Ball: BallFactor2 = 120
 	ld a, [wcf91]
 	ld b, 255
 	cp POKE_BALL
@@ -385,7 +386,7 @@ ItemUseBall:
 	ld b, 200
 	cp GREAT_BALL
 	jr z, .skip4
-	ld b, 150
+	ld b, 120
 	cp ULTRA_BALL
 	jr z, .skip4
 
@@ -517,8 +518,6 @@ ItemUseBall:
 	ld hl, wEnemyBattleStatus3
 	bit TRANSFORMED, [hl]
 	jr z, .notTransformed
-	ld a, DITTO
-	ld [wEnemyMonSpecies2], a
 	jr .skip6
 
 .notTransformed
@@ -2459,7 +2458,856 @@ PPRestoredText:
 ; for items that can't be used from the Item menu
 UnusableItem:
 	jp ItemUseNotTime
+	
+ItemUseCDPlayer:
+	
+; CD Player can't be used in battle.
+	ld a, [wIsInBattle]
+	and a
+	jr z, .notInBattle
+	jp ItemUseNotTime
+	ret
+.notInBattle
+	ld hl, CDPowerOn
+	call PrintText
+	jr c, .playmusic
+.playmusic
+	ld hl, CDSelectTrack
+	call PrintText
+	ld hl, MusicItemList
+	call LoadItemList
+	ld hl, wItemList
+	ld a, l
+	ld [wListPointer], a
+	ld a, h
+	ld [wListPointer + 1], a
+	xor a
+	ld [wPrintItemPrices], a
+	ld [wMenuItemToSwap], a
+	ld a, SPECIALLISTMENU
+	ld [wListMenuID], a
+	call DisplayListMenuID
+	jr c, .asm_74e60
+	ld hl, CDTextPointers
+	ld a, [wcf91]
+	sub INTRO
+	add a
+	ld d, $0
+	ld e, a
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call PrintText
+	jr .playmusic
+.asm_74e60
+	xor a
+	ld [wListScrollOffset], a
+	ld hl, CDPowerOff
+	call PrintText
+	call PlayDefaultMusic
+	jp TextScriptEnd
 
+MusicItemList:
+	db 52 ; #
+	db INTRO
+	db TITLE_SCREEN
+	db WELCOME
+	db PROF_OAKM
+	db RIVALM
+	db MTRAINER
+	db FTRAINER
+	db ETRAINER
+	db JESSIEJAMES
+	db GIOVANNIM
+	db FOLLOW_ME
+	db TENSION
+	db PALLET_TOWNM
+	db PEWTER_SAFFRON
+	db CERULEAN_FUCHSIA
+	db VERMILIONM
+	db LAVENDERM
+	db CELADONM
+	db CINNABARM
+	db LABO
+	db PKMNCENTER
+	db GYMM
+	db SSANNE
+	db GAMECORNER
+	db TOWER
+	db SILPH
+	db MANSIONM
+	db PLATEAUM
+	db ROUTES1M
+	db ROUTESCOMMON
+	db ROUTESRARE
+	db CAVE1M
+	db CAVE2M
+	db CAVE3M
+	db DIGGY
+	db ROADDY
+	db WILDMON
+	db BEATMON
+	db TRAINERBAT
+	db TRAINERBEAT
+	db GYMBAT
+	db GYMBEAT
+	db CHAMP
+	db HOF
+	db CREDITSM
+	db BIKEY
+	db SURFY
+	db CRAMSURF
+	db EVOM
+	db MONHEAL
+	db JIGGLY
+	db PRINTER
+	db -1 ; end
+
+CDPowerOn:
+	text_far _CDPowerOn
+	text_end
+	
+CDSelectTrack:
+	text_far _CDSelectTrack
+	text_end
+
+CDPowerOff:
+	text_far _CDPowerOff
+	text_end
+
+CDTextPointers:
+	dw IntroMusic
+	dw TitleScreen
+	dw Welcome
+	dw ProfOakM
+	dw RivalM
+	dw MaleTrainer
+	dw FemaleTrainer
+	dw EvilTrainer
+	dw JessieJames
+	dw GiovanniM
+	dw FollowMe
+	dw Tension
+	dw PalletTownM
+	dw PewterSaffron
+	dw CeruleanFuchsia
+	dw VermilionM
+	dw LavenderM
+	dw CeladonM
+	dw CinnabarM
+	dw Labo
+	dw PkmnCenter
+	dw Gymm
+	dw Ssanne
+	dw GameCorner
+	dw Tower
+	dw Silph
+	dw MansionM
+	dw PlateauM
+	dw Route1M
+	dw RouteCommon
+	dw RouteRare
+	dw Cave1M
+	dw Cave2M
+	dw Cave3M
+	dw Diggy
+	dw Roaddy
+	dw WildMon
+	dw BeatMon
+	dw TrainerBat
+	dw TrainerBeat
+	dw GymBat
+	dw GymBeat
+	dw Champ
+	dw Hof
+	dw CreditsM
+	dw Bikey
+	dw Surfy
+	dw CramSurf
+	dw Evom
+	dw MonHeal
+	dw Jiggly
+	dw Printer
+
+IntroMusic:
+	text_asm
+	ld c, BANK(Music_YellowIntro)
+	ld a, MUSIC_YELLOW_INTRO
+	call PlayMusic
+	ld hl, CDText_fudge
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge:
+	text_far _CDNowPlaying
+	text_end
+
+TitleScreen:
+	text_asm
+	ld c, BANK(Music_TitleScreen)
+	ld a, MUSIC_TITLE_SCREEN
+	call PlayMusic
+	ld hl, CDText_fudge1
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge1:
+	text_far _CDNowPlaying
+	text_end
+
+Welcome:
+	text_asm
+	ld c, BANK(Music_Routes2)
+	ld a, MUSIC_ROUTES2
+	call PlayMusic
+	ld hl, CDText_fudge2
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge2:
+	text_far _CDNowPlaying
+	text_end
+
+ProfOakM:
+	text_asm
+	ld c, BANK(Music_MeetProfOak)
+	ld a, MUSIC_MEET_PROF_OAK
+	call PlayMusic
+	ld hl, CDText_fudge3
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge3:
+	text_far _CDNowPlaying
+	text_end
+
+RivalM:
+	text_asm
+	ld c, BANK(Music_MeetRival)
+	ld a, MUSIC_MEET_RIVAL
+	call PlayMusic
+	ld hl, CDText_fudge4
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge4:
+	text_far _CDNowPlaying
+	text_end
+
+MaleTrainer:
+	text_asm
+	ld c, BANK(Music_MeetMaleTrainer)
+	ld a, MUSIC_MEET_MALE_TRAINER
+	call PlayMusic
+	ld hl, CDText_fudge5
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge5:
+	text_far _CDNowPlaying
+	text_end
+
+FemaleTrainer:
+	text_asm
+	ld c, BANK(Music_MeetFemaleTrainer)
+	ld a, MUSIC_MEET_FEMALE_TRAINER
+	call PlayMusic
+	ld hl, CDText_fudge6
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge6:
+	text_far _CDNowPlaying
+	text_end
+
+EvilTrainer:
+	text_asm
+	ld c, BANK(Music_MeetEvilTrainer)
+	ld a, MUSIC_MEET_EVIL_TRAINER
+	call PlayMusic
+	ld hl, CDText_fudge7
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge7:
+	text_far _CDNowPlaying
+	text_end
+
+JessieJames:
+	text_asm
+	ld c, BANK(Music_MeetJessieJames)
+	ld a, MUSIC_MEET_JESSIE_JAMES
+	call PlayMusic
+	ld hl, CDText_fudge8
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge8:
+	text_far _CDNowPlaying
+	text_end
+	
+GiovanniM:
+	text_asm
+	ld c, BANK(Music_YellowUnusedSong)
+	ld a, MUSIC_YELLOW_UNUSED_SONG
+	call PlayMusic
+	ld hl, CDText_fudge9
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge9:
+	text_far _CDNowPlaying
+	text_end
+	
+FollowMe:
+	text_asm
+	ld c, BANK(Music_MuseumGuy)
+	ld a, MUSIC_MUSEUM_GUY
+	call PlayMusic
+	ld hl, CDText_fudge10
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge10:
+	text_far _CDNowPlaying
+	text_end
+	
+Tension:
+	text_asm
+	call StopAllMusic
+	ld c, BANK(Music_Kincho)
+	ld a, MUSIC_KINCHO
+	call PlayMusic
+	ld hl, CDText_fudge11
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge11:
+	text_far _CDNowPlaying
+	text_end
+	
+PalletTownM:
+	text_asm
+	ld c, BANK(Music_PalletTown)
+	ld a, MUSIC_PALLET_TOWN
+	call PlayMusic
+	ld hl, CDText_fudge12
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge12:
+	text_far _CDNowPlaying
+	text_end
+	
+PewterSaffron:
+	text_asm
+	ld c, BANK(Music_Cities1)
+	ld a, MUSIC_CITIES1
+	call PlayMusic
+	ld hl, CDText_fudge13
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge13:
+	text_far _CDNowPlaying
+	text_end
+	
+CeruleanFuchsia:
+	text_asm
+	ld c, BANK(Music_Cities2)
+	ld a, MUSIC_CITIES2
+	call PlayMusic
+	ld hl, CDText_fudge14
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge14:
+	text_far _CDNowPlaying
+	text_end
+	
+VermilionM:
+	text_asm
+	ld c, BANK(Music_Vermilion)
+	ld a, MUSIC_VERMILION
+	call PlayMusic
+	ld hl, CDText_fudge15
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge15:
+	text_far _CDNowPlaying
+	text_end
+	
+LavenderM:
+	text_asm
+	ld c, BANK(Music_Lavender)
+	ld a, MUSIC_LAVENDER
+	call PlayMusic
+	ld hl, CDText_fudge16
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge16:
+	text_far _CDNowPlaying
+	text_end
+	
+CeladonM:
+	text_asm
+	ld c, BANK(Music_Celadon)
+	ld a, MUSIC_CELADON
+	call PlayMusic
+	ld hl, CDText_fudge17
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge17:
+	text_far _CDNowPlaying
+	text_end
+	
+CinnabarM:
+	text_asm
+	ld c, BANK(Music_Cinnabar)
+	ld a, MUSIC_CINNABAR
+	call PlayMusic
+	ld hl, CDText_fudge18
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge18:
+	text_far _CDNowPlaying
+	text_end
+	
+Labo:
+	text_asm
+	ld c, BANK(Music_OaksLab)
+	ld a, MUSIC_OAKS_LAB
+	call PlayMusic
+	ld hl, CDText_fudge19
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge19:
+	text_far _CDNowPlaying
+	text_end
+	
+PkmnCenter:
+	text_asm
+	ld c, BANK(Music_Pokecenter)
+	ld a, MUSIC_POKECENTER
+	call PlayMusic
+	ld hl, CDText_fudge20
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge20:
+	text_far _CDNowPlaying
+	text_end
+	
+Gymm:
+	text_asm
+	ld c, BANK(Music_Gym)
+	ld a, MUSIC_GYM
+	call PlayMusic
+	ld hl, CDText_fudge21
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge21:
+	text_far _CDNowPlaying
+	text_end
+	
+Ssanne:
+	text_asm
+	ld c, BANK(Music_SSAnne)
+	ld a, MUSIC_SS_ANNE
+	call PlayMusic
+	ld hl, CDText_fudge22
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge22:
+	text_far _CDNowPlaying
+	text_end
+	
+GameCorner:
+	text_asm
+	ld c, BANK(Music_GameCorner)
+	ld a, MUSIC_GAME_CORNER
+	call PlayMusic
+	ld hl, CDText_fudge23
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge23:
+	text_far _CDNowPlaying
+	text_end
+	
+Tower:
+	text_asm
+	ld c, BANK(Music_PokemonTower)
+	ld a, MUSIC_POKEMON_TOWER
+	call PlayMusic
+	ld hl, CDText_fudge24
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge24:
+	text_far _CDNowPlaying
+	text_end
+	
+Silph:
+	text_asm
+	ld c, BANK(Music_SilphCo)
+	ld a, MUSIC_SILPH_CO
+	call PlayMusic
+	ld hl, CDText_fudge25
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge25:
+	text_far _CDNowPlaying
+	text_end
+	
+MansionM:
+	text_asm
+	ld c, BANK(Music_CinnabarMansion)
+	ld a, MUSIC_CINNABAR_MANSION
+	call PlayMusic
+	ld hl, CDText_fudge26
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge26:
+	text_far _CDNowPlaying
+	text_end
+	
+PlateauM:
+	text_asm
+	ld c, BANK(Music_IndigoPlateau)
+	ld a, MUSIC_INDIGO_PLATEAU
+	call PlayMusic
+	ld hl, CDText_fudge27
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge27:
+	text_far _CDNowPlaying
+	text_end
+	
+Route1M:
+	text_asm
+	ld c, BANK(Music_Routes1)
+	ld a, MUSIC_ROUTES1
+	call PlayMusic
+	ld hl, CDText_fudge28
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge28:
+	text_far _CDNowPlaying
+	text_end
+	
+RouteCommon:
+	text_asm
+	ld c, BANK(Music_Routes3)
+	ld a, MUSIC_ROUTES3
+	call PlayMusic
+	ld hl, CDText_fudge29
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge29:
+	text_far _CDNowPlaying
+	text_end
+	
+RouteRare:
+	text_asm
+	ld c, BANK(Music_Routes4)
+	ld a, MUSIC_ROUTES4
+	call PlayMusic
+	ld hl, CDText_fudge30
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge30:
+	text_far _CDNowPlaying
+	text_end
+
+Cave1M:
+	text_asm
+	ld c, BANK(Music_Dungeon3)
+	ld a, MUSIC_DUNGEON3
+	call PlayMusic
+	ld hl, CDText_fudge31
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge31:
+	text_far _CDNowPlaying
+	text_end
+	
+Cave2M:
+	text_asm
+	ld c, BANK(Music_Dungeon2)
+	ld a, MUSIC_DUNGEON2
+	call PlayMusic
+	ld hl, CDText_fudge32
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge32:
+	text_far _CDNowPlaying
+	text_end
+	
+Cave3M:
+	text_asm
+	ld c, BANK(Music_Dungeon1)
+	ld a, MUSIC_DUNGEON1
+	call PlayMusic
+	ld hl, CDText_fudge33
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge33:
+	text_far _CDNowPlaying
+	text_end
+	
+Diggy:
+	text_asm
+	ld c, BANK(Music_Digda)
+	ld a, MUSIC_DIGDA
+	call PlayMusic
+	ld hl, CDText_fudge34
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge34:
+	text_far _CDNowPlaying
+	text_end
+	
+Roaddy:
+	text_asm
+	call StopAllMusic; I don't know why adding this is necessary for the music to work but I won't complain.
+	ld c, BANK(Music_VictoryRoad)
+	ld a, MUSIC_VICTORY_ROAD
+	call PlayMusic
+	ld hl, CDText_fudge35
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge35:
+	text_far _CDNowPlaying
+	text_end
+	
+WildMon:
+	text_asm
+	ld c, BANK(Music_WildBattle)
+	ld a, MUSIC_WILD_BATTLE
+	call PlayMusic
+	ld hl, CDText_fudge36
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge36:
+	text_far _CDNowPlaying
+	text_end
+	
+BeatMon:
+	text_asm
+	ld c, BANK(Music_DefeatedWildMon)
+	ld a, MUSIC_DEFEATED_WILD_MON
+	call PlayMusic
+	ld hl, CDText_fudge37
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge37:
+	text_far _CDNowPlaying
+	text_end
+	
+TrainerBat:
+	text_asm
+	ld c, BANK(Music_TrainerBattle)
+	ld a, MUSIC_TRAINER_BATTLE
+	call PlayMusic
+	ld hl, CDText_fudge38
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge38:
+	text_far _CDNowPlaying
+	text_end
+	
+TrainerBeat:
+	text_asm
+	ld c, BANK(Music_DefeatedTrainer)
+	ld a, MUSIC_DEFEATED_TRAINER
+	call PlayMusic
+	ld hl, CDText_fudge39
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge39:
+	text_far _CDNowPlaying
+	text_end
+	
+GymBat:
+	text_asm
+	ld c, BANK(Music_GymLeaderBattle)
+	ld a, MUSIC_GYM_LEADER_BATTLE
+	call PlayMusic
+	ld hl, CDText_fudge40
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge40:
+	text_far _CDNowPlaying
+	text_end
+	
+GymBeat:
+	text_asm
+	ld c, BANK(Music_DefeatedGymLeader)
+	ld a, MUSIC_DEFEATED_GYM_LEADER
+	call PlayMusic
+	ld hl, CDText_fudge41
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge41:
+	text_far _CDNowPlaying
+	text_end
+	
+Champ:
+	text_asm
+	ld c, BANK(Music_FinalBattle)
+	ld a, MUSIC_FINAL_BATTLE
+	call PlayMusic
+	ld hl, CDText_fudge42
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge42:
+	text_far _CDNowPlaying
+	text_end
+	
+Hof:
+	text_asm
+	ld c, BANK(Music_HallOfFame)
+	ld a, MUSIC_HALL_OF_FAME
+	call PlayMusic
+	ld hl, CDText_fudge43
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge43:
+	text_far _CDNowPlaying
+	text_end
+	
+CreditsM:
+	text_asm
+	ld c, BANK(Music_Credits)
+	ld a, MUSIC_CREDITS
+	call PlayMusic
+	ld hl, CDText_fudge44
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge44:
+	text_far _CDNowPlaying
+	text_end
+	
+Bikey:
+	text_asm
+	ld c, BANK(Music_BikeRiding)
+	ld a, MUSIC_BIKE_RIDING
+	call PlayMusic
+	ld hl, CDText_fudge45
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge45:
+	text_far _CDNowPlaying
+	text_end
+	
+Surfy:
+	text_asm
+	ld c, BANK(Music_Surfing)
+	ld a, MUSIC_SURFING
+	call PlayMusic
+	ld hl, CDText_fudge46
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge46:
+	text_far _CDNowPlaying
+	text_end
+	
+CramSurf:
+	text_asm
+	ld c, BANK(Music_SurfingPikachu)
+	ld a, MUSIC_SURFING_PIKACHU
+	call PlayMusic
+	ld hl, CDText_fudge47
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge47:
+	text_far _CDNowPlaying
+	text_end
+	
+Evom:
+	text_asm
+	ld c, BANK(Music_SafariZone)
+	ld a, MUSIC_SAFARI_ZONE
+	call PlayMusic
+	ld hl, CDText_fudge48
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge48:
+	text_far _CDNowPlaying
+	text_end
+	
+MonHeal:
+	text_asm
+	ld c, BANK(Music_PkmnHealed)
+	ld a, MUSIC_PKMN_HEALED
+	call PlayMusic
+	ld hl, CDText_fudge49
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge49:
+	text_far _CDNowPlaying
+	text_end
+	
+Jiggly:
+	text_asm
+	ld c, BANK(Music_JigglypuffSong)
+	ld a, MUSIC_JIGGLYPUFF_SONG
+	call PlayMusic
+	ld hl, CDText_fudge50
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge50:
+	text_far _CDNowPlaying
+	text_end
+	
+Printer:
+	text_asm
+	ld c, BANK(Music_GBPrinter)
+	ld a, MUSIC_GB_PRINTER
+	call PlayMusic
+	ld hl, CDText_fudge51
+	call PrintText
+	jp TextScriptEnd
+	
+CDText_fudge51:
+	text_far _CDNowPlaying
+	text_end
+	
 ItemUseTMHM:
 	ld a, [wIsInBattle]
 	and a
@@ -2565,9 +3413,9 @@ ItemUseTMHM:
 	callfar IsThisPartymonStarterPikachu_Party
 	jr nc, .notTeachingThunderboltOrThunderToPikachu
 	ld a, [wcf91]
-	cp TM_THUNDERBOLT ; are we teaching thunderbolt to the player pikachu?
+	cp TM_BUBBLEBEAM ; are we teaching bubblebeam to the player cramorant?
 	jr z, .teachingThunderboltOrThunderToPlayerPikachu
-	cp TM_THUNDER ; are we teaching thunder then?
+	cp HM_SURF ; are we teaching surf then?
 	jr nz, .notTeachingThunderboltOrThunderToPikachu
 .teachingThunderboltOrThunderToPlayerPikachu
 	ld a, $5

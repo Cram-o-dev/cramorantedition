@@ -764,6 +764,7 @@ FaintEnemyPokemon:
 ; was congruent to 0 modulo 256.
 	xor a
 	ld [wPlayerBideAccumulatedDamage], a
+	ld [wPlayerBideAccumulatedDamage + 1], a
 	ld hl, wEnemyStatsToDouble ; clear enemy statuses
 	ld [hli], a
 	ld [hli], a
@@ -4068,17 +4069,20 @@ PrintMoveFailureText:
 	ret nz
 
 	; if you get here, the mon used jump kick or hi jump kick and missed
-	ld hl, wDamage ; since the move missed, wDamage will always contain 0 at this point.
+	;ld hl, wDamage ; since the move missed, wDamage will always contain 0 at this point.
 	                ; Thus, recoil damage will always be equal to 1
 	                ; even if it was intended to be potential damage/8.
+					
+	ld hl, wDamageIntention ; PureRGBnote: FIXED: this address now stores the damage that would have been done if it didn't miss
 	ld a, [hli]
 	ld b, [hl]
 	srl a
 	rr b
-	srl a
+	srl a ; PureRGBnote: Made it recoil 1/8 of intended damage. Thanks Vortyne!
 	rr b
 	srl a
 	rr b
+	ld hl, wDamage+1
 	ld [hl], b
 	dec hl
 	ld [hli], a
@@ -4857,12 +4861,16 @@ CriticalHitTest:
 	jr nc, .SkipHighCritical
 	ld b, $ff
 .SkipHighCritical
+	ld a, b
+	inc a ; optimization of "cp $ff"
+	jr z, .guaranteedCriticalHit
 	call BattleRandom            ; generates a random value, in "a"
 	rlc a
 	rlc a
 	rlc a
 	cp b                         ; check a against calculated crit rate
-	ret nc                       ; no critical hit if no borrow
+	ret nc                       ; no critical hit if no borrow. Fixed?
+.guaranteedCriticalHit
 	ld a, $1
 	ld [wCriticalHitOrOHKO], a   ; set critical hit flag
 	ret
@@ -5475,6 +5483,21 @@ AdjustDamageForMoveType:
 	ld b, a
 	ld a, [hl] ; a = damage multiplier
 	ldh [hMultiplier], a
+	and a  ; cp NO_EFFECT
+	jr z, .gotMultiplier
+	cp NOT_VERY_EFFECTIVE
+	jr nz, .nothalf
+	ld a, [wDamageMultipliers]
+	and $7f
+	srl a
+	jr .gotMultiplier
+.nothalf
+	cp SUPER_EFFECTIVE
+	jr nz, .gotMultiplier
+	ld a, [wDamageMultipliers]
+	and $7f
+	sla a
+.gotMultiplier
 	add b
 	ld [wDamageMultipliers], a
 	xor a
@@ -5588,8 +5611,7 @@ MoveHitTest:
 	ret z ; Swift never misses (this was fixed from the Japanese versions)
 	call CheckTargetSubstitute ; substitute check (note that this overwrites a)
 	jr z, .checkForDigOrFlyStatus
-; The fix for Swift broke this code. It's supposed to prevent HP draining moves from working on Substitutes.
-; Since CheckTargetSubstitute overwrites a with either $00 or $01, it never works.
+	ld a, [de]
 	cp DRAIN_HP_EFFECT
 	jp z, .moveMissed
 	cp DREAM_EATER_EFFECT
@@ -5659,11 +5681,25 @@ MoveHitTest:
 .doAccuracyCheck
 ; if the random number generated is greater than or equal to the scaled accuracy, the move misses
 ; note that this means that even the highest accuracy is still just a 255/256 chance, not 100%
+; The following snippet is taken from Pokemon Crystal, it fixes the above bug.
+	ld a, b
+	cp $FF ; Is the value $FF?
+	ret z ; If so, we need not calculate, just so we can fix this bug. Hopefully 1/256 move glitch is fixed?
+	
 	call BattleRandom
 	cp b
 	jr nc, .moveMissed
 	ret
 .moveMissed
+	;;;;;;;;;;;;;;;;;;;;
+	;shinpokerednote: FIXED: if a move misses, store the damage it threatened into wDamageIntention.
+	;this is so the Jump Kick effect works correctly
+	ld hl, wDamageIntention
+	ld a, [wDamage]
+	ld [hli], a
+	ld a, [wDamage + 1]
+	ld [hl], a
+;;;;;;;;;;;;;;;;;;;;
 	xor a
 	ld hl, wDamage ; zero the damage
 	ld [hli], a

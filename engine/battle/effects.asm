@@ -256,7 +256,12 @@ FreezeBurnParalyzeEffect:
 	cp FREEZE_SIDE_EFFECT
 	jr z, .freeze1
 ; .paralyze1
-	jr nz, .asm_3f2c7
+	ld a, 1 << PAR
+	ld [wEnemyMonStatus], a
+	call QuarterSpeedDueToParalysis ; quarter speed of affected mon
+	ld a, ANIM_C7
+	call PlayBattleAnimation
+	jp PrintMayNotAttackText ; print paralysis text
 .burn1
 	ld a, 1 << BRN
 	ld [wEnemyMonStatus], a

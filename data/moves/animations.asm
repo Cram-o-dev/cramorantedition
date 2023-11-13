@@ -389,9 +389,9 @@ TackleAnim:
 
 BodySlamAnim:
 	battle_anim LEECH_SEED, SE_MOVE_MON_HORIZONTALLY
-	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
-	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+	battle_anim NO_MOVE, SE_DARK_SCREEN_PALETTE
 	battle_anim NO_MOVE, SE_RESET_MON_POSITION
+	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
 WrapAnim:
@@ -444,8 +444,7 @@ PinMissileAnim:
 
 LeerAnim:
 	battle_anim LEECH_SEED, SE_DARK_SCREEN_PALETTE
-	battle_anim LEER, SE_DARK_SCREEN_FLASH
-	battle_anim LEER, SE_DARK_SCREEN_FLASH
+	battle_anim LEER, SE_DELAY_ANIMATION_10
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
@@ -481,9 +480,8 @@ SonicBoomAnim:
 	db -1 ; end
 
 DisableAnim:
-	battle_anim LEECH_SEED, SE_DARK_SCREEN_PALETTE
-	battle_anim LEER, SE_DARK_SCREEN_FLASH
-	battle_anim LEER, SE_DARK_SCREEN_FLASH
+	battle_anim LEER, SE_LIGHT_SCREEN_PALETTE
+	battle_anim NO_MOVE, SE_FLASH_SCREEN_LONG
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
@@ -990,8 +988,7 @@ HiJumpKickAnim:
 
 GlareAnim:
 	battle_anim LEECH_SEED, SE_DARK_SCREEN_PALETTE
-	battle_anim GLARE, SE_DARK_SCREEN_FLASH
-	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+	battle_anim GLARE, SE_SHAKE_SCREEN
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 
@@ -1054,8 +1051,9 @@ SporeAnim:
 
 FlashAnim:
 	battle_anim LEECH_SEED, SE_LIGHT_SCREEN_PALETTE
-	battle_anim GLARE, SE_DARK_SCREEN_FLASH
-	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
+	battle_anim GLARE, SE_LIGHT_SCREEN_PALETTE
+	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
+	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
 	battle_anim NO_MOVE, SE_RESET_SCREEN_PALETTE
 	db -1 ; end
 

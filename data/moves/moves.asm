@@ -139,7 +139,7 @@ Moves:
 	move FIRE_BLAST,   BURN_SIDE_EFFECT2,          120, FIRE,          85,  5
 	move WATERFALL,    NO_ADDITIONAL_EFFECT,        80, WATER,        100, 15
 	move CLAMP,        TWO_TO_FIVE_ATTACKS_EFFECT,  35, WATER,         75, 10
-	move SWIFT,        SWIFT_EFFECT,                60, NORMAL,       100, 20
+	move SWIFT,        SWIFT_EFFECT,                65, NORMAL,       100, 20
 	move SKULL_BASH,   CHARGE_EFFECT,              100, NORMAL,       100, 15
 	move SPIKE_CANNON, TWO_TO_FIVE_ATTACKS_EFFECT,  20, NORMAL,       100, 15
 	move CONSTRICT,    SPEED_DOWN_SIDE_EFFECT,      10, NORMAL,       100, 35

@@ -14,12 +14,15 @@ SpecialTrainerMoves:
 	db 0
 
 	db BROCK, 1
+	db 1, 4, ROCK_THROW
 	db 2, 3, BIND
 	db 2, 4, BIDE
+	db 3, 4, ROCK_THROW
 	db 0
 
 	db MISTY, 1
-	db 2, 4, BUBBLEBEAM
+	db 2, 4, BUBBLE
+	db 3, 1, BUBBLEBEAM
 	db 0
 
 	db LT_SURGE, 1
@@ -113,8 +116,11 @@ SpecialTrainerMoves:
 
 	db LANCE, 1
 	db 1, 1, DRAGON_RAGE
+	db 1, 2, DRAGONBREATH
+	db 1, 3, WATERFALL
+	db 1, 4, FIRE_BLAST
 	db 2, 1, THUNDER_WAVE
-	db 2, 3, THUNDERBOLT
+	db 2, 3, AURORA_BEAM
 	db 3, 1, BUBBLEBEAM
 	db 3, 2, WRAP
 	db 3, 3, ICE_BEAM
@@ -125,6 +131,48 @@ SpecialTrainerMoves:
 	db 5, 2, FIRE_BLAST
 	db 5, 3, THUNDER
 	db 0
+	
+	db RIVAL2, 5
+	db 5, 1, LIGHT_SCREEN
+	db 5, 2, AURORA_BEAM
+	db 5, 3, SWIFT
+	db 5, 4, WATERFALL
+	db 0
+
+	db RIVAL2, 6
+	db 5, 1, LIGHT_SCREEN
+	db 5, 2, AURORA_BEAM
+	db 5, 3, SWIFT
+	db 5, 4, WATERFALL
+	db 0
+
+	db RIVAL2, 7
+	db 5, 1, LIGHT_SCREEN
+	db 5, 2, AURORA_BEAM
+	db 5, 3, SWIFT
+	db 5, 4, WATERFALL
+	db 0
+	
+	db RIVAL2, 8
+	db 6, 1, SWIFT
+	db 6, 2, WATERFALL
+	db 6, 3, REFLECT
+	db 6, 4, ICE_BEAM
+	db 0
+
+	db RIVAL2, 9
+	db 6, 1, SWIFT
+	db 6, 2, WATERFALL
+	db 6, 3, REFLECT
+	db 6, 4, ICE_BEAM
+	db 0
+
+	db RIVAL2, 10
+	db 6, 1, SWIFT
+	db 6, 2, WATERFALL
+	db 6, 3, REFLECT
+	db 6, 4, ICE_BEAM
+	db 0
 
 	db RIVAL3, 1
 	db 1, 3, EARTHQUAKE
@@ -133,7 +181,10 @@ SpecialTrainerMoves:
 	db 4, 1, ICE_BEAM
 	db 5, 1, CONFUSE_RAY
 	db 5, 4, FIRE_SPIN
-	db 6, 3, QUICK_ATTACK
+	db 6, 1, SWIFT
+	db 6, 2, SURF
+	db 6, 3, BARRIER
+	db 6, 4, ICE_BEAM
 	db 0
 
 	db RIVAL3, 2
@@ -142,8 +193,10 @@ SpecialTrainerMoves:
 	db 3, 4, LEECH_SEED
 	db 4, 1, THUNDERBOLT
 	db 5, 1, ICE_BEAM
-	db 6, 2, REFLECT
-	db 6, 3, QUICK_ATTACK
+	db 6, 1, SWIFT
+	db 6, 2, SURF
+	db 6, 3, BARRIER
+	db 6, 4, ICE_BEAM
 	db 0
 
 	db RIVAL3, 3
@@ -153,8 +206,10 @@ SpecialTrainerMoves:
 	db 4, 1, CONFUSE_RAY
 	db 4, 4, FIRE_SPIN
 	db 5, 1, THUNDERBOLT
-	db 6, 1, AURORA_BEAM
-	db 6, 3, QUICK_ATTACK
+	db 6, 1, SWIFT
+	db 6, 2, SURF
+	db 6, 3, BARRIER
+	db 6, 4, ICE_BEAM
 	db 0
 
 	db -1 ; end

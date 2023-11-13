@@ -8,8 +8,8 @@ PokemonTower6FWildMons:
 	db 23, CUBONE
 	db 25, CUBONE
 	db 29, HAUNTER
-	db 25, MAROWAK
-	db 32, MAROWAK
+	db 27, JYNX
+	db 32, JYNX
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

@@ -8,8 +8,8 @@ PokemonTower7FWildMons:
 	db 26, CUBONE
 	db 28, CUBONE
 	db 27, HAUNTER
-	db 26, JYNX
-	db 30, JYNX
+	db 27, JYNX
+	db 36, GENGAR
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

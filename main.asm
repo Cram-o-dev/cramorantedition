@@ -74,6 +74,7 @@ INCLUDE "engine/menus/party_menu.asm"
 INCLUDE "gfx/player.asm"
 INCLUDE "engine/menus/start_sub_menus.asm"
 INCLUDE "engine/items/tms.asm"
+INCLUDE "engine/gbc/gbc_cpu_speed.asm"
 
 
 SECTION "Battle Engine 1", ROMX
@@ -160,19 +161,19 @@ SECTION "Battle Engine 6", ROMX
 INCLUDE "data/moves/moves.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
-INCLUDE "engine/pokemon/evos_moves.asm"
 
 
 SECTION "Battle Core", ROMX
 
 INCLUDE "data/pokemon/cries.asm"
-INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
 INCLUDE "engine/battle/core.asm"
 INCLUDE "engine/battle/effects.asm"
 
 
 SECTION "bank10", ROMX
 
+INCLUDE "engine/pokemon/evos_moves.asm"
+INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
 INCLUDE "gfx/trade.asm"
 INCLUDE "engine/menus/pokedex.asm"
 INCLUDE "engine/overworld/emotion_bubbles.asm"

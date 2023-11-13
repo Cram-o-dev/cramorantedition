@@ -1,4 +1,5 @@
 IsPlayerTalkingToPikachu::
+	callfar GBCSetCPU1xSpeed
 	ld a, [wd436]
 	and a
 	ret z

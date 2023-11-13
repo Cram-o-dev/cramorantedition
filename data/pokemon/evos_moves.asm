@@ -1667,8 +1667,8 @@ PikachuEvosMoves:
 	db 25, BUBBLEBEAM
 	db 28, AMNESIA
 	db 34, DRILL_PECK
-	db 40, WATERFALL
-	db 46, THRASH
+	db 40, SURF
+	db 46, AMNESIA
 	db 53, HYDRO_PUMP
 	db 62, SKY_ATTACK
 	db 70, GULP_MISSILE
@@ -2330,10 +2330,10 @@ DewgongEvosMoves:
 	db 39, REST
 	db 42, TAKE_DOWN
 	db 47, ICE_BEAM
-	db 51, HORN_DRILL
+	db 51, HYDRO_PUMP
 	db 54, BLIZZARD
-	db 60, HYDRO_PUMP
-	db 64, PSYWAVE
+	db 57, HORN_DRILL
+	db 61, PSYWAVE
 	db 0
 
 MissingNo79EvosMoves:
@@ -2493,6 +2493,7 @@ SnorlaxEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 31, REST
 	db 35, BODY_SLAM
 	db 38, HARDEN
 	db 42, DOUBLE_EDGE
@@ -2653,8 +2654,8 @@ WeezingEvosMoves:
 	db 30, BODY_SLAM
 	db 36, HAZE
 	db 42, EGG_BOMB
-	db 45, EXPLOSION
-	db 46, TOXIC
+	db 45, TOXIC
+	db 46, EXPLOSION
 	db 49, THUNDERBOLT
 	db 52, ROCK_SLIDE
 	db 56, HYPER_BEAM

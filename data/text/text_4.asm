@@ -54,3 +54,17 @@ _StoppedEvolvingText::
 	text_start
 	line "stopped evolving!"
 	prompt
+
+_SortItemsText::
+	text "Would you like to"
+	next "sort items?"
+	done
+
+_SortComplete::
+	text "Sorting complete."
+	prompt
+
+_NothingToSort::
+	text "Items have already"
+	next "been sorted."
+	prompt

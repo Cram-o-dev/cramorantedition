@@ -321,6 +321,11 @@ _TimesUpText::
 
 	para "Time's up!"
 	prompt
+	
+_SafariZoneRetireText::
+	text "Are you sure"
+	line "you're done?"
+	done
 
 _GameOverText::
 	text "PA: Your SAFARI"
@@ -1260,8 +1265,8 @@ _GainedText::
 	text_end
 
 _WithExpAllText::
-	text "with EXP.ALL,"
-	cont "@"
+	text "Party gained"
+	next "@"
 	text_end
 
 _BoostedText::

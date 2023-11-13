@@ -27,7 +27,11 @@ _HM03ExplanationText::
 	para "#MON will be"
 	line "able to ferry you"
 	cont "across water!"
-
+	
+	para "You can even SURF"
+	line "faster by holding"
+	cont "the B button!"
+	
 	para "And, this HM isn't"
 	line "disposable! You"
 	cont "can use it over"

@@ -169,7 +169,9 @@ _Route13Text12::
 
 	para "Use SELECT to"
 	line "switch items in"
-	cont "the ITEM window!"
+	cont "the ITEM window,"
+	cont "and use START to"
+	cont "organize them!"
 	done
 
 _Route13Text13::

@@ -42,6 +42,11 @@ _BikeShopText_1d82f::
 	para "You can take it"
 	line "on CYCLING ROAD"
 	cont "and in caves!"
+	
+	para "You can also shift"
+	line "into high gear by"
+	cont "holding the B"
+	cont "button!"
 	done
 
 _BikeShopText_1d834::

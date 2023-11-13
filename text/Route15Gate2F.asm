@@ -3,12 +3,7 @@ _Route15GateUpstairsText_4968c::
 	line "EXP points to all"
 	cont "the #MON with"
 	cont "you, even if they"
-	cont "don't fight."
-
-	para "It does, however,"
-	line "reduce the amount"
-	cont "of EXP for each"
-	cont "#MON."
+	cont "don't fight!"
 
 	para "If you don't need"
 	line "it, you should "

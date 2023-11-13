@@ -33,3 +33,13 @@ _Route4Text6::
 	line "MT.MOON -"
 	cont "CERULEAN CITY"
 	done
+
+_Route4Text7::
+	text "TRAINER TIPS"
+
+	para "During a battle"
+	line "with any wild"
+	cont "#MON, use B to"
+	cont "instantly move"
+	cont "to the RUN option!"
+	done

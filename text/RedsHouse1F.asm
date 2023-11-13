@@ -3,10 +3,19 @@ _MomWakeUpText::
 	line "All boys leave"
 	cont "home someday."
 	cont "It said so on TV."
+	
+	para "Hey, those shoes"
+	line "look good on you,"
+	cont "<PLAYER>!"
+	
+	para "I think you can"
+	line "run in them by"
+	cont "holding down the"
+	cont "B button!"
 
-	para "PROF.OAK, next"
-	line "door, is looking"
-	cont "for you."
+	para "Oh yes, PROF.OAK,"
+	line "next door, is"
+	cont "looking for you."
 	done
 
 _MomHealText1::

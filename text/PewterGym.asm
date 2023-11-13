@@ -182,6 +182,6 @@ _PewterGymGuyText::
 	para "Water attacks are"
 	line "super effective"
 	cont "against BROCK's"
-	cont "ground and rock"
-	cont "type #MON."
+	cont "rock and ground"
+	cont "type #MON!"
 	done

@@ -1,6 +1,6 @@
 	db DEX_BARASKEWDA ; pokedex id
 
-	db  75, 140,  90,  150, 90
+	db  75, 140,  90,  140, 90
 	;   hp  atk  def  spd  spc
 
 	db WATER, WATER ; type

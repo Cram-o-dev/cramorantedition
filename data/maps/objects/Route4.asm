@@ -10,6 +10,7 @@ Route4_Object:
 	bg_event 12,  5, 4 ; PokeCenterSignText
 	bg_event 17,  7, 5 ; Route4Text5
 	bg_event 27,  7, 6 ; Route4Text6
+	bg_event  9,  4, 7 ; Route4Text7
 
 	def_object_events
 	object_event  9,  8, SPRITE_COOLTRAINER_F, WALK, ANY_DIR, 1 ; person

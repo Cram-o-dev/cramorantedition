@@ -12,11 +12,13 @@ A ROM hack of Pokemon Yellow which replaces Pikachu with Cramorant! Many other m
 
 ## Additional Features
 
+- Hold B at any time in the overworld to move faster while walking, surfing, or biking!
 - Extra Pokemon! Cramorant and 2 other Pokemon have been added which brings the total amount to 154!
 - Extra battles! A few additional trainers have been added.
 - Greater trainer Pokemon variety. Trainers now use a bigger selection of Pokemon. Many Pokemon never that never got a chance to shine in battle will get their moment!
 - Greater wild Pokemon variety. Many more Pokemon can now be found in the wild all across the region or recieved through other means. Many rare Pokemon can now be found in several locations, and Pokemon that couldn't previously be found in the wild are waiting to be encountered!
 - All 151+ Pokemon are obtainable in-game without the need for trading or glitches, and can be infinitely encountered! Pikachu is now a regular Pokemon that can be found in Viridian Forest and the legendary birds re-appear each time you beat the Pokemon League. Pokemon that evolved through trading can now be obtained a different way, and new Pokemon are availiable as Game Corner Prizes.
+- Some move animations which involved rapid flashing have been toned down for those with photosensitivity.
 - New maps added! A few minor locations have been added for new events. Many maps have also recieved some touch-ups to look nicer, and a few have been altered to be less claustrophobic (like Cerulean and Fuschia City). Many of the CUT trees have been removed. A couple of new buildings also open up after you become champion!
 - Tons of additional hidden items! Search suspicious places for them.
 - Many unused, rare, and hard to obtain items have been added and are more plentiful than before. If you ever wanted to use Safari Balls outside the Safari Zone, now you can! Speaking of which...
@@ -29,6 +31,8 @@ A ROM hack of Pokemon Yellow which replaces Pikachu with Cramorant! Many other m
 - Vermilion Gym puzzle is no longer frustrating and a time waster.
 - Amount of Pokemon required to show to Oak's Aides has been heavily reduced. Get the Flash HM much earlier!
 - Some beta and unused content included! Unused music (like Giovanni's theme) as well as unused graphics and text have been added. A few music tracks have also been replaced by songs adapted from the Generation II games.
+- The Item Bag can be sorted by pressing Start while opened.
+- Icon added to HUD in battle which indicates any previously captured Pokemon!
 - Slow text speed has been removed and replaced with Normal text speed. Fast text is on by default, and an Instant text speed option has been added. Use this text speed to quickly go through dialogue and even skip some sound effects. Perfect for those with limited time!
 - Various bug fixes. Many Generation I bugs were fixed in Yellow, while Cramorant Edition fixes a few more minor errors and quirks. Any bugs which provided a negative experience for the player have been patched.
 - Super Game Boy compatible! Comes with its own set of color palettes and its own border!
@@ -41,15 +45,17 @@ A ROM hack of Pokemon Yellow which replaces Pikachu with Cramorant! Many other m
 - The left and right d-pad can now be used while shopping to decrease/increase the amount of items by 10. (Included from Pokemon PureRGB.)
 - The low health alarm now only beeps four times before stopping. No need to annoy the player with constant ringing. (Included from Pokemon PureRGB.)
 - Pokemon no longer waste turns after waking up from sleep and can attack that same turn! (Tutorial by Xillicis.)
-- Player now turns to face trainers when spotted by them like in other Pokemon games. (Tutorial by JustRegularLuna).
+- Player now turns to face trainers when spotted by them like in other Pokemon games. (Tutorial by JustRegularLuna.)
 - A move deleter and re-learner have been added which allow you to delete any Pokemon move (including HMs) and learn any moves they've known previously! (Tutorial by PlagueVonKarma.)
+- Improved Exp. All which shares more exp between remaining Pokemon and gives less text messages. (Tutorial by suloku.)
+- "Retire" option added to Safari Zone, allowing players to instantly quit Safari game. (Included from pokered-speedchoice.)
+- Press B in wild battles to move to the Run option. (Tutorial by devolov.)
 
 ## Features not present.
 - No physical/special split.
 - No seperate Spc. Atk or Spc. Def stats.
 - No additional typings.
-- No typing changes.
-- No movepool changes.
+- No Pokemon typing changes.
 - No base stat changes.
 - No sprite changes to existing Pokemon (Although a few misaligned back sprites have been corrected.)
 

@@ -54,7 +54,7 @@ GaryScript2:
 	xor a
 	ld [wJoyIgnore], a
 	ld hl, wOptions
-	res 7, [hl]  ; Turn on battle animations to make the battle feel more epic.
+	;res 7, [hl]  ; Turn on battle animations to make the battle feel more epic.
 	ld a, $1
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID

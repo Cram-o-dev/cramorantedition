@@ -1,5 +1,8 @@
 SaffronMart_Script:
 	jp EnableAutoTextBoxDrawing
+	
+SaffronCashierText::
+	script_mart GREAT_BALL, HYPER_POTION, MAX_REPEL, ESCAPE_ROPE, FULL_HEAL, REVIVE
 
 SaffronMart_TextPointers:
 	dw SaffronCashierText

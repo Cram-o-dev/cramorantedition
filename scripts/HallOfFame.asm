@@ -20,6 +20,7 @@ HallofFameRoomScript3:
 	ret
 
 HallofFameRoomScript2:
+	callfar GBCSetCPU1xSpeed
 	call Delay3
 	ld a, [wLetterPrintingDelayFlags]
 	push af
@@ -107,6 +108,12 @@ HallofFameRoomScript1:
 	ld a, HS_CELADON_CITY_TM_GUY
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	ld a, HS_CELADON_MANSION_2F_ME1
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_CELADON_MANSION_2F_ME2
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	ld a, HS_ARTICUNO
 	ld [wMissableObjectIndex], a
 	predef ShowObject
@@ -129,6 +136,9 @@ HallofFameRoomScript1:
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 	ld a, HS_SAFFRON_SHADY_HOUSE_GUY4
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	ld a, HS_REDS_HOUSE_2F_CRAM_PLUSH
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 	ld a, $2

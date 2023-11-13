@@ -1,6 +1,9 @@
 CeladonMart4F_Script:
 	jp EnableAutoTextBoxDrawing
 
+CeladonMart4ClerkText::
+	script_mart POKE_DOLL, FIRE_STONE, THUNDER_STONE, WATER_STONE, LEAF_STONE, MOON_STONE, LINK_CABLE
+	
 CeladonMart4F_TextPointers:
 	dw CeladonMart4ClerkText
 	dw CeladonMart4Text2

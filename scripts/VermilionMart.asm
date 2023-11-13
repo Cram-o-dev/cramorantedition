@@ -1,5 +1,8 @@
 VermilionMart_Script:
 	jp EnableAutoTextBoxDrawing
+	
+VermilionCashierText::
+	script_mart POKE_BALL, SUPER_POTION, ICE_HEAL, AWAKENING, PARLYZ_HEAL, REPEL
 
 VermilionMart_TextPointers:
 	dw VermilionCashierText

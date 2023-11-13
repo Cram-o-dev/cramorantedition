@@ -9,7 +9,7 @@ Route15GateUpstairsText1:
 	text_asm
 	CheckEvent EVENT_GOT_EXP_ALL
 	jr nz, .got_item
-	ld a, 25
+	ld a, 30
 	ldh [hOaksAideRequirement], a
 	ld a, EXP_ALL
 	ldh [hOaksAideRewardItem], a

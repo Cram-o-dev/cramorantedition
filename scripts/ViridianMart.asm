@@ -19,7 +19,7 @@ ViridianMartScript_1d47d:
 	ld a, h
 	ld [wMapTextPtr+1], a
 	ret
-
+	
 ViridianMart_ScriptPointers:
 	dw ViridianMartScript0
 	dw ViridianMartScript1
@@ -72,6 +72,9 @@ ViridianMartScript2:
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 	ret
+	
+ViridianCashierText::
+	script_mart POKE_BALL, POTION, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL
 
 ViridianMart_TextPointers:
 	dw ViridianMartText1

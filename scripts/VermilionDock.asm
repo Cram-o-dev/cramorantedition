@@ -43,6 +43,7 @@ VermilionDock_Script:
 
 VermilionDock_1db9b:
 	SetEventForceReuseHL EVENT_SS_ANNE_LEFT
+	callfar GBCSetCPU1xSpeed
 	ld a, $ff
 	ld [wJoyIgnore], a
 	call StopAllMusic
@@ -122,6 +123,7 @@ VermilionDock_1db9b:
 	dec hl
 	ld [hl], c
 	call LoadPlayerSpriteGraphics
+	callfar GBCSetCPU2xSpeed
 	ld hl, wNumberOfWarps
 	dec [hl]
 	ret

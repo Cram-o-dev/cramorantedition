@@ -13,6 +13,9 @@ IndigoPlateauLobby_Script:
 	; Elite 4 events
 	ResetEventRange INDIGO_PLATEAU_EVENTS_START, EVENT_LANCES_ROOM_LOCK_DOOR
 	ret
+	
+IndigoCashierText::
+	script_mart ULTRA_BALL, GREAT_BALL, FULL_RESTORE, MAX_POTION, FULL_HEAL, REVIVE, MAX_REPEL
 
 IndigoPlateauLobby_TextPointers:
 	dw IndigoHealNurseText

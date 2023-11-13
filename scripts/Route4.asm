@@ -19,6 +19,7 @@ Route4_TextPointers:
 	dw PokeCenterSignText
 	dw Route4Text5
 	dw Route4Text6
+	dw Route4Text7
 
 Route4TrainerHeaders:
 	def_trainers 2
@@ -54,4 +55,8 @@ Route4Text5:
 
 Route4Text6:
 	text_far _Route4Text6
+	text_end
+	
+Route4Text7:
+	text_far _Route4Text7
 	text_end

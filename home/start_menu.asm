@@ -74,6 +74,41 @@ RedisplayStartMenu_DoNotDrawStartMenu::
 	jp z, StartMenu_SaveReset
 	cp 5
 	jp z, StartMenu_Option
+; EXIT or retire
+	ld a, [wCurMap]
+	cp SAFARI_ZONE_EAST
+	jr c, CloseStartMenu
+	cp CERULEAN_CAVE_2F
+	jr nc, CloseStartMenu
+; retire from safari zone
+	ld hl, .AreYouDoneText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr z, .quit
+	call LoadScreenTilesFromBuffer2 ; restore saved screen
+	call LoadTextBoxTilePatterns
+	call UpdateSprites
+	jp RedisplayStartMenu
+
+.AreYouDoneText
+	text_far _SafariZoneRetireText
+	db "@"
+
+.quit
+	xor a
+	ld [wPlayerMovingDirection], a
+	ld a, SAFARI_ZONE_GATE
+	ld [hWarpDestinationMap], a
+	ld a, $3
+	ld [wDestinationWarpID], a
+	ld a, $5
+	ld [wSafariZoneGateCurScript], a
+	SetEvent EVENT_SAFARI_GAME_OVER
+	ld a, 1
+	ld [wSafariZoneGameOver], a
+	; fallthrough
 
 ; EXIT falls through to here
 CloseStartMenu::

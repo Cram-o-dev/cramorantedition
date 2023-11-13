@@ -43,6 +43,7 @@ EnterMap::
 OverworldLoop::
 	call DelayFrame
 OverworldLoopLessDelay::
+	callfar GBCSetCPU2xSpeed
 	call DelayFrame
 	call IsSurfingPikachuInParty
 	call LoadGBPal
@@ -236,11 +237,38 @@ OverworldLoopLessDelay::
 	call UpdateSprites
 
 .moveAhead2
-	ld hl, wFlags_0xcd60
-	res 2, [hl]
-	xor a
-	ld [wd435], a
-	call DoBikeSpeedup
+	ld hl,wFlags_0xcd60
+	res 2,[hl]
+	ld a,[wWalkBikeSurfState]
+	dec a ; riding a bike?
+	jr nz,.normalPlayerSpriteAdvancement
+	ld a,[wd736]
+	bit 6,a ; jumping a ledge?
+	jr nz,.notRunning
+	call DoBikeSpeedup ; if riding a bike and not jumping a ledge
+	ld a,[wWalkBikeSurfState]
+	cp a, $02
+	jr z, .surfFaster
+	; Add running shoes
+	ld a, [hJoyHeld] ; Check what buttons are being pressed
+	and B_BUTTON ; Are you holding B?
+	jr z, .notRunning
+	call DoBikeSpeedup ; added
+	call DoBikeSpeedup ; added
+	jr .notRunning
+.normalPlayerSpriteAdvancement
+	; Make you surf at bike speed
+	ld a,[wWalkBikeSurfState]
+	cp a, $01
+	jr z, .surfFaster
+	; Add running shoes
+	ld a, [hJoyHeld] ; Check what buttons are being pressed
+	and B_BUTTON ; Are you holding B?
+	jr z, .notRunning ; If you aren't holding B, skip ahead to step normally.
+.surfFaster
+	call AdvancePlayerSprite ; Make you go faster if you were holding B
+
+.notRunning ; Normal code resumes here
 	call AdvancePlayerSprite
 	ld a, [wWalkCounter]
 	and a
@@ -523,6 +551,8 @@ CheckMapConnections::
 	cp $ff
 	jr nz, .checkEastMap
 	ld a, [wWestConnectedMap]
+	cp $ff
+	jr z, .checkEastMap
 	ld [wCurMap], a
 	ld a, [wWestConnectedMapXAlignment] ; new X coordinate upon entering west map
 	ld [wXCoord], a
@@ -560,6 +590,8 @@ CheckMapConnections::
 	cp b
 	jr nz, .checkNorthMap
 	ld a, [wEastConnectedMap]
+	cp $ff
+	jr z, .checkNorthMap
 	ld [wCurMap], a
 	ld a, [wEastConnectedMapXAlignment] ; new X coordinate upon entering east map
 	ld [wXCoord], a
@@ -596,6 +628,8 @@ CheckMapConnections::
 	cp $ff
 	jr nz, .checkSouthMap
 	ld a, [wNorthConnectedMap]
+	cp $ff
+	jr z, .checkSouthMap
 	ld [wCurMap], a
 	ld a, [wNorthConnectedMapYAlignment] ; new Y coordinate upon entering north map
 	ld [wYCoord], a
@@ -624,6 +658,8 @@ CheckMapConnections::
 	cp b
 	jr nz, .didNotEnterConnectedMap
 	ld a, [wSouthConnectedMap]
+	cp $ff
+	jr z, .didNotEnterConnectedMap
 	ld [wCurMap], a
 	ld a, [wSouthConnectedMapYAlignment] ; new Y coordinate upon entering south map
 	ld [wYCoord], a

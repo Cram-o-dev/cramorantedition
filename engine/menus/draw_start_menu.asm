@@ -51,7 +51,16 @@ DrawStartMenu::
 	call PrintStartMenuItem
 	ld de, StartMenuOptionText
 	call PrintStartMenuItem
+	ld a, [wCurMap]
+	cp SAFARI_ZONE_EAST
+	jr c, .exit
+	cp CERULEAN_CAVE_2F
+	jr nc, .exit
+	ld de, StartMenuRetireText
+	jr .place
+.exit
 	ld de, StartMenuExitText
+.place
 	call PlaceString
 	ld hl, wd730
 	res 6, [hl] ; turn pauses between printing letters back on
@@ -74,6 +83,9 @@ StartMenuResetText:
 
 StartMenuExitText:
 	db "EXIT@"
+	
+StartMenuRetireText:
+	db "RETIRE@"
 
 StartMenuOptionText:
 	db "OPTION@"

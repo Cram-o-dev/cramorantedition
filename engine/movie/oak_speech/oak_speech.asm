@@ -41,6 +41,7 @@ SetDefaultNames:
 	ret
 
 OakSpeech:
+	callfar GBCSetCPU1xSpeed
 	call StopAllMusic ; stop music
 	ld a, BANK(Music_Routes2)
 	ld c, a

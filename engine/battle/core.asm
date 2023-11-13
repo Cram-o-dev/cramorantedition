@@ -7,6 +7,7 @@ INCLUDE "data/battle/always_happen_effects.asm"
 INCLUDE "data/battle/special_effects.asm"
 
 SlidePlayerAndEnemySilhouettesOnScreen:
+	callfar GBCSetCPU1xSpeed
 	call LoadPlayerBackPic
 	ld a, MESSAGE_BOX ; the usual text box at the bottom of the screen
 	ld [wTextBoxID], a
@@ -1717,6 +1718,7 @@ LoadBattleMonFromParty:
 	ld de, wBattleMonNick
 	ld bc, NAME_LENGTH
 	call CopyData
+	call ApplyBadgeStatBoosts ; include badge boosts in unmodified stats
 	ld hl, wBattleMonLevel
 	ld de, wPlayerMonUnmodifiedLevel ; block of memory used for unmodified stats
 	ld bc, 1 + NUM_STATS * 2
@@ -1979,6 +1981,27 @@ DrawEnemyHUDAndHPBar:
 	lb bc, 4, 12
 	call ClearScreenArea
 	callfar PlaceEnemyHUDTiles
+	;==============================start of caught code
+	push hl
+	ld a, [wEnemyMonSpecies2]
+	ld [wd11e], a
+	ld hl, IndexToPokedex
+	ld b, BANK(IndexToPokedex)
+	call Bankswitch
+	ld a, [wd11e]
+	dec a
+	ld c, a
+	ld b, FLAG_TEST
+	ld hl, wPokedexOwned
+	predef FlagActionPredef
+	ld a, c
+	and a
+	jr z, .notOwned
+	coord hl, 1, 1;horizontal/vertical
+	ld [hl], $72;replace this with your Poké Ball icon or other character
+	.notOwned
+	pop hl
+	;==============================end
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
 	call CenterMonName
@@ -2199,9 +2222,16 @@ DisplayBattleMenu::
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
 	ld [hl], D_RIGHT | A_BUTTON ; wMenuWatchedKeys
+	ld a, [wIsInBattle]
+	dec a
+	jr nz, .leftColumn_WaitForInput_BPressedIgnore
+	ld [hl], D_RIGHT | A_BUTTON | B_BUTTON ; wMenuWatchedKeys
+.leftColumn_WaitForInput_BPressedIgnore
 	call HandleMenuInput
 	bit BIT_D_RIGHT, a
 	jr nz, .rightColumn
+	bit BIT_B_BUTTON, a
+	jr nz, .BButtonPressed
 	jr .AButtonPressed ; the A button was pressed
 .rightColumn ; put cursor in right column of menu
 	ld a, [wBattleType]
@@ -2231,14 +2261,26 @@ DisplayBattleMenu::
 	inc hl
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
+	ld a, [wIsInBattle]
+	dec a
 	ld a, D_LEFT | A_BUTTON
+	jr nz, .rightColumn_WaitForInput_BPressedIgnore
+	ld a, D_LEFT | A_BUTTON | B_BUTTON
+.rightColumn_WaitForInput_BPressedIgnore
 	ld [hli], a ; wMenuWatchedKeys
 	call HandleMenuInput
 	bit 5, a ; check if left was pressed
-	jr nz, .leftColumn ; if left was pressed, jump
+	jp nz, .leftColumn ; if left was pressed, jump
+	bit BIT_B_BUTTON, a
+	jr nz, .BButtonPressed
 	ld a, [wCurrentMenuItem]
 	add $2 ; if we're in the right column, the actual id is +2
 	ld [wCurrentMenuItem], a
+	jr .AButtonPressed
+.BButtonPressed
+	ld a, $1
+	ld [wCurrentMenuItem], a
+	jr .rightColumn
 .AButtonPressed
 	call PlaceUnfilledArrowMenuCursor
 	ld a, [wBattleType]
@@ -4387,18 +4429,21 @@ GetDamageVarsForPlayerAttack:
 	and a ; check for critical hit
 	jr z, .scaleStats
 ; in the case of a critical hit, reset the player's attack and the enemy's defense to their base values
-	ld c, 3 ; defense stat
-	call GetEnemyMonStat
-	ldh a, [hProduct + 2]
+; skip resetting enemy defense if it's been lowered. Thanks Sukishiyou.
+	ld a, [wEnemyMonDefenseMod]
+	cp $7
+	jr c, .checkPlayerAttack 
+	ld hl, wEnemyMonUnmodifiedDefense
+	ld a, [hli]
 	ld b, a
-	ldh a, [hProduct + 3]
-	ld c, a
-	push bc
-	ld hl, wPartyMon1Attack
-	ld a, [wPlayerMonNumber]
-	ld bc, wPartyMon2 - wPartyMon1
-	call AddNTimes
-	pop bc
+	ld c, [hl] ; bc = reset enemy defense
+	ld hl, wBattleMonAttack ; reset hl to point to player attack
+.checkPlayerAttack
+; skip resetting player attack if it was raised
+	ld a, [wPlayerMonAttackMod]
+	cp $7
+	jr nc, .scaleStats 
+	ld hl, wPlayerMonUnmodifiedAttack
 	jr .scaleStats
 .specialAttack
 	ld hl, wEnemyMonSpecial
@@ -4419,18 +4464,21 @@ GetDamageVarsForPlayerAttack:
 	and a ; check for critical hit
 	jr z, .scaleStats
 ; in the case of a critical hit, reset the player's and enemy's specials to their base values
-	ld c, 5 ; special stat
-	call GetEnemyMonStat
-	ldh a, [hProduct + 2]
+; skip resetting enemy special if it's been lowered
+	ld a, [wEnemyMonSpecialMod]
+	cp $7
+	jr c, .checkPlayerSpecial
+	ld hl, wEnemyMonUnmodifiedSpecial
+	ld a, [hli]
 	ld b, a
-	ldh a, [hProduct + 3]
-	ld c, a
-	push bc
-	ld hl, wPartyMon1Special
-	ld a, [wPlayerMonNumber]
-	ld bc, wPartyMon2 - wPartyMon1
-	call AddNTimes
-	pop bc
+	ld c, [hl] ; bc = reset enemy defense
+	ld hl, wBattleMonSpecial ; reset hl to point to player attack
+.checkPlayerSpecial
+; skip resetting player special if it was raised
+	ld a, [wPlayerMonSpecialMod]
+	cp $7
+	jr nc, .scaleStats 
+	ld hl, wPlayerMonUnmodifiedSpecial
 ; if either the offensive or defensive stat is too large to store in a byte, scale both stats by dividing them by 4
 ; this allows values with up to 10 bits (values up to 1023) to be handled
 ; anything larger will wrap around
@@ -4500,18 +4548,21 @@ GetDamageVarsForEnemyAttack:
 	and a ; check for critical hit
 	jr z, .scaleStats
 ; in the case of a critical hit, reset the player's defense and the enemy's attack to their base values
-	ld hl, wPartyMon1Defense
-	ld a, [wPlayerMonNumber]
-	ld bc, wPartyMon2 - wPartyMon1
-	call AddNTimes
+	;skip resetting player defense if it's been lowered
+	ld a, [wPlayerMonDefenseMod]
+	cp $7
+	jr c, .checkEnemyAttack 
+	ld hl, wPlayerMonUnmodifiedDefense
 	ld a, [hli]
 	ld b, a
-	ld c, [hl]
-	push bc
-	ld c, 2 ; attack stat
-	call GetEnemyMonStat
-	ld hl, hProduct + 2
-	pop bc
+	ld c, [hl] ; bc = reset player defense
+	ld hl, wEnemyMonAttack ; reset hl to point to enemy attack
+.checkEnemyAttack
+; skip resetting enemy attack if it was raised
+	ld a, [wEnemyMonAttackMod]
+	cp $7
+	jr nc, .scaleStats 
+	ld hl, wEnemyMonUnmodifiedAttack
 	jr .scaleStats
 .specialAttack
 	ld hl, wBattleMonSpecial
@@ -4532,18 +4583,21 @@ GetDamageVarsForEnemyAttack:
 	and a ; check for critical hit
 	jr z, .scaleStats
 ; in the case of a critical hit, reset the player's and enemy's specials to their base values
-	ld hl, wPartyMon1Special
-	ld a, [wPlayerMonNumber]
-	ld bc, wPartyMon2 - wPartyMon1
-	call AddNTimes
+	; skip resetting player special if it's been lowered
+	ld a, [wPlayerMonSpecialMod]
+	cp $7
+	jr c, .checkEnemySpecial
+	ld hl, wPlayerMonUnmodifiedSpecial
 	ld a, [hli]
 	ld b, a
-	ld c, [hl]
-	push bc
-	ld c, 5 ; special stat
-	call GetEnemyMonStat
-	ld hl, hProduct + 2
-	pop bc
+	ld c, [hl] ; bc = reset player defense
+	ld hl, wEnemyMonSpecial ; reset hl to point to enemy attack
+.checkEnemySpecial
+; skip resetting enemy special if it was raised
+	ld a, [wEnemyMonSpecialMod]
+	cp $7
+	jr nc, .scaleStats 
+	ld hl, wEnemyMonUnmodifiedSpecial
 ; if either the offensive or defensive stat is too large to store in a byte, scale both stats by dividing them by 4
 ; this allows values with up to 10 bits (values up to 1023) to be handled
 ; anything larger will wrap around
@@ -4818,7 +4872,6 @@ CriticalHitTest:
 	call GetMonHeader
 	ld a, [wMonHBaseSpeed]
 	ld b, a
-	srl b                        ; (effective (base speed/2))
 	ldh a, [hWhoseTurn]
 	and a
 	ld hl, wPlayerMovePower
@@ -4832,17 +4885,6 @@ CriticalHitTest:
 	ret z                        ; do nothing if zero
 	dec hl
 	ld c, [hl]                   ; read move id
-	ld a, [de]
-	bit GETTING_PUMPED, a        ; test for focus energy
-	jr nz, .focusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left,
-	                             ; resulting in 1/4 the usual crit chance
-	sla b                        ; (effective (base speed/2)*2)
-	jr nc, .noFocusEnergyUsed
-	ld b, $ff                    ; cap at 255/256
-	jr .noFocusEnergyUsed
-.focusEnergyUsed
-	srl b
-.noFocusEnergyUsed
 	ld hl, HighCriticalMoves     ; table of high critical hit moves
 .Loop
 	ld a, [hli]                  ; read move from move table
@@ -4850,17 +4892,29 @@ CriticalHitTest:
 	jr z, .HighCritical          ; if so, the move about to be used is a high critical hit ratio move
 	inc a                        ; move on to the next move, FF terminates loop
 	jr nz, .Loop                 ; check the next move in HighCriticalMoves
-	srl b                        ; /2 for regular move (effective (base speed / 2))
+	srl b                        ; /2 for regular move
 	jr .SkipHighCritical         ; continue as a normal move
 .HighCritical
 	sla b                        ; *2 for high critical hit moves
 	jr nc, .noCarry
 	ld b, $ff                    ; cap at 255/256
 .noCarry
-	sla b                        ; *4 for high critical move (effective (base speed/2)*8))
+	sla b                        ; *4 for high critical move
 	jr nc, .SkipHighCritical
 	ld b, $ff
 .SkipHighCritical
+	ld a, [de]
+	bit GETTING_PUMPED, a        ; test for focus energy
+	jr z, .noFocusEnergyUsed
+	sla b                        ; (effective (base speed*2))
+	jr nc, .focusEnergyUsed
+	ld b, $ff                    ; cap at 255/256
+	jr .noFocusEnergyUsed
+.focusEnergyUsed
+	sla b                        ; (effective ((base speed*2)*2))
+	jr nc, .noFocusEnergyUsed
+	ld b, $ff                    ; cap at 255/256
+.noFocusEnergyUsed
 	ld a, b
 	inc a ; optimization of "cp $ff"
 	jr z, .guaranteedCriticalHit

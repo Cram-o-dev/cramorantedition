@@ -64,6 +64,7 @@ ApplyOutOfBattlePoisonDamage:
 	callfar IsThisPartymonStarterPikachu_Party
 	jr nc, .curMonNotPlayerPikachu
 	ld e, $3
+	callfar GBCSetCPU1xSpeed
 	callfar PlayPikachuSoundClip
 	calladb_ModifyPikachuHappiness PIKAHAPPY_PSNFNT
 .curMonNotPlayerPikachu

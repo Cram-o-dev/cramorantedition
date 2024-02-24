@@ -1086,6 +1086,7 @@ OaksLabRivalToughenUpText:
 OaksLabText26:
 	text_asm
 	ldpikacry e, PikachuCry2
+	callfar GBCSetCPU1xSpeed
 	callfar PlayPikachuSoundClip
 	ld hl, OaksLabPikachuDislikesPokeballsText1
 	call PrintText

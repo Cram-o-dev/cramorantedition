@@ -93,6 +93,7 @@ StarterPikachuEmotionCommand_pcm:
 PlayPikachuSoundClip_:
 	cp $ff
 	ret z
+	callfar GBCSetCPU1xSpeed
 	callfar PlayPikachuSoundClip
 	ret
 

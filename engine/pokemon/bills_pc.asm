@@ -238,6 +238,7 @@ BillsPCDeposit:
 	callfar IsThisPartymonStarterPikachu_Party
 	jr nc, .asm_215c9
 	ld e, $1b
+	callfar GBCSetCPU1xSpeed
 	callfar PlayPikachuSoundClip
 	jr .asm_215cf
 .asm_215c9
@@ -301,6 +302,7 @@ BillsPCWithdraw:
 	callfar IsThisPartymonStarterPikachu_Box
 	jr nc, .asm_21660
 	ld e, $22
+	callfar GBCSetCPU1xSpeed
 	callfar PlayPikachuSoundClip
 	jr .asm_21666
 .asm_21660
@@ -352,6 +354,7 @@ BillsPCRelease:
 	ld hl, wBoxMonNicks
 	call GetPartyMonName
 	ld e, $27
+	callfar GBCSetCPU1xSpeed
 	callfar PlayPikachuSoundClip
 	ld hl, PikachuUnhappyText
 	call PrintText

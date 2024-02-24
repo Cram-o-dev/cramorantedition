@@ -183,6 +183,7 @@ StatusScreen:
 	jr nc, .playRegularCry
 .playPikachuSoundClip
 	ld e, 16
+	callfar GBCSetCPU1xSpeed
 	callfar PlayPikachuSoundClip
 	jr .continue
 .playRegularCry

@@ -840,6 +840,7 @@ ItemUseEvoStone:
 	callfar IsThisPartymonStarterPikachu_Party
 	jr nc, .notPlayerPikachu
 	ld e, $1b
+	callfar GBCSetCPU1xSpeed
 	callfar PlayPikachuSoundClip
 	ld a, [wWhichPokemon]
 	ld hl, wPartyMonNicks

@@ -215,9 +215,12 @@ _YesAdviceText::
 	done
 	
 _CDPlayerNoRoomText::
-	text "Oh, you don't"
-	line "have room in your"
-	cont "BAG for my super"
+	text "Oh? I wanted to"
+	line "reward you with"
+	cont "something cool,"
+	cont "but you have no"
+	cont "room in your BAG"
+	cont "for my super"
 	cont "special item!"
 	done
 

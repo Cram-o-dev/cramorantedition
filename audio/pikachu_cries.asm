@@ -96,9 +96,6 @@ PikachuCry19::
 PikachuCry24::
 	pcm INCBIN "audio/pikachu_cries/pikachu_cry_24.pcm"
 
-PikachuCry26::
-	pcm INCBIN "audio/pikachu_cries/pikachu_cry_26.pcm"
-
 
 SECTION "Pikachu Cries 9", ROMX
 
@@ -141,9 +138,6 @@ PikachuCry33::
 PikachuCry34::
 	pcm INCBIN "audio/pikachu_cries/pikachu_cry_34.pcm"
 
-PikachuCry41::
-	pcm INCBIN "audio/pikachu_cries/pikachu_cry_41.pcm"
-
 
 SECTION "Pikachu Cries 12", ROMX
 
@@ -164,9 +158,21 @@ PikachuCry37::
 
 PikachuCry38::
 	pcm INCBIN "audio/pikachu_cries/pikachu_cry_38.pcm"
+	
+	
+SECTION "Pikachu Cries 14", ROMX
 
 PikachuCry40::
 	pcm INCBIN "audio/pikachu_cries/pikachu_cry_40.pcm"
 
 PikachuCry42::
 	pcm INCBIN "audio/pikachu_cries/pikachu_cry_42.pcm"
+
+PikachuCry26::
+	pcm INCBIN "audio/pikachu_cries/pikachu_cry_26.pcm"
+	
+
+SECTION "Pikachu Cries 15", ROMX
+	
+PikachuCry41::
+	pcm INCBIN "audio/pikachu_cries/pikachu_cry_41.pcm"

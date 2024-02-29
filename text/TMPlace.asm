@@ -2,7 +2,7 @@ _TMPlaceText1::
 	text "<PLAYER> my boy!"
 	line "Welcome! Congrats"
 	cont "on becoming the"
-	cont "CHAMP!"
+	cont "champ!"
 	
 	para "This is the TM"
 	line "EMPORIUM!"

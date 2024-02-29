@@ -15,7 +15,7 @@ _CeruleanCaveB4FText_51510::
 	cont "that the journey"
 	cont "doesn't end once"
 	cont "you become the"
-	cont "CHAMP. There's"
+	cont "champ. There's"
 	cont "always room for"
 	cont "improvement!"
 

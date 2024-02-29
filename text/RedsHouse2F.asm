@@ -9,7 +9,7 @@ _RedsHouse2FDollText::
 	line "attached:"
 	
 	para "“Congratulations"
-	line "CHAMP, you've"
+	line "champ, you've"
 	cont "made us all very"
 	cont "proud!"
 	

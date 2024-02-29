@@ -99,7 +99,7 @@ _CeladonCityTMGuyText::
 	
 	para "But if you were"
 	line "to become the"
-	cont "#MON CHAMP, we"
+	cont "#MON champ, we"
 	cont "might grant you"
 	cont "entry."
 	done

@@ -29,7 +29,7 @@ _WayOfFishBFEndBattleText1::
 _WayOfFishBFAfterBattleText1::
 	text "Maybe you are able"
 	line "to show them"
-	cont "respect...."
+	cont "respect..."
 	
 	para "But I'm only the"
 	line "beginning of the"

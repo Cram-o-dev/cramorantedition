@@ -1,6 +1,6 @@
 _CeladonMansion2MeText::
 	text "GAH! Oh..."
-	line "phew...."
+	line "phew..."
 	
 	para "You're not one of"
 	line "them."
@@ -19,6 +19,16 @@ _CeladonMansion2MeText::
 	cont "between us, okay?"
 	
 	para ";)"
+	
+	para "Hey, you look like"
+	line "a promising"
+	cont "trainer, <PLAYER>."
+	
+	para "If you become the"
+	line "champ, come see"
+	cont "me again. I'll"
+	cont "give you a cool"
+	cont "thing!"
 	done
 	
 _CDPreReceiveText::
@@ -46,7 +56,7 @@ _ReceivedCDPlayerText::
 	cont "passion project!"
 	
 	para "Since you're the"
-	line "new CHAMP, you"
+	line "new champ, you"
 	cont "deserve a special"
 	cont "reward!"
 	

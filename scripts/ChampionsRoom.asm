@@ -28,6 +28,7 @@ GaryScript0:
 	ret
 
 GaryScript1:
+	ResetEvent EVENT_BEAT_CHAMPION_RIVAL ;Fixes bug of dialogue displaying incorrectly upon rematches
 	ld a, $ff
 	ld [wJoyIgnore], a
 	ld hl, wSimulatedJoypadStatesEnd

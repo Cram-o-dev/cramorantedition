@@ -66,6 +66,9 @@ CeruleanCaveB4FScript3:
 	ld a, $f0
 	ld [wJoyIgnore], a
 	SetEvent EVENT_BEAT_CERULEAN_CAVEB4F_TRAINER_0
+	ld a, HS_REDS_HOUSE_2F_TROPHY
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	ld a, $1
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
@@ -108,7 +111,7 @@ OakBattleText:
 	set 6, [hl]
 	set 7, [hl]
 	ld hl, CeruleanCaveB4FText_5152b
-	ld de, CeruleanCaveB4FText_5152b
+	ld de, CeruleanCaveB4FOakBeatText_5152b
 	call SaveEndBattleTextPointers
 	ldh a, [hSpriteIndexOrTextID]
 	ld [wSpriteIndex], a
@@ -163,6 +166,10 @@ CeruleanCaveB4FText_51526:
 
 CeruleanCaveB4FText_5152b:
 	text_far _CeruleanCaveB4FText_5152b
+	text_end
+	
+CeruleanCaveB4FOakBeatText_5152b:
+	text_far _CeruleanCaveB4FOakBeatText_5152b
 	text_end
 
 CeruleanCaveB4FText_51530:

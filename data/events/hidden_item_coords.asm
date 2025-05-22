@@ -41,7 +41,7 @@ HiddenItemCoords:
 	hidden_item ROCKET_HIDEOUT_B1F,            21,  15
 	hidden_item ROCKET_HIDEOUT_B3F,            27,  17
 	hidden_item ROCKET_HIDEOUT_B4F,            25,   1
-	hidden_item ROUTE_10,                       9,  17
+	hidden_item ROUTE_10,                       8,  25
 	hidden_item ROUTE_10,                      16,  53
 	hidden_item ROUTE_10,                       4,  19
 	hidden_item POWER_PLANT,                   17,  16
